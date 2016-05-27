@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="weinerApp">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+	<title>Weiner Fever 2016</title>
+
+	<!-- ***** SCRIPT LIBRARIES ***** -->
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+		
+		<!-- BOOTSTRAP 
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
+		<link rel="stylesheet" type="text/less" href="bower_components/bootstrap/less/glyphicons.less">
+
+		<!-- SKELETON -->
+		<link rel="stylesheet" type="text/css" href="bower_components/skeleton/css/skeleton.css">
+
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="bower_components/firebase/firebase.js"></script>
+	<script type="text/javascript" src="bower_components/angularfire/dist/angularfire.min.js"></script>
+
+		<!-- Less Auto-prefixer
+		<script type="text/javascript"></script> -->
+	<!-- ***** Defers ***** -->
+	<script type="text/javascript" src="bower_components/fastclick/lib/fastclick.js" defer="true"></script>
+	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js" defer="true"></script>	
+
+	<!-- ***** STYLE LIBRARIES ***** -->
+	<link rel="stylesheet" type="text/css" href="bower_components/normalize-css/normalize.css">
+
+	<!-- ***** CUSTOM SCRIPTS ***** -->
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/controllers.js"></script>
+	<script type="text/javascript" src="js/animations.js"></script>
+
+	<!-- ***** CUSTOM STYLES ****** -->
+	<link rel="stylesheet" type="text/less" href="style/less/animations.less">
+	<link rel="stylesheet" type="text/less" href="style/less/layout.less">
+	<link rel="stylesheet" type="text/less" href="style/less/home.less">
+	<link rel="stylesheet" type="text/less" href="style/less/games.less">
+
+	<!-- LESS -->
+	<script type="text/javascript" src="bower_components/less/dist/less.min.js"></script>
+</head>
+<body ng-cloak class="container {{touch}}" onload="size()">
+
+	<div id="out-container">
+		<header class="jumbotron" id="top-head">
+			<nav id="hamburger"><span class="glyphicon glyphicon-menu-hamburger"></span></nav>
+			<h1> Weiner 2016 </h1>
+			<h3> 30<sup>th</sup> Annual Florence &amp; Joseph Weiner Basketball Tournament @BT </h3>
+		</header>
+
+		<div class="row" id="top-nav">
+			<nav class="offset-by-three columns six">
+				<a href="#/home" class="button first"> <span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
+				<a href="#/games" class="button"> <span class="glyphicon glyphicon-calendar"></span>&nbsp;Games</a>
+				<a href="#/home" class="button last"> <span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
+			</nav>
+		</div>
+
+
+		<div class="outer-wrap">
+			<div ng-view class="view-frame"></div>
+		</div>
+
+
+		<footer id="page-foot">
+			<p>Footer</p>
+
+			<script type="text/javascript">
+		var winHeight;
+		var winWidth;
+		var topHeight;
+		var footHeight;
+		function size() {
+			winHeight = $(window).height();
+			winWidth = $(window).width();
+			topHeight =$("#top-head").outerHeight() + $("#top-nav nav").outerHeight();
+			footHeight = $("#page-foot").outerHeight();
+			console.log(topHeight + "   " + footHeight);
+			$(".outer-wrap").css("min-height", winHeight - topHeight - footHeight);
+		}
+
+		$(window).resize(size);
+	</script>
+		</footer>
+	</div>
+</body>
+</html>

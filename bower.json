@@ -1,0 +1,24 @@
+{
+  "name": "weiner2016",
+  "description": "Beth Tfiloh Weiner Tournament 2016",
+  "version": "0.0.0",
+  "homepage": "www.weinerfever.com",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.4.x",
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.3.6",
+    "angular-route": "1.4.x",
+    "angular-animate": "1.4.x",
+    "normalize-css": "normalize.css#^4.1.1",
+    "semantic": "semantic-ui#^2.1.8",
+    "firebase": "^2.4.2",
+    "angularfire": "^1.2.0",
+    "fastclick": "^1.0.6",
+    "less": "less.js#^2.7.0",
+    "angular-snap": "^1.8.5",
+    "pure": "^0.6.0",
+    "skeleton": "skeleton-css#^2.0.4"
+  }
+}
