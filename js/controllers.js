@@ -7,6 +7,17 @@ weinerControllers.run(['$rootScope', function($rootScope){
 		$rootScope.touch = "no-touch";
 	}
 
+
+	$rootScope.toggleMenu = function () {
+		if ($rootScope.menuOpen == "closed") {
+			$rootScope.menuOpen = "open";
+		} else {
+			$rootScope.menuOpen = "closed";
+		}
+	}
+
+	$rootScope.menuOpen = "closed";
+
 	//Makes base firebase ref available as $rootScope.ref
 //	$rootScope.ref = new Firebase("https://weinerfever.firebaseio.com/");
 }]);

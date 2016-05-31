@@ -3,21 +3,21 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="x-ua-compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-touch-fullscreen" content="yes">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
 	<title>Weiner Fever 2016</title>
 
 	<!-- ***** SCRIPT LIBRARIES ***** -->
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 		
-		<!-- BOOTSTRAP 
+		<!-- BOOTSTRAP -->
 		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
-		<link rel="stylesheet" type="text/less" href="bower_components/bootstrap/less/glyphicons.less">
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+		<!--<link rel="stylesheet" type="text/less" href="bower_components/bootstrap/less/glyphicons.less">-->
 
-		<!-- SKELETON -->
-		<link rel="stylesheet" type="text/css" href="bower_components/skeleton/css/skeleton.css">
+		<!-- SKELETON 
+		<link rel="stylesheet" type="text/css" href="bower_components/skeleton/css/skeleton.css"> -->
 
 	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 	<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
@@ -44,52 +44,102 @@
 	<link rel="stylesheet" type="text/less" href="style/less/home.less">
 	<link rel="stylesheet" type="text/less" href="style/less/games.less">
 
-	<!-- LESS -->
-	<script type="text/javascript" src="bower_components/less/dist/less.min.js"></script>
-</head>
-<body ng-cloak class="container {{touch}}" onload="size()">
-
-	<div id="out-container">
-		<header class="jumbotron" id="top-head">
-			<nav id="hamburger"><span class="glyphicon glyphicon-menu-hamburger"></span></nav>
-			<h1> Weiner 2016 </h1>
-			<h3> 30<sup>th</sup> Annual Florence &amp; Joseph Weiner Basketball Tournament @BT </h3>
-		</header>
-
-		<div class="row" id="top-nav">
-			<nav class="offset-by-three columns six">
-				<a href="#/home" class="button first"> <span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
-				<a href="#/games" class="button"> <span class="glyphicon glyphicon-calendar"></span>&nbsp;Games</a>
-				<a href="#/home" class="button last"> <span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
-			</nav>
-		</div>
-
-
-		<div class="outer-wrap">
-			<div ng-view class="view-frame"></div>
-		</div>
-
-
-		<footer id="page-foot">
-			<p>Footer</p>
-
-			<script type="text/javascript">
-		var winHeight;
-		var winWidth;
-		var topHeight;
-		var footHeight;
-		function size() {
-			winHeight = $(window).height();
-			winWidth = $(window).width();
-			topHeight =$("#top-head").outerHeight() + $("#top-nav nav").outerHeight();
-			footHeight = $("#page-foot").outerHeight();
-			console.log(topHeight + "   " + footHeight);
-			$(".outer-wrap").css("min-height", winHeight - topHeight - footHeight);
+	<style type="text/css">
+		@font-face {
+			font-family: 'Black Ops One';
+			font-style: normal;
+			font-weight: 400;
+			src: local('Black Ops One'), local('BlackOpsOne-Regular'), url(fonts/BlackOpsOne.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 		}
 
-		$(window).resize(size);
-	</script>
-		</footer>
+		@font-face {
+			font-family: 'Caveat Brush';
+			font-style: normal;
+			font-weight: 400;
+			src: local('Caveat Brush'), local('CaveatBrush-Regular'), url(fonts/CaveatBrush.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+		}
+	</style>
+
+	<!-- LESS -->
+	<script type="text/javascript" src="bower_components/less/dist/less.min.js"></script>
+
+</head>
+<body ng-cloak class="{{touch}}" onload="size()">
+
+	<div id="hidden-nav" class="{{menuOpen}}">
+						<ul >
+							<li>
+								<a href="#/" class="button first" ng-click="toggleMenu()"> <span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
+							</li>
+							<li>
+								<a href="#/games" class="button" ng-click="toggleMenu()"> <span class="glyphicon glyphicon-calendar"></span>&nbsp;Games</a>
+							</li>
+							<li>
+								<a href="#/teams" class="button last" ng-click="toggleMenu()"> <span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
+							</li>
+						</ul>
+					</div>
+
+	<div id="out-container" class="container-fluid {{menuOpen}}">
+		<!--<header class="jumbotron" id="top-head">
+			<nav id="hamburger"><span class="glyphicon glyphicon-menu-hamburger"></span></nav>
+			<h1> Weiner 2016 </h1>
+			<h3> 30<sup>th</sup> Annual Florence &amp; Joseph Weiner Basketball Tournament @BT </h3>-->
+
+			<nav class="navbar navbar-default navbar-fixed-top {{menuOpen}}">
+				<div class="container">
+					<div class="navbar-header">
+						<nav id="hamburger" ng-click="toggleMenu()"><span class="glyphicon glyphicon-menu-hamburger"></span></nav>
+						<span class="navbar-brand"><a href="#/">Weiner 2016</a> <span>30<sup>th</sup> Annual Florence &amp; Joseph Weiner Basketball Tournament @BT</span></span>
+					</div>
+
+					<div id="top-navbar">
+						<ul >
+							<li>
+								<a href="#/" class="button first"> <span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
+							</li>
+							<li>
+								<a href="#/games" class="button"> <span class="glyphicon glyphicon-calendar"></span>&nbsp;Games</a>
+							</li>
+							<li>
+								<a href="#/teams" class="button last"> <span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		<!--</header>-->
+
+		
+		<div id="outer-wrap" class="container">
+			<div>
+				<div ng-view class="view-frame"></div>
+			</div>
+
+
+			<footer id="page-foot" class="col-sm-12">
+				<p>Footer</p>
+
+				<script type="text/javascript">
+					var winHeight, winWidth, topHeight, footHeight, fontSize, bottomHeight;
+					function size() {
+						winHeight = $(window).height();
+						winWidth = $(window).width();
+						topHeight = $("#outer-wrap").css('margin-top');
+						topHeight = parseInt(topHeight.substr(0, topHeight.search('px')));
+						bottomHeight = $("#outer-wrap").css('margin-bottom');
+						bottomHeight = parseInt(bottomHeight.substr(0, bottomHeight.search('px')));
+						footHeight = $("#page-foot").outerHeight();
+						console.log(topHeight + "   " + bottomHeight);
+						$("#outer-wrap > :first-child").css("min-height", winHeight - topHeight - footHeight - bottomHeight);
+					}
+
+					$(window).resize(size);
+				</script>
+			</footer>
+		</div>
 	</div>
 </body>
 </html>
