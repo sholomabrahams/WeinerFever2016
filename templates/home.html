@@ -1,10 +1,18 @@
 <section class="inner-wrap" id="home">
 	<div class="">
-		<section class="col-lg-7 col-md-6" id="live">
+		<main class="col-lg-7 col-md-6 game-sec" id="live">
 			<div>
-				<h3> Live Games </h3>
+				<h2> Live Games </h2>
+				<section>
+					<div class="game-wrap" ng-repeat="game in games">
+						<h4 class="home-team" ng-bind="game.home"></h4>
+						<img src="/ng/assets/img/logos/{{game.hPath}}.png">
+
+						<h4 class="away-team" ng-bind="game.away"></h4>
+					</div>
+				</section>
 			</div>
-		</section>
+		</main>
 		<aside class="col-lg-5 col-md-6" class="timeline-2">
 			<div class="glyphicon glyphicon-cloud"></div>
 		</aside>
