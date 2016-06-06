@@ -16,6 +16,28 @@ weinerApp.config(['$routeProvider',function($routeProvider) {
 			templateUrl: 'templates/games.html',
 			controller: 'games'
 		}).
+		when('/teams/:teamName?/:gender?', {
+			templateUrl: 'templates/teams.html',
+			controller: 'teams'
+		}).
+		when('/admin', {
+			templateUrl: 'templates/admin/login.html',
+			controller: 'adminLogin',
+			resolve: {
+				"currentAuth": ["Auth", function (Auth) {
+					return Auth.$waitForAuth();
+				}]
+			}
+		}).
+		when('/admin/dash', {
+			templateUrl: 'templates/admin/dash.html',
+			controller: 'adminDash',
+			resolve: {
+				"currentAuth": ["Auth", function (Auth) {
+					return Auth.$requireAuth();
+				}]
+			}
+		}).
 		otherwise({
 			redirectTo: '/'
 		});

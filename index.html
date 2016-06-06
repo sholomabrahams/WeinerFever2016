@@ -43,6 +43,9 @@
 	<link rel="stylesheet" type="text/less" href="style/less/layout.less">
 	<link rel="stylesheet" type="text/less" href="style/less/home.less">
 	<link rel="stylesheet" type="text/less" href="style/less/games.less">
+	<link rel="stylesheet" type="text/less" href="style/less/teams.less">
+	<link rel="stylesheet" type="text/less" href="style/less/admin/login.less">
+	<link rel="stylesheet" type="text/less" href="style/less/admin/dash.less">
 
 	<style type="text/css">
 		@font-face {
@@ -69,77 +72,71 @@
 <body ng-cloak class="{{touch}}" onload="size()">
 
 	<div id="hidden-nav" class="{{menuOpen}}">
-						<ul >
-							<li>
-								<a href="#/" class="button first" ng-click="toggleMenu()"> <span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
-							</li>
-							<li>
-								<a href="#/games" class="button" ng-click="toggleMenu()"> <span class="glyphicon glyphicon-calendar"></span>&nbsp;Games</a>
-							</li>
-							<li>
-								<a href="#/teams" class="button last" ng-click="toggleMenu()"> <span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
-							</li>
-						</ul>
-					</div>
+		<ul >
+			<li>
+				<a href="#/" class="button first" ng-click="toggleMenu()"> <span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
+			</li>
+			<li>
+				<a href="#/games" class="button" ng-click="toggleMenu()"> <span class="glyphicon glyphicon-calendar"></span>&nbsp;Games</a>
+			</li>
+			<li>
+				<a href="#/teams" class="button last" ng-click="toggleMenu()"> <span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
+			</li>
+		</ul>
+	</div>
 
 	<div id="out-container" class="container-fluid {{menuOpen}}">
-		<!--<header class="jumbotron" id="top-head">
-			<nav id="hamburger"><span class="glyphicon glyphicon-menu-hamburger"></span></nav>
-			<h1> Weiner 2016 </h1>
-			<h3> 30<sup>th</sup> Annual Florence &amp; Joseph Weiner Basketball Tournament @BT </h3>-->
-
-			<nav class="navbar navbar-default navbar-fixed-top {{menuOpen}}">
-				<div class="container">
-					<div class="navbar-header">
-						<nav id="hamburger" ng-click="toggleMenu()"><span class="glyphicon glyphicon-menu-hamburger"></span></nav>
-						<span class="navbar-brand"><a href="#/">Weiner 2016</a> <span>30<sup>th</sup> Annual Florence &amp; Joseph Weiner Basketball Tournament @BT</span></span>
-					</div>
-
-					<div id="top-navbar">
-						<ul >
-							<li>
-								<a href="#/" class="button first"> <span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
-							</li>
-							<li>
-								<a href="#/games" class="button"> <span class="glyphicon glyphicon-calendar"></span>&nbsp;Games</a>
-							</li>
-							<li>
-								<a href="#/teams" class="button last"> <span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
-							</li>
-						</ul>
-					</div>
+		<nav class="navbar navbar-default navbar-fixed-top {{menuOpen}}">
+			<div class="container">
+				<div class="navbar-header">
+					<nav id="hamburger" ng-click="toggleMenu()"><span class="glyphicon glyphicon-menu-hamburger"></span></nav>
+					<span class="navbar-brand" ng-click="closeMenu()"><a href="#/">Weiner 2016</a> <span>30<sup>th</sup> Annual Florence &amp; Joseph Weiner Basketball Tournament @BT</span></span>
 				</div>
-			</nav>
-		<!--</header>-->
+
+				<div id="top-navbar" ng-click="closeMenu()">
+					<ul >
+						<li>
+							<a href="#/" class="button first"> <span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
+						</li>
+						<li>
+							<a href="#/games" class="button"> <span class="glyphicon glyphicon-calendar"></span>&nbsp;Games</a>
+						</li>
+						<li>
+							<a href="#/teams" class="button last"> <span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
 		
-		<div id="outer-wrap" class="container">
+		<div id="outer-wrap" class="container" ng-click="closeMenu()">
 			<div>
 				<div ng-view class="view-frame"></div>
 			</div>
 
 
-			<footer id="page-foot" class="col-sm-12">
-				<p>Footer</p>
-
-				<script type="text/javascript">
-					var winHeight, winWidth, topHeight, footHeight, fontSize, bottomHeight;
-					function size() {
-						winHeight = $(window).height();
-						winWidth = $(window).width();
-						topHeight = $("#outer-wrap").css('margin-top');
-						topHeight = parseInt(topHeight.substr(0, topHeight.search('px')));
-						bottomHeight = $("#outer-wrap").css('margin-bottom');
-						bottomHeight = parseInt(bottomHeight.substr(0, bottomHeight.search('px')));
-						footHeight = $("#page-foot").outerHeight();
-						//console.log(topHeight + "   " + bottomHeight);
-						$("#outer-wrap > :first-child").css("min-height", winHeight - topHeight - footHeight - bottomHeight);
-					}
-
-					$(window).resize(size);
-				</script>
+			<footer id="page-foot" class="container">
+				<iframe src="https://www.spreaker.com/embed/player/mini?show_id=1294893&autoplay=false" style="width: 100%; height: 71px;" frameborder="0" scrolling="no"></iframe>
 			</footer>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		var winHeight, winWidth, topHeight, footHeight, fontSize, bottomHeight;
+		function size() {
+			winHeight = $(window).height();
+			winWidth = $(window).width();
+			topHeight = $("#outer-wrap").css('margin-top');
+			topHeight = parseInt(topHeight.substr(0, topHeight.search('px')));
+			bottomHeight = $("#outer-wrap").css('margin-bottom');
+			bottomHeight = parseInt(bottomHeight.substr(0, bottomHeight.search('px')));
+			footHeight = $("#page-foot").outerHeight();
+			console.log(topHeight + "   " + bottomHeight);
+			$("#outer-wrap > :first-child").css("min-height", winHeight - topHeight - bottomHeight);
+		}
+
+		$(window).resize(size);
+	</script>
 </body>
 </html>

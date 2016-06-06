@@ -1,19 +1,47 @@
 <section class="inner-wrap" id="home">
 	<div class="">
-		<main class="col-lg-7 col-md-6 game-sec" id="live">
+		<section class="col-lg-7 col-md-7 game-sec" id="live">
 			<div>
 				<h2> Live Games </h2>
-				<section>
-					<div class="game-wrap" ng-repeat="game in games">
-						<h4 class="home-team" ng-bind="game.home"></h4>
-						<img src="/ng/assets/img/logos/{{game.hPath}}.png">
+				<div class="games-wrap">
+					<div class="game" ng-repeat="game in games | orderBy:sortGames">
 
-						<h4 class="away-team" ng-bind="game.away"></h4>
+						<div class="left">
+							<div class="home">
+								<a ng-href="/ng/#teams/{{game.home}}/{{getGender(game.name)}}">
+									<div>
+										<h4 class="home-name" ng-bind="game.home"></h4>
+										<p class="record">{{teams[game.home][getGender(game.name)].win}}-{{teams[game.home][getGender(game.name)].los}}</p>
+									</div>
+									<img ng-src="/ng/assets/img/logos/{{teams[game.home].picture}}" width="60" height="60">
+								</a>
+								<h2 class="score">{{game.hScore}}</h2>
+							</div>
+
+							<div class="away">
+								<a ng-href="/ng/#teams/{{game.away}}/{{getGender(game.name)}}">
+									<div>
+										<h4 class="away-name" ng-bind="game.away"></h4>
+										<p class="record">{{teams[game.away][getGender(game.name)].win}}-{{teams[game.away][getGender(game.name)].los}}</p>
+									</div>
+									<img ng-src="/ng/assets/img/logos/{{teams[game.away].picture}}" width="60" height="60">
+								</a>
+								<h2 class="score">{{game.aScore}}</h2>
+							</div>
+						</div>
+
+						<div class="right">
+							<h4>{{game.name}}</h4>
+							<h2> {{game.playTime}} </h2>
+							<h6> {{game.quarter}} </h6>
+							<p>{{game.gym}}</p>
+						</div>
+
 					</div>
-				</section>
+				</div>
 			</div>
-		</main>
-		<aside class="col-lg-5 col-md-6" class="timeline-2">
+		</section>
+		<aside class="col-lg-5 col-md-5" class="timeline-2">
 			<div class="glyphicon glyphicon-cloud"></div>
 		</aside>
 	</div>

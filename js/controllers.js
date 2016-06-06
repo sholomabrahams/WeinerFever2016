@@ -1,49 +1,62 @@
 var weinerControllers = angular.module('weinerControllers', []);
 
 /* FACTORIES */
-weinerControllers.run(['$rootScope', '$http', function($rootScope, $http){
+weinerControllers.run(['$rootScope', '$http', '$location', function($rootScope, $http, $location){
 	//Set body class no-touch if not touchscreen
 	if (!('ontouchstart' in window || navigator.maxTouchPoints)) {
 		$rootScope.touch = "no-touch";
 	}
 
-
-	$rootScope.toggleMenu = function () {
+	//toggles or closes side menu
+	$rootScope.toggleMenu = function (e) {
 		if ($rootScope.menuOpen == "closed") {
 			$rootScope.menuOpen = "open";
 		} else {
 			$rootScope.menuOpen = "closed";
 		}
-	}
+	};
+	$rootScope.closeMenu = function () {
+		$rootScope.menuOpen = "closed";
+	};
 
 	$rootScope.menuOpen = "closed";
 
+	//offline db bootstrap
 	var data;
-	var current;
-	var games;
-	$http.get('/ng/weinerfever.json').then(function (response) {
+	$http.get("/ng/weinerfever.json").then(function (response) {
 		data = response.data;
-		games = data.games;
-		//console.log(data);
-		for (game in games) {
-			console.log(game.home);
-			if (game.home == "Beth Tfiloh" || game.home == "Boyar") {
-				console.log(data.teams[game.home]);
-				data.games[game].hPath = data.teams[game.home].path;
-			} else {
-				data.games[game].hPath = "Ramaz";
-			}
-		}
-		$rootScope.games = games;
+		$rootScope.games = data.games;
 		$rootScope.teams = data.teams;
 	});
+
+	//returns gender of the game
+	$rootScope.getGender = function (name) {
+		if (name.substring(0, 4).toLowerCase() == "boys") {
+			return "boys";
+		} else {
+			return "girls";
+		}
+	};
+
+	$rootScope.sortGames = function (game) {
+		
+	}
+
+
+	//firebase auth handles on routes
+	$rootScope.$on('$routeChangeError', function(event, next, previous, error) {
+		if (error === "AUTH_REQUIRED") {
+			$location.path("/");
+		}
+	});
+
 
 	//Makes base firebase ref available as $rootScope.ref
 //	$rootScope.ref = new Firebase("https://weinerfever.firebaseio.com/");
 }]);
 
 /*CONTROLLERS*/
-weinerControllers.controller('home', ['$scope', '$firebaseObject', '$rootScope', '$http', function($scope, $firebaseObject, $rootScope, $http) {
+weinerControllers.controller('home', ['$scope', '$firebaseObject', '$rootScope', function($scope, $firebaseObject, $rootScope) {
 //	var obj = new $firebaseObject($rootScope.ref.child('games').child('b01').child('time'));
 	//obj.$loaded().then(function () {console.log(obj)});
 //	$scope.games = obj;
@@ -61,4 +74,23 @@ weinerControllers.controller('home', ['$scope', '$firebaseObject', '$rootScope',
 weinerControllers.controller('games', ['$scope', '$firebaseObject', '$rootScope', function ($scope, $firebaseObject, $rootScope) {
 //	var obj2 = new $firebaseObject($rootScope.ref.child('games').child('b01').child('time'));
 	//obj2.$loaded().then(function () {console.log(obj2)});
+}]);
+
+weinerControllers.controller('teams', ['$scope', function($scope){
+	$scope.message = "teams page";
+}]);
+
+weinerControllers.controller('adminLogin', ['$scope', function($scope){
+	$scope.disabled = false;
+
+	$scope.logIn = function () {
+		$scope.disabled = true;
+		$scope.entry = $scope.email + "   " + $scope.password;
+		$scope.email = null;
+		$scope.password = null;
+	}
+}]);
+
+weinerControllers.controller('adminDash', ['$scope', '$firebaseArray', 'currentAuth', function($scope, $firebaseArray, currentAuth){
+	
 }]);
