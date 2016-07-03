@@ -6,20 +6,19 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "1.4.x",
-    "jquery": "~2.1.1",
-    "bootstrap": "~3.3.6",
-    "angular-route": "1.4.x",
-    "angular-animate": "1.4.x",
-    "jasny-bootstrap": "3.1.3",
+    "angular": "1.x.x",
+    "jquery": "2.x.x",
+    "bootstrap": "~3.x.x",
+    "angular-animate": "1.x.x",
     "normalize-css": "normalize.css#^4.1.1",
-    "semantic": "semantic-ui#^2.1.8",
-    "firebase": "^2.4.2",
-    "angularfire": "^1.2.0",
+    "firebase": "^2.x.x",
+    "angularfire": "^1.x.x",
     "fastclick": "^1.0.6",
     "less": "less.js#^2.7.0",
-    "angular-snap": "^1.8.5",
-    "pure": "^0.6.0",
-    "skeleton": "skeleton-css#^2.0.4"
+    "angular-sanitize": "^1.x.x",
+    "tock-js": "^2.0.0",
+    "angular-ui-router": "^0.3.1",
+    "angular-route": "^1.5.7",
+    "Waves": "waves#^0.7.5"
   }
 }

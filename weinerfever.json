@@ -8,13 +8,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 4,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 4
+			"time" : "3:30PM"
 		},
 		"b02" : {
 			"aScore" : 0,
@@ -24,13 +24,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 5,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "00:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 5
+			"time" : "3:30PM"
 		},
 		"b03" : {
 			"aScore" : 0,
@@ -40,13 +40,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 6,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 6
+			"time" : "3:30PM"
 		},
 		"b04" : {
 			"aScore" : 0,
@@ -56,13 +56,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Kushner",
+			"index" : 10,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 10
+			"time" : "3:30PM"
 		},
 		"b05" : {
 			"aScore" : 0,
@@ -72,13 +72,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Boyar",
+			"index" : 11,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 11
+			"time" : "3:30PM"
 		},
 		"b06" : {
 			"aScore" : 0,
@@ -88,13 +88,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Boyar",
+			"index" : 12,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "00:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 12
+			"time" : "3:30PM"
 		},
 		"b07" : {
 			"aScore" : 0,
@@ -104,13 +104,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Yavneh",
+			"index" : 16,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 16
+			"time" : "3:30PM"
 		},
 		"b08" : {
 			"aScore" : 0,
@@ -120,13 +120,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 17,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 17
+			"time" : "3:30PM"
 		},
 		"b09" : {
 			"aScore" : 0,
@@ -136,13 +136,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 18,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 18
+			"time" : "3:30PM"
 		},
 		"b10" : {
 			"aScore" : 0,
@@ -152,13 +152,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 22,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "00:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 22
+			"time" : "3:30PM"
 		},
 		"b11" : {
 			"aScore" : 0,
@@ -168,13 +168,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 23,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 23
+			"time" : "3:30PM"
 		},
 		"b12" : {
 			"aScore" : 0,
@@ -184,13 +184,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 24,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 24
+			"time" : "3:30PM"
 		},
 		"b13" : {
 			"aScore" : 0,
@@ -200,9 +200,10 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 28,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
 			"time" : "3:30PM"
@@ -215,9 +216,10 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 29,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "00:00",
 			"quarter" : 0,
 			"special" : false,
 			"time" : "3:30PM"
@@ -230,9 +232,10 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 30,
 			"name" : "Boys",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
 			"time" : "3:30PM"
@@ -245,9 +248,10 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 39,
 			"name" : "Boys 3<sup>rd</sup> Place",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
 			"time" : "3:30PM"
@@ -260,9 +264,10 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 37,
 			"name" : "Boys 5<sup>th</sup> Place",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
 			"time" : "3:30PM"
@@ -275,9 +280,10 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 40,
 			"name" : "Boys Finals",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "00:00",
 			"quarter" : 0,
 			"special" : false,
 			"time" : "3:30PM"
@@ -290,9 +296,10 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 33,
 			"name" : "Boys SF 1",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
 			"time" : "3:30PM"
@@ -305,9 +312,10 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 34,
 			"name" : "Boys SF 2",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
 			"time" : "3:30PM"
@@ -320,13 +328,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 1,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 1
+			"time" : "3:30PM"
 		},
 		"g02" : {
 			"aScore" : 0,
@@ -336,13 +344,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 2,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "00:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 2
+			"time" : "3:30PM"
 		},
 		"g03" : {
 			"aScore" : 0,
@@ -352,13 +360,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 3,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 3
+			"time" : "3:30PM"
 		},
 		"g04" : {
 			"aScore" : 0,
@@ -368,13 +376,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 7,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 7
+			"time" : "3:30PM"
 		},
 		"g05" : {
 			"aScore" : 0,
@@ -384,13 +392,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 8,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 8
+			"time" : "3:30PM"
 		},
 		"g06" : {
 			"aScore" : 0,
@@ -400,13 +408,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 9,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "00:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 9
+			"time" : "3:30PM"
 		},
 		"g07" : {
 			"aScore" : 0,
@@ -416,13 +424,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 13,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 13
+			"time" : "3:30PM"
 		},
 		"g08" : {
 			"aScore" : 0,
@@ -432,13 +440,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 14,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 14
+			"time" : "3:30PM"
 		},
 		"g09" : {
 			"aScore" : 0,
@@ -448,13 +456,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 15,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 15
+			"time" : "3:30PM"
 		},
 		"g10" : {
 			"aScore" : 0,
@@ -464,13 +472,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 19,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "00:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 19
+			"time" : "3:30PM"
 		},
 		"g11" : {
 			"aScore" : 0,
@@ -480,13 +488,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 20,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 20
+			"time" : "3:30PM"
 		},
 		"g12" : {
 			"aScore" : 0,
@@ -496,13 +504,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 21,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 21
+			"time" : "3:30PM"
 		},
 		"g13" : {
 			"aScore" : 0,
@@ -512,13 +520,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 25,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 25
+			"time" : "3:30PM"
 		},
 		"g14" : {
 			"aScore" : 0,
@@ -528,13 +536,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 26,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "00:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 26
+			"time" : "3:30PM"
 		},
 		"g15" : {
 			"aScore" : 0,
@@ -544,13 +552,13 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 27,
 			"name" : "Girls",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM",
-			"index": 27
+			"time" : "3:30PM"
 		},
 		"g3p" : {
 			"aScore" : 0,
@@ -560,9 +568,10 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 35,
 			"name" : "Girls 3<sup>rd</sup> Place",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
 			"time" : "3:30PM"
@@ -575,9 +584,10 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 36,
 			"name" : "Girls 5<sup>th</sup> Place",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
 			"time" : "3:30PM"
@@ -590,9 +600,10 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 38,
 			"name" : "Girls Finals",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "00:00",
 			"quarter" : 0,
 			"special" : false,
 			"time" : "3:30PM"
@@ -605,9 +616,10 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 31,
 			"name" : "Girls SF 1",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
 			"time" : "3:30PM"
@@ -620,941 +632,888 @@
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
+			"index" : 32,
 			"name" : "Girls SF 2",
 			"ot" : false,
-			"playTime" : "07:00.000",
+			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
 			"time" : "3:30PM"
 		}
 	},
-
-	"teams": {
-		"Beth Tfiloh": {
-			"picture": "BT.png",
-			"dimensions": 440,
-			"boys": {
-				"win": 0,
-				"los":0,
-				"coach": "Ari Braun",
-				"players": {
-					"Mitchell C": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+	"teams" : {
+		"Beth Tfiloh" : {
+			"boys" : {
+				"coach" : "Ari Braun",
+				"los" : 0,
+				"players" : {
+					"Andrew S" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Brian F": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Brian F" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Jeremy F": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Dovid T" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Kameron G": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Ethan H" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Sammy G": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Jeremy F" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Ethan H": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Kameron G" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Michael M": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Michael M" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Yair P": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Mitchell C" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Oren P": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Oren P" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Andrew S": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Sammy G" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Sammy S": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Sammy S" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Dovid T": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Yair P" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					}
-				}
+				},
+				"win" : 0
 			},
-			"girls": {
-				"win": 0,
-				"los":0,
-				"coach": "Sonya Howell",
-				"players": {
-					"Hannah C": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+			"dimensions" : 440,
+			"girls" : {
+				"coach" : "Sonya Howell",
+				"los" : 0,
+				"players" : {
+					"Alyse M" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Sydney H": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Chloe N" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Kelsey T": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Hallie H" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Samantha B": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Hannah C" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Hallie H": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Jessica S" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Jessica S": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Kelsey T" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Teva V": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Nina G" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Alyse M": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Samantha B" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Chloe N": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Sydney H" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Nina G": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Teva V" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					}
-				}
-			}
-		},
-
-		"Boyar": {
-			"picture": "boyar.png",
-			"dimensions": 666,
-			"boys": {
-				"win": 0,
-				"los":0,
-				"coach": "null",
-				"players": {
-					"Ron Menashe N": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Itai H": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Roi N": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"David D": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Israel G": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Tomer M": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Yoav R": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Yair R": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Gilad M": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Yonatan P": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					}
-				}
+				},
+				"win" : 0
 			},
-			"girls": {
-				"win": 0,
-				"los":0,
-				"coach": "Tova Cohen",
-				"players": {
-					"Mira S": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Shir C": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Maya E": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Rotem R": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Noa S": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Tamar B": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Lihy I": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					}
-				}
-			}
+			"picture" : "BT.png"
 		},
-
-		"CHAT": {
-			"picture": "CHAT.png",
-			"dimensions": 92,
-			"boys": {
-				"win": 0,
-				"los":0,
-				"coach": "Aubrey Zimmerman",
-				"players": {
-					"Ron Menashe N": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+		"Boyar" : {
+			"boys" : {
+				"coach" : "null",
+				"los" : 0,
+				"players" : {
+					"David D" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Itai H": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Gilad M" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Roi N": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Israel G" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"David D": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Itai H" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Israel G": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Roi N" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Tomer M": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Ron Menashe N" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Yoav R": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Tomer M" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Yair R": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Yair R" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Gilad M": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Yoav R" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Yonatan P": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Yonatan P" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					}
-				}
+				},
+				"win" : 0
 			},
-			"girls": {
-				"win": 0,
-				"los":0,
-				"coach": "Aubrey Zimmerman",
-				"players": {
-					"Mira S": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+			"dimensions" : 666,
+			"girls" : {
+				"coach" : "Tova Cohen",
+				"los" : 0,
+				"players" : {
+					"Lihy I" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Shir C": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Maya E" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Maya E": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Mira S" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Rotem R": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Noa S" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Noa S": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Rotem R" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Tamar B": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Shir C" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Lihy I": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Tamar B" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					}
-				}
-			}
-		},
-
-		"HANC": {
-			"picture": "HANC.png",
-			"dimensions": 120,
-			"boys": {
-				"win": 0,
-				"los":0,
-				"coach": "Jonathan Gastwirth",
-				"players": {
-					"Ron Menashe N": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Itai H": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Roi N": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"David D": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Israel G": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Tomer M": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Yoav R": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Yair R": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Gilad M": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Yonatan P": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					}
-				}
+				},
+				"win" : 0
 			},
-			"girls": {
-				"win": 0,
-				"los":0,
-				"coach": "Adam Brick",
-				"players": {
-					"Mira S": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Shir C": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Maya E": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Rotem R": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Noa S": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Tamar B": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					},
-					"Lihy I": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
-					}
-				}
-			}
+			"picture" : "boyar.png"
 		},
-
-		"Yavneh": {
-			"picture": "Yavneh.png",
-			"dimensions": 166.5,
-			"boys": {
-				"win": 0,
-				"los":0,
-				"coach": "David Zimmerman",
-				"players": {
-					"Ron Menashe N": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+		"CHAT" : {
+			"boys" : {
+				"coach" : "Aubrey Zimmerman",
+				"los" : 0,
+				"players" : {
+					"David D" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Itai H": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Gilad M" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Roi N": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Israel G" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"David D": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Itai H" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Israel G": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Roi N" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Tomer M": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Ron Menashe N" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Yoav R": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Tomer M" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Yair R": {
-						"grade": null,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Yair R" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Gilad M": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Yoav R" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Yonatan P": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Yonatan P" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					}
-				}
+				},
+				"win" : 0
 			},
-			"girls": {
-				"win": 0,
-				"los":0,
-				"coach": "Derrick Martin",
-				"players": {
-					"Mira S": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+			"dimensions" : 92,
+			"girls" : {
+				"coach" : "Aubrey Zimmerman",
+				"los" : 0,
+				"players" : {
+					"Lihy I" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Shir C": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Maya E" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Maya E": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Mira S" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Rotem R": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Noa S" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Noa S": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Rotem R" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Tamar B": {
-						"grade": 12,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Shir C" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Lihy I": {
-						"grade": 11,
-						"ft": 0,
-						"2p": 0,
-						"3p": 0,
-						"fo": 0,
-						"pt": 0
+					"Tamar B" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					}
-				}
-			}
+				},
+				"win" : 0
+			},
+			"picture" : "CHAT.png"
 		},
-
-		"Ramaz": {
-			"picture": "Ramaz.png",
-			"dimensions": 69,
-			"girls": {
-				"win": 0,
-				"los": 0,
-				"coach": "Randy Dulny",
-				"players": {
-					"Ava A": {
-						"number": 10,
-						"grade": null
+		"HANC" : {
+			"boys" : {
+				"coach" : "Jonathan Gastwirth",
+				"los" : 0,
+				"players" : {
+					"David D" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Beckie C": {
-						"number": 24,
-						"grade": null
+					"Gilad M" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Lily H": {
-						"number": 34,
-						"grade": 12
+					"Israel G" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
 					},
-					"Caroline J": {
-						"number": 43,
-						"grade": 12
+					"Itai H" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Jasmine L": {
-						"number": 0,
-						"grade": 12
+					"Roi N" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Oriya R": {
-						"number": 2,
-						"grade": 12
+					"Ron Menashe N" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Annabelle R": {
-						"number": 12,
-						"grade": null
+					"Tomer M" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					},
-					"Elizabeth R": {
-						"number": 44,
-						"grade": null
+					"Yair R" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Brianna R": {
-						"number": 14,
-						"grade": 11
+					"Yoav R" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
 					},
-					"Emily S": {
-						"number": 22,
-						"grade": null
+					"Yonatan P" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
 					}
-				}
-			}
+				},
+				"win" : 0
+			},
+			"dimensions" : 120,
+			"girls" : {
+				"coach" : "Adam Brick",
+				"los" : 0,
+				"players" : {
+					"Lihy I" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
+					},
+					"Maya E" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Mira S" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Noa S" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Rotem R" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Shir C" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
+					},
+					"Tamar B" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					}
+				},
+				"win" : 0
+			},
+			"picture" : "HANC.png"
 		},
-
-		"Kushner": {
-			"picture": "kushner_png.png",
-			"dimensions": 341,
-			"boys": {
-				"win": 0,
-				"los": 0,
-				"coach": "Jan Sandusky",
-				"players": {
-					"Zachary A": {
-						"grade": 12
+		"Kushner" : {
+			"boys" : {
+				"coach" : "Jan Sandusky",
+				"los" : 0,
+				"players" : {
+					"Avery B" : {
+						"grade" : 12
 					},
-					"Greg A": {
-						"grade": null
+					"Doni S" : {
+						"grade" : 12
 					},
-					"Jonah B": {
-						"grade": 12
+					"Jonah B" : {
+						"grade" : 12
 					},
-					"Avery B": {
-						"grade": 12
+					"Koby S" : {
+						"grade" : 12
 					},
-					"Sam B": {
-						"grade": 12
+					"Mark Y" : {
+						"grade" : 12
 					},
-					"Jake D": {
-						"grade": null
+					"Sam B" : {
+						"grade" : 12
 					},
-					"Arthur G": {
-						"grade": null
+					"Sam R" : {
+						"grade" : 12
 					},
-					"Jake J": {
-						"grade": null
+					"Zach T" : {
+						"grade" : 12
 					},
-					"Sam K": {
-						"grade": null
-					},
-					"David L": {
-						"grade": null
-					},
-					"Sam R": {
-						"grade": 12
-					},
-					"Alec R": {
-						"grade": null
-					},
-					"Doni S": {
-						"grade": 12
-					},
-					"Koby S": {
-						"grade": 12
-					},
-					"Zach T": {
-						"grade": 12
-					},
-					"Mark Y": {
-						"grade": 12
+					"Zachary A" : {
+						"grade" : 12
 					}
-				}
-			}
+				},
+				"win" : 0
+			},
+			"dimensions" : 341,
+			"picture" : "kushner_png.png"
+		},
+		"Ramaz" : {
+			"dimensions" : 69,
+			"girls" : {
+				"coach" : "Randy Dulny",
+				"los" : 0,
+				"players" : {
+					"Annabelle R" : {
+						"number" : 12
+					},
+					"Ava A" : {
+						"number" : 10
+					},
+					"Beckie C" : {
+						"number" : 24
+					},
+					"Brianna R" : {
+						"grade" : 11,
+						"number" : 14
+					},
+					"Caroline J" : {
+						"grade" : 12,
+						"number" : 43
+					},
+					"Elizabeth R" : {
+						"number" : 44
+					},
+					"Emily S" : {
+						"number" : 22
+					},
+					"Jasmine L" : {
+						"grade" : 12,
+						"number" : 0
+					},
+					"Lily H" : {
+						"grade" : 12,
+						"number" : 34
+					},
+					"Oriya R" : {
+						"grade" : 12,
+						"number" : 2
+					}
+				},
+				"win" : 0
+			},
+			"picture" : "Ramaz.png"
+		},
+		"Yavneh" : {
+			"boys" : {
+				"coach" : "David Zimmerman",
+				"los" : 0,
+				"players" : {
+					"David D" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
+					},
+					"Gilad M" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Israel G" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Itai H" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
+					},
+					"Roi N" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
+					},
+					"Ron Menashe N" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
+					},
+					"Tomer M" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
+					},
+					"Yair R" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
+					},
+					"Yoav R" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
+					},
+					"Yonatan P" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
+					}
+				},
+				"win" : 0
+			},
+			"dimensions" : 166.5,
+			"girls" : {
+				"coach" : "Derrick Martin",
+				"los" : 0,
+				"players" : {
+					"Lihy I" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
+					},
+					"Maya E" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Mira S" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Noa S" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Rotem R" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Shir C" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
+					},
+					"Tamar B" : {
+						"2p" : 0,
+						"3p" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					}
+				},
+				"win" : 0
+			},
+			"picture" : "Yavneh.png"
 		}
 	}
 }

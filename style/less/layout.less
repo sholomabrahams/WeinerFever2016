@@ -1,12 +1,12 @@
 /* Black Ops One font for top Weiner */
-//@import url(https://fonts.googleapis.com/css?family=Black+Ops+One);
+@import url(https://fonts.googleapis.com/css?family=Black+Ops+One);
 /* Caveat Brush font for sub-heading */
-//@import url(https://fonts.googleapis.com/css?family=Caveat+Brush);
+@import url(https://fonts.googleapis.com/css?family=Caveat+Brush);
 /* Josefin snas font - Utility */
-//@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,600);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,600);
 
 body {
-	background: url(/ng/assets/img/background/basketball2.jpg) no-repeat center center fixed;
+	background: url(/assets/img/background/basketball2.jpg) no-repeat center center fixed;
 	background-size: cover;
 	font-size: 100%;
 	overflow-x: hidden;
@@ -216,6 +216,15 @@ body {
 	background-color: #f8f8f8;
 	margin-top: 98px;
 	margin-bottom: 71px;
+
+	::selection {
+		background: #444;
+		color: #f8f8f8;
+	}
+
+	img::selection {
+		background: transparent;
+	}
 }
 
 #page-foot {
@@ -224,8 +233,10 @@ body {
 	bottom: 0;
 	padding: 0;
 	box-shadow: 0px -2px 5px 0px rgba(0,0,0,0.5);
-	background-color: #aaa;
+	background-color: #25282a;
 	margin-left: -15px;
+	z-index: 150;
+	//opacity: 0.95;
 }
 
 /* All styles specific for non-touch screens */
@@ -293,7 +304,6 @@ body.no-touch {
 
 	#outer-wrap {
 		margin-top: 65px;
-		margin-bottom: 0;;
 	}
 
 	.navbar {
@@ -325,6 +335,10 @@ body.no-touch {
 			margin: 1.45rem 1.6rem !important;
 			margin-right: 0.5rem !important;
 		}
+	}
+
+	#page-foot {
+		width: 100%;
 	}
 }
 

@@ -28,7 +28,8 @@
 
 				.left {
 					display: flex;
-					flex: 1.61803398875;
+					flex: 1;
+					//flex: 1.61803398875;
 					order: 1;
 					flex-direction: column;
 
@@ -50,13 +51,16 @@
 						div {
 							width: 105px;
 							text-align: center;
-							margin-right: 7.5px;
+							margin-right: 20px;
+							margin-left: 10px;
+							box-sizing: content-box;
 
 							h4 {
 								margin: 5px auto;
 								width: 100%;
 								text-align: inherit;
 								font-size: 2rem;
+								box-sizing: border-box;
 								font-weight: 600;
 							}							
 
@@ -64,6 +68,7 @@
 								margin: 0 5px;
 								font-weight: inherit;
 								font-size: 1.4rem;
+								box-sizing: border-box;
 								text-align: inherit;
 							}
 						}
@@ -74,6 +79,7 @@
 							text-align: inherit;
 							margin: 0;
 							margin: auto;
+							margin-right: 35px;
 						}
 					}
 				}
@@ -82,8 +88,117 @@
 					flex: 1;
 					order: 2;
 					text-align: center;
+					display: flex;
+
+					.stats-button {
+						padding-left: 3.5px;
+						color: #e8e8e8;
+
+						div {
+							background-color: #165488;
+							cursor: pointer;
+							opacity: 0.9;
+							border-radius: 5px;
+							padding: 4px 8px;
+							margin-top: 4px;
+							font-size: 22px;
+							min-width: 30px;
+
+							h3 {
+								margin: 0;
+								width: 1px;
+								word-wrap: break-word;
+								font-family: 'Josefin sans', sans-serif;
+								flex: 7;
+							}
+						}
+
+						@media screen and (max-width: 376px) {
+							padding-left: 25px;
+						}
+					}
+
+					.info {
+						flex: 7;
+
+						
+					}
 				}
 			}
 		}
 	}
 }
+
+.live {
+	.left {
+		flex: 1.61803398875 !important;
+	}
+}
+
+.inner-wrap#home {
+	aside {
+		padding-top: 15px;
+	}
+}
+
+@media screen and (max-width: 1199px) {
+	.game-sec .games-wrap h2.score {
+		margin: auto !important;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.game-sec .games-wrap h2.score {
+		margin-right: 62.5px !important;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.game-sec .games-wrap h2.score {
+		margin: auto !important;
+	}
+}
+
+@media screen and (max-width: 467px) {
+	.game-sec .games-wrap .left {
+		.home, .away {
+			div {
+				margin-left: 0 !important;
+				margin-right: 10px !important;
+			}
+		}
+	}
+
+	.game-sec .games-wrap h2.score {
+		margin-left: 10px !important;
+		margin-right: 10px !important;
+	}
+}
+
+/* when games collapse into 2 rows */
+@media screen and (max-width: 434px) {
+	.game-sec .games-wrap .left {
+		.home, .away {
+			a, h2 { 
+				margin: auto !important;
+			}
+			
+			a {
+				margin-left: 0 !important;
+			}
+		}
+	}
+}
+
+// optomize 
+@media screen and (max-width: 345px) {
+	.game-sec .games-wrap .left {
+		.home, .away {
+			a, h2 {
+				margin-left: 10px !important;
+			}
+		}
+	}
+}
+
+//.game-sec div .games-wrap .game .left .home h2.score

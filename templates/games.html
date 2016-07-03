@@ -1,4 +1,43 @@
-<section class="inner-wrap">
-	<p>games page</p>
-	<a href="#/"> Home </a>
-</section>
+<div class="col-xs-12 col-sm-12 col-md-6 game-sec">
+	<section class="inner-wrap">
+		<div id="other-wrap" class="game-inner">
+			<h2>Boys</h2>
+			<div class="games-wrap">
+				<div class="game" ng-repeat="game in games.boys | orderBy : 'index'">
+
+					<div class="left">
+						<div class="home">
+							<a ng-href="/#teams/{{game.home}}/{{getGender(game.name)}}">
+								<div>
+									<h4 class="home-name" ng-bind="game.home"></h4>
+									<p class="record">{{teams[game.home][getGender(game.name)].win}}-{{teams[game.home][getGender(game.name)].los}}</p>
+								</div>
+								<img ng-src="/assets/img/logos/{{teams[game.home].picture}}" width="60" height="60">
+							</a>
+							<!--<h2 class="score">{{game.hScore}}</h2>-->
+						</div>
+
+						<div class="away">
+							<a ng-href="/#teams/{{game.away}}/{{getGender(game.name)}}">
+								<div>
+									<h4 class="away-name" ng-bind="game.away"></h4>
+									<p class="record">{{teams[game.away][getGender(game.name)].win}}-{{teams[game.away][getGender(game.name)].los}}</p>
+								</div>
+								<img ng-src="/assets/img/logos/{{teams[game.away].picture}}" width="60" height="60">
+							</a>
+							<!--<h2 class="score">{{game.aScore}}</h2>-->
+						</div>
+					</div>
+
+					<div class="right">
+						<h4 ng-bind-html="game.name"></h4>
+						<h2> {{game.time}} </h2>
+						<h6>{{game.gym}}</h6>
+						<h5>Dec. {{game.day}}</h5>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

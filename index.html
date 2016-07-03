@@ -12,42 +12,43 @@
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 		
 		<!-- BOOTSTRAP -->
-		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+		<!--<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js" async></script>-->
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css" async>
 		<!--<link rel="stylesheet" type="text/less" href="bower_components/bootstrap/less/glyphicons.less">-->
 
 		<!-- SKELETON 
 		<link rel="stylesheet" type="text/css" href="bower_components/skeleton/css/skeleton.css"> -->
 
-	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-	<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
-	<script type="text/javascript" src="bower_components/firebase/firebase.js"></script>
-	<script type="text/javascript" src="bower_components/angularfire/dist/angularfire.min.js"></script>
-
-		<!-- Less Auto-prefixer
-		<script type="text/javascript"></script> -->
-	<!-- ***** Defers ***** -->
-	<script type="text/javascript" src="bower_components/fastclick/lib/fastclick.js" defer="true"></script>
-	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js" defer="true"></script>	
+	<script type="text/javascript" src="bower_components/angular/angular.min.js" defer></script>
+	<!--<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js" defer></script>-->
+	<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js" defer></script>
+	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js" defer></script>
+	<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js" defer></script>
+	<script type="text/javascript" src="bower_components/firebase/firebase.js" defer></script>
+	<script type="text/javascript" src="bower_components/angularfire/dist/angularfire.min.js" defer></script>
+	<script type="text/javascript" src="bower_components/fastclick/lib/fastclick.js" async></script>	
 
 	<!-- ***** STYLE LIBRARIES ***** -->
-	<link rel="stylesheet" type="text/css" href="bower_components/normalize-css/normalize.css">
+	<!--<link rel="stylesheet" type="text/css" href="bower_components/normalize-css/normalize.css" async>-->
 
-	<!-- ***** CUSTOM SCRIPTS ***** -->
-	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/controllers.js"></script>
-	<script type="text/javascript" src="js/animations.js"></script>
+	<!-- ***** CUSTOM ANGULAR SCRIPTS ***** -->
+	<script type="text/javascript" src="js/app.js" defer></script>
+	<script type="text/javascript" src="js/routes.js" defer></script>
+	<script type="text/javascript" src="js/controllers.js" defer></script>
+	<script type="text/javascript" src="js/animations.js" defer></script>
 
-	<!-- ***** CUSTOM STYLES ****** -->
+	<script type="text/javascript" src="js/inject.js" defer></script>
+
+	<!-- ***** CUSTOM STYLES ****** 
 	<link rel="stylesheet" type="text/less" href="style/less/animations.less">
 	<link rel="stylesheet" type="text/less" href="style/less/layout.less">
 	<link rel="stylesheet" type="text/less" href="style/less/home.less">
 	<link rel="stylesheet" type="text/less" href="style/less/games.less">
 	<link rel="stylesheet" type="text/less" href="style/less/teams.less">
 	<link rel="stylesheet" type="text/less" href="style/less/admin/login.less">
-	<link rel="stylesheet" type="text/less" href="style/less/admin/dash.less">
+	<link rel="stylesheet" type="text/less" href="style/less/admin/dash.less"> -->
 
-	<style type="text/css">
+	<!--<style type="text/css">
 		@font-face {
 			font-family: 'Black Ops One';
 			font-style: normal;
@@ -63,10 +64,12 @@
 			src: local('Caveat Brush'), local('CaveatBrush-Regular'), url(fonts/CaveatBrush.woff2) format('woff2');
 			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 		}
-	</style>
+	</style>-->
 
 	<!-- LESS -->
-	<script type="text/javascript" src="bower_components/less/dist/less.min.js"></script>
+	<link rel="stylesheet" type="text/less" href="style/main.less" async>
+
+	<script type="text/javascript" src="bower_components/less/dist/less.min.js" async></script>
 
 </head>
 <body ng-cloak class="{{touch}}" onload="size()">
@@ -111,32 +114,19 @@
 
 		
 		<div id="outer-wrap" class="container" ng-click="closeMenu()">
-			<div>
-				<div ng-view class="view-frame"></div>
+			<div id="view-container">
+				<div ui-view class="view-frame"></div>
 			</div>
 
 
 			<footer id="page-foot" class="container">
-				<iframe src="https://www.spreaker.com/embed/player/mini?show_id=1294893&autoplay=false" style="width: 100%; height: 71px;" frameborder="0" scrolling="no"></iframe>
+				<!-- JS Inserts Spreaker -->
 			</footer>
 		</div>
 	</div>
 
 	<script type="text/javascript">
-		var winHeight, winWidth, topHeight, footHeight, fontSize, bottomHeight;
-		function size() {
-			winHeight = $(window).height();
-			winWidth = $(window).width();
-			topHeight = $("#outer-wrap").css('margin-top');
-			topHeight = parseInt(topHeight.substr(0, topHeight.search('px')));
-			bottomHeight = $("#outer-wrap").css('margin-bottom');
-			bottomHeight = parseInt(bottomHeight.substr(0, bottomHeight.search('px')));
-			footHeight = $("#page-foot").outerHeight();
-			console.log(topHeight + "   " + bottomHeight);
-			$("#outer-wrap > :first-child").css("min-height", winHeight - topHeight - bottomHeight);
-		}
-
-		$(window).resize(size);
+		
 	</script>
 </body>
 </html>
