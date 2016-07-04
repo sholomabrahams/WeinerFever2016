@@ -88,6 +88,7 @@ weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 
 	}
 
 	$scope.now = new Date();
+	console.log($scope.teams["Boyar"]["Boys"].players["David D"]);
 }]);
 
 weinerControllers.controller('games', ['$scope', '$rootScope', '$firebaseArray', 'teamsObject', function ($scope, $rootScope, $firebaseArray, teamsObject) {

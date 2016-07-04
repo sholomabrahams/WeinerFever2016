@@ -11,117 +11,120 @@
 
 		.games-wrap {
 			.game {
+				min-height: inherit;
 				margin: 5px;
-				min-height: 150px;
-				display: flex;
-				flex-wrap: wrap;
-				/* DEV ONLY *///border: 1px solid #333;
 				border-bottom: 1px dashed #777;
+				/* DEV ONLY *///border: 1px solid #333;
 
-				&:last-child {
-					border-bottom: none;
-				}
-
-				.left, .right {
-					min-height: 150px;
-				}
-
-				.left {
+				.game-out-wrap {
 					display: flex;
-					flex: 1;
-					//flex: 1.61803398875;
-					order: 1;
-					flex-direction: column;
+					min-height: 150px;
+					flex-wrap: wrap;
+				
+					&:last-child {
+						border-bottom: none;
+					}
 
-					.home, .away {
+					.left, .right {
+						min-height: 150px;
+					}
+
+					.left {
 						display: flex;
 						flex: 1;
-						align-items: center;
-					
-						a {
+						//flex: @golden-ratio; //golden ratio
+						order: 1;
+						flex-direction: column;
+
+						.home, .away {
 							display: flex;
+							flex: 1;
 							align-items: center;
-							text-decoration: none;
-
-							&:hover, &:active, &:focus {
+							
+							a {
+								display: flex;
+								align-items: center;
 								text-decoration: none;
+									
+								&:hover, &:active, &:focus {
+									text-decoration: none;
+								}
 							}
-						}
 
-						div {
-							width: 105px;
-							text-align: center;
-							margin-right: 20px;
-							margin-left: 10px;
-							box-sizing: content-box;
+							div {
+								width: 105px;
+								text-align: center;
+								margin-right: 20px;
+								margin-left: 10px;
+								box-sizing: content-box;
 
-							h4 {
-								margin: 5px auto;
-								width: 100%;
-								text-align: inherit;
-								font-size: 2rem;
-								box-sizing: border-box;
-								font-weight: 600;
-							}							
+								h4 {
+									margin: 5px auto;
+									width: 100%;
+									text-align: inherit;
+									font-size: 2rem;
+									box-sizing: border-box;
+									font-weight: 600;
+								}							
 
-							.record {
-								margin: 0 5px;
-								font-weight: inherit;
-								font-size: 1.4rem;
-								box-sizing: border-box;
-								text-align: inherit;
+								.record {
+									margin: 0 5px;
+									font-weight: inherit;
+									font-size: 1.4rem;
+									box-sizing: border-box;
+									text-align: inherit;
+								}
 							}
-						}
 
-						h2.score {
-							font-size: 3.5rem;
-							font-weight: 700;
-							text-align: inherit;
-							margin: 0;
-							margin: auto;
-							margin-right: 35px;
-						}
-					}
-				}
-
-				.right {
-					flex: 1;
-					order: 2;
-					text-align: center;
-					display: flex;
-
-					.stats-button {
-						padding-left: 3.5px;
-						color: #e8e8e8;
-
-						div {
-							background-color: #165488;
-							cursor: pointer;
-							opacity: 0.9;
-							border-radius: 5px;
-							padding: 4px 8px;
-							margin-top: 4px;
-							font-size: 22px;
-							min-width: 30px;
-
-							h3 {
+							h2.score {
+								font-size: 3.5rem;
+								font-weight: 700;
+								text-align: inherit;
 								margin: 0;
-								width: 1px;
-								word-wrap: break-word;
-								font-family: 'Josefin sans', sans-serif;
-								flex: 7;
+								margin: auto;
+								margin-right: 35px;
 							}
-						}
-
-						@media screen and (max-width: 376px) {
-							padding-left: 25px;
 						}
 					}
 
-					.info {
-						flex: 7;
+					.right {
+						flex: 1;
+						order: 2;
+						text-align: center;
+						display: flex;
 
-						
+						.stats-button {
+							padding-left: 3.5px;
+							color: #e8e8e8;
+
+								div {
+								background-color: #165488;
+								cursor: pointer;
+								opacity: 0.9;
+								border-radius: 5px;
+								padding: 4px 8px;
+								margin-top: 4px;
+								font-size: 22px;
+								min-width: 30px;
+
+								h3 {
+									margin: 0;
+									width: 1px;
+									word-wrap: break-word;
+									font-family: 'Josefin sans', sans-serif;
+									flex: 7;
+								}
+							}
+
+							@media screen and (max-width: 376px) {
+								padding-left: 25px;
+							}
+						}
+
+						.info {
+							flex: 7;
+								
+						}
 					}
 				}
 			}

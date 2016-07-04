@@ -5,45 +5,45 @@
 				<h2> Live Games </h2>
 				<div class="games-wrap">
 					<div class="game" ng-repeat="game in liveGames | orderBy : 'index'">
-						
-						<div class="left">
-							<div class="home">
-								<a ng-href="/#teams/{{game.home}}/{{getGender(game.name)}}">
-									<div>
-										<h4 class="home-name" ng-bind="game.home"></h4>
-										<p class="record">{{teams[game.home][getGender(game.name)].win}}-{{teams[game.home][getGender(game.name)].los}}</p>
-									</div>
-									<img ng-src="/assets/img/logos/{{teams[game.home].picture}}" width="60" height="60">
-								</a>
-								<h2 class="score">{{game.hScore}}</h2>
-							</div>
+						<div class="game-out-wrap">
+							<div class="left">
+								<div class="home">
+									<a ng-href="/#teams/{{game.home}}/{{getGender(game.name)}}">
+										<div>
+											<h4 class="home-name" ng-bind="game.home"></h4>
+											<p class="record">{{teams[game.home][getGender(game.name)].win}}-{{teams[game.home][getGender(game.name)].los}}</p>
+										</div>
+										<img ng-src="/assets/img/logos/{{teams[game.home].picture}}" width="60" height="60">
+									</a>
+									<h2 class="score">{{game.hScore}}</h2>
+								</div>
 
-							<div class="away">
-								<a ng-href="/#teams/{{game.away}}/{{getGender(game.name)}}">
-									<div>
-										<h4 class="away-name" ng-bind="game.away"></h4>
-										<p class="record">{{teams[game.away][getGender(game.name)].win}}-{{teams[game.away][getGender(game.name)].los}}</p>
-									</div>
-									<img ng-src="/assets/img/logos/{{teams[game.away].picture}}" width="60" height="60">
-								</a>
-								<h2 class="score">{{game.aScore}}</h2>
-							</div>
-						</div>
-
-						<div class="right">
-							<div class="stats-button">
-								<div>
-									<h3>STATS</h3>
+								<div class="away">
+									<a ng-href="/#teams/{{game.away}}/{{getGender(game.name)}}">
+										<div>
+											<h4 class="away-name" ng-bind="game.away"></h4>
+											<p class="record">{{teams[game.away][getGender(game.name)].win}}-{{teams[game.away][getGender(game.name)].los}}</p>
+										</div>
+										<img ng-src="/assets/img/logos/{{teams[game.away].picture}}" width="60" height="60">
+									</a>
+									<h2 class="score">{{game.aScore}}</h2>
 								</div>
 							</div>
-							<div class="info">
-								<h4 ng-bind-html="game.name"></h4>
-								<h2> {{game.playTime}} </h2>
-								<h6> {{game.quarter}} </h6>
-								<p> {{game.gym}} </p>
+
+							<div class="right">
+								<div class="stats-button">
+									<div>
+										<h3>STATS</h3>
+									</div>
+								</div>
+								<div class="info">
+									<h4 ng-bind-html="game.name"></h4>
+									<h2> {{game.playTime}} </h2>
+									<h6> {{game.quarter}} </h6>
+									<p> {{game.gym}} </p>
+								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
@@ -52,46 +52,68 @@
 				<h2 ng-bind="panelTwoTitle"></h2>
 				<div class="games-wrap">
 					<div class="game" ng-repeat="game in otherGames | orderBy : 'index'" ng-if="game.day == otherGameDay">
+						<div class="game-out-wrap">
+							<div class="left">
+								<div class="home">
+									<a ng-href="/#teams/{{game.home}}/{{getGender(game.name)}}">
+										<div>
+											<h4 class="home-name" ng-bind="game.home"></h4>
+											<p class="record">{{teams[game.home][getGender(game.name)].win}}-{{teams[game.home][getGender(game.name)].los}}</p>
+										</div>
+										<img ng-src="/assets/img/logos/{{teams[game.home].picture}}" width="60" height="60">
+									</a>
+									<!--<h2 class="score">{{game.hScore}}</h2>-->
+								</div>
 
-						<div class="left">
-							<div class="home">
-								<a ng-href="/#teams/{{game.home}}/{{getGender(game.name)}}">
-									<div>
-										<h4 class="home-name" ng-bind="game.home"></h4>
-										<p class="record">{{teams[game.home][getGender(game.name)].win}}-{{teams[game.home][getGender(game.name)].los}}</p>
-									</div>
-									<img ng-src="/assets/img/logos/{{teams[game.home].picture}}" width="60" height="60">
-								</a>
-								<!--<h2 class="score">{{game.hScore}}</h2>-->
-							</div>
-
-							<div class="away">
-								<a ng-href="/#teams/{{game.away}}/{{getGender(game.name)}}">
-									<div>
-										<h4 class="away-name" ng-bind="game.away"></h4>
-										<p class="record">{{teams[game.away][getGender(game.name)].win}}-{{teams[game.away][getGender(game.name)].los}}</p>
-									</div>
-									<img ng-src="/assets/img/logos/{{teams[game.away].picture}}" width="60" height="60">
-								</a>
-								<!--<h2 class="score">{{game.aScore}}</h2>-->
-							</div>
-						</div>
-
-
-						<div class="right">
-							<div class="stats-button">
-								<div>
-									<h3>STATS</h3>
+								<div class="away">
+									<a ng-href="/#teams/{{game.away}}/{{getGender(game.name)}}">
+										<div>
+											<h4 class="away-name" ng-bind="game.away"></h4>
+											<p class="record">{{teams[game.away][getGender(game.name)].win}}-{{teams[game.away][getGender(game.name)].los}}</p>
+										</div>
+										<img ng-src="/assets/img/logos/{{teams[game.away].picture}}" width="60" height="60">
+									</a>
+									<!--<h2 class="score">{{game.aScore}}</h2>-->
 								</div>
 							</div>
-							<div class="info">
-								<h4 ng-bind-html="game.name"></h4>
-								<h2> {{game.time}} </h2>
-								<h6> {{game.gym}} </h6>
-								<h5> Dec. {{game.day}} </h5>
+
+
+							<div class="right">
+								<div class="stats-button">
+									<div>
+										<h3>STATS</h3>
+									</div>
+								</div>
+								<div class="info">
+									<h4 ng-bind-html="game.name"></h4>
+									<h2> {{game.time}} </h2>
+									<h6> {{game.gym}} </h6>
+									<h5> Dec. {{game.day}} </h5>
+								</div>
 							</div>
 						</div>
-
+						<section class="stats">
+							<table>
+								<tr>
+									<th>name</th>
+									<th>grade</th>
+									<th>pts</th>
+									<th>ft</th>
+									<th>2p</th>
+									<th>3p</th>
+									<th>fouls</th>
+								</tr>
+								<tr ng-repeat="player in teams[game.home][getGender(game.name)].players">
+									<td ng-bind="player.$id"></td>
+									<td ng-bind="player.grade"></td>
+									<td ng-bind="player.pt"></td>
+									<td ng-bind="player.ft"></td>
+									<td ng-bind="player.p2"></td>
+									<td ng-bind="player.p3"></td>
+									<td ng-bind="player.fo"></td>
+								</tr>
+							</table>
+						</section>
 					</div>
 				</div>
 			</div>
