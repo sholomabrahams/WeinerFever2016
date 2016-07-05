@@ -52,6 +52,8 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', functi
 	$rootScope.teamsRef = new Firebase("https://weinerfever.firebaseio.com/teams");
 
 	$rootScope.gamesRef = new Firebase("https://weinerfever.firebaseio.com/games");
+
+	$rootScope.statsRef = new Firebase("https://weinerfever.firebaseio.com/stats");
 }]);
 
 /* DATA FACTORIES */
@@ -61,16 +63,21 @@ weinerControllers.factory('teamsList', ['$firebaseArray', '$firebaseObject', '$r
 	return [$firebaseArray(teamsQuery), $firebaseObject(gamesQuery)];
 }]);
 
-weinerControllers.factory('teamsObject', ['$firebaseObject', '$rootScope', function($firebaseObject, $rootScope){
+weinerControllers.factory('teamsObject', ['$firebaseObject', '$rootScope', function($firebaseObject, $rootScope) {
 	return $firebaseObject($rootScope.teamsRef.orderByKey());
+}]);
+
+weinerControllers.factory('stats', ['$firebaseObject', '$rootScope', function($firebaseObject, $rootScope) {
+	return $firebaseObject($rootScope.statsRef.orderByKey());
 }])
 
 
 /*CONTROLLERS*/
-weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 'teamsObject', function($scope, $rootScope, $firebaseArray, teamsObject) {
+weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 'teamsObject', 'stats', function($scope, $rootScope, $firebaseArray, teamsObject, stats) {
 	$scope.liveGames = $firebaseArray($rootScope.gamesRef.orderByChild("live").equalTo(true));
 	$scope.otherGames = $firebaseArray($rootScope.gamesRef.orderByChild("live").equalTo(false));
 	$scope.teams = teamsObject;
+	$scope.stats = stats;
 	
 	//second games panel:
 	//	panelTwoTitle: either upcoming, recent, or other - 	depending on time
@@ -88,7 +95,6 @@ weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 
 	}
 
 	$scope.now = new Date();
-	console.log($scope.teams["Boyar"]["Boys"].players["David D"]);
 }]);
 
 weinerControllers.controller('games', ['$scope', '$rootScope', '$firebaseArray', 'teamsObject', function ($scope, $rootScope, $firebaseArray, teamsObject) {
