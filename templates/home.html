@@ -79,7 +79,7 @@
 
 
 							<div class="right">
-								<div class="stats-button">
+								<div class="stats-button" ng-click="openStats($event)">
 									<div>
 										<h3>STATS</h3>
 									</div>
@@ -92,55 +92,7 @@
 								</div>
 							</div>
 						</div>
-						<section class="stats">
-							<div class="home">
-								<h4>Home</h4>
-								<table>
-									<tr>
-										<th>Name</th>
-										<th>grade</th>
-										<th>pts</th>
-										<th>ft</th>
-										<th>2p</th>
-										<th>3p</th>
-										<th>fouls</th>
-									</tr>
-									<tr ng-repeat="player in teams[game.home][getGender(game.name)].players">
-										<td ng-bind="player"></td>
-										<td ng-bind="stats[player].grade"></td>
-										<td ng-bind="stats[player].pt"></td>
-										<td ng-bind="stats[player].ft"></td>
-										<td ng-bind="stats[player].p2"></td>
-										<td ng-bind="stats[player].p3"></td>
-										<td ng-bind="stats[player].fo"></td>
-									</tr>
-								</table>
-							</div>
-
-							<div class="away">
-								<h4>Away</h4>
-								<table>
-									<tr>
-										<th>Name</th>
-										<th>grade</th>
-										<th>pts</th>
-										<th>ft</th>
-										<th>2p</th>
-										<th>3p</th>
-										<th>fouls</th>
-									</tr>
-									<tr ng-repeat="player in teams[game.away][getGender(game.name)].players">
-										<td ng-bind="player"></td>
-										<td ng-bind="stats[player].grade"></td>
-										<td ng-bind="stats[player].pt"></td>
-										<td ng-bind="stats[player].ft"></td>
-										<td ng-bind="stats[player].p2"></td>
-										<td ng-bind="stats[player].p3"></td>
-										<td ng-bind="stats[player].fo"></td>
-									</tr>
-								</table>
-							</div>
-						</section>
+						<section class="stats" style="display: none;" ng-include="'/templates/partials/stats.html'"></section>
 					</div>
 				</div>
 			</div>

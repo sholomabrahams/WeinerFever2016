@@ -74,29 +74,29 @@
 </head>
 <body ng-cloak class="{{touch}}" onload="size()">
 
-	<div id="hidden-nav" class="{{menuOpen}}">
+	<div id="hidden-nav" class="{{menuOpen ? 'open' : 'closed'}}">
 		<ul >
 			<li>
-				<a href="#/" class="button first" ng-click="toggleMenu()"> <span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
+				<a href="#/" class="button first" ng-click="menuOpen = !menuOpen"> <span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
 			</li>
 			<li>
-				<a href="#/games" class="button" ng-click="toggleMenu()"> <span class="glyphicon glyphicon-calendar"></span>&nbsp;Games</a>
+				<a href="#/games" class="button" ng-click="menuOpen = !menuOpen"> <span class="glyphicon glyphicon-calendar"></span>&nbsp;Games</a>
 			</li>
 			<li>
-				<a href="#/teams" class="button last" ng-click="toggleMenu()"> <span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
+				<a href="#/teams" class="button last" ng-click="menuOpen = !menuOpen"> <span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
 			</li>
 		</ul>
 	</div>
 
-	<div id="out-container" class="container-fluid {{menuOpen}}">
-		<nav class="navbar navbar-default navbar-fixed-top {{menuOpen}}">
+	<div id="out-container" class="container-fluid {{menuOpen ? 'open' : 'closed'}}">
+		<nav class="navbar navbar-default navbar-fixed-top {{menuOpen ? 'open' : 'closed'}}">
 			<div class="container">
 				<div class="navbar-header">
-					<nav id="hamburger" ng-click="toggleMenu()"><span class="glyphicon glyphicon-menu-hamburger"></span></nav>
-					<span class="navbar-brand" ng-click="closeMenu()"><a href="#/">Weiner 2016</a> <span>30<sup>th</sup> Annual Florence &amp; Joseph Weiner Basketball Tournament @BT</span></span>
+					<nav id="hamburger" ng-click="menuOpen = !menuOpen"><span class="glyphicon glyphicon-menu-hamburger"></span></nav>
+					<span class="navbar-brand" ng-click="menuOpen = false"><a href="#/">Weiner 2016</a> <span>30<sup>th</sup> Annual Florence &amp; Joseph Weiner Basketball Tournament @BT</span></span>
 				</div>
 
-				<div id="top-navbar" ng-click="closeMenu()">
+				<div id="top-navbar" ng-click="menuOpen = false">
 					<ul >
 						<li>
 							<a href="#/" class="button first"> <span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
@@ -113,7 +113,7 @@
 		</nav>
 
 		
-		<div id="outer-wrap" class="container" ng-click="closeMenu()">
+		<div id="outer-wrap" class="container" ng-click="menuOpen = false">
 			<div id="view-container">
 				<div ui-view class="view-frame"></div>
 			</div>

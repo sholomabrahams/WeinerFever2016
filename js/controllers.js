@@ -7,19 +7,8 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', functi
 		$rootScope.touch = "no-touch";
 	}
 
-	//toggles or closes side menu
-	$rootScope.menuOpen = "closed";
-
-	$rootScope.toggleMenu = function (e) {
-		if ($rootScope.menuOpen == "closed") {
-			$rootScope.menuOpen = "open";
-		} else {
-			$rootScope.menuOpen = "closed";
-		}
-	};
-	$rootScope.closeMenu = function () {
-		$rootScope.menuOpen = "closed";
-	};
+	//initialise menu closed
+	$rootScope.menuOpen = false;
 
 	//offline db bootstrap
 	/*var data;
@@ -95,6 +84,22 @@ weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 
 	}
 
 	$scope.now = new Date();
+
+	$scope.whichStats = null;
+	$scope.openStats = function(event) {
+		event.stopPropagation();
+		//$(".stats").slideDown();
+		console.log(event.currentTarget);
+		if (event.currentTarget != $scope.whichStats) {
+			$(".stats").slideUp(350);
+			$(event.currentTarget).parents(".game-out-wrap").siblings(".stats").slideDown(350);
+			$scope.whichStats = event.currentTarget;
+		} else {
+			$(event.currentTarget).parents(".game-out-wrap").siblings(".stats").slideUp(350);
+			$scope.whichStats = null;
+		}
+		
+	};
 }]);
 
 weinerControllers.controller('games', ['$scope', '$rootScope', '$firebaseArray', 'teamsObject', function ($scope, $rootScope, $firebaseArray, teamsObject) {
