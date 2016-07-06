@@ -15,6 +15,102 @@
 			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
+			"stats": {
+				"home": {
+					"Andrew S" : {
+						"p2" : 0,
+						"p3" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
+					},
+					"Brian F" : {
+						"p2" : 0,
+						"p3" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Dovid T" : {
+						"p2" : 0,
+						"p3" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Ethan H" : {
+						"p2" : 0,
+						"p3" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Jeremy F" : {
+						"p2" : 0,
+						"p3" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
+					},
+					"Kameron G" : {
+						"p2" : 0,
+						"p3" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
+					},
+					"Michael M" : {
+						"p2" : 0,
+						"p3" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
+					},
+					"Mitchell C" : {
+						"p2" : 0,
+						"p3" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Oren P" : {
+						"p2" : 0,
+						"p3" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 11,
+						"pt" : 0
+					},
+					"Sammy G" : {
+						"p2" : 0,
+						"p3" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Sammy S" : {
+						"p2" : 0,
+						"p3" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"grade" : 12,
+						"pt" : 0
+					},
+					"Yair P" : {
+						"p2" : 0,
+						"p3" : 0,
+						"fo" : 0,
+						"ft" : 0,
+						"pt" : 0
+					}
+				}
+			},
 			"time" : "3:30PM"
 		},
 		"b02" : {

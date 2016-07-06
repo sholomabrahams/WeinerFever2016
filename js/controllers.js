@@ -88,8 +88,6 @@ weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 
 	$scope.whichStats = null;
 	$scope.openStats = function(event) {
 		event.stopPropagation();
-		//$(".stats").slideDown();
-		console.log(event.currentTarget);
 		if (event.currentTarget != $scope.whichStats) {
 			$(".stats").slideUp(350);
 			$(event.currentTarget).parents(".game-out-wrap").siblings(".stats").slideDown(350);
@@ -98,7 +96,6 @@ weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 
 			$(event.currentTarget).parents(".game-out-wrap").siblings(".stats").slideUp(350);
 			$scope.whichStats = null;
 		}
-		
 	};
 }]);
 
