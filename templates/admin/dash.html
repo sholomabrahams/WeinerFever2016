@@ -1,4 +1,35 @@
 <section class="inner-wrap admin" id="dash">
-	<h4>Admin Dashboard</h4>
-	<p>{{welcome}}</p>
+	<h2>Admin Dashboard</h2>
+	<p>Please select your game:</p>
+	
+	<table class="table table-hover table-striped table-responsive table-bordered">
+		<tr>
+			<th>Name</th>
+			<th>Home</th>
+			<th>Away</th>
+			<th>Gym</th>
+			<th>Start Time</th>
+			<th>Day</th>
+			<th>Score</th>
+			<th>Quarter</th>
+			<th>Play Time</th>
+		</tr>
+		<tr ng-repeat="game in games | orderBy: 'index'">
+			<td>
+				<a ui-sref="gameEditor({gameCode: game.$id})"> {{game.$id}} </a>
+			</td>
+			<td>{{game.home}}</td>
+			<td>{{game.away}}</td>
+			<td>{{game.gym}}</td>
+			<td>{{game.time}}</td>
+			<td>{{game.day}}</td>
+			<td>{{game.hScore}}&nbsp;-&nbsp;{{game.aScore}}</td>
+			<td>{{game.quarter}}</td>
+			<td>{{game.playTime}}</td>
+		</tr>
+	</table>
+
+	<div id="logout">
+		<button class="btn btn-default btn-block btn-warning" ng-click="logout()">Logout&nbsp;<span class="glyphicon glyphicon-log-out"></span></button>
+	</div>
 </section>

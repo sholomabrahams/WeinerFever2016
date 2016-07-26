@@ -1,7 +1,7 @@
 var weinerControllers = angular.module('weinerControllers', []);
 
 /* FACTORIES */
-weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', function($rootScope, $http, $firebaseArray, $state) {
+weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$firebaseAuth', function($rootScope, $http, $firebaseArray, $state, $firebaseAuth) {
 	//Set body class no-touch if not touchscreen
 	if (!('ontouchstart' in window || navigator.maxTouchPoints)) {
 		$rootScope.touch = "no-touch";
@@ -30,7 +30,7 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', functi
 	//firebase auth handles on routes
 	$rootScope.$on("$stateChangeError", function(event, toState, toParams, fromState, fromParams, error) {
 		if (error === "AUTH_REQUIRED") {
-			$state.go("home");
+			$state.go("adminLogin");
 		}
 	});
 
@@ -43,6 +43,9 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', functi
 	$rootScope.gamesRef = new Firebase("https://weinerfever.firebaseio.com/games");
 
 	$rootScope.statsRef = new Firebase("https://weinerfever.firebaseio.com/stats");
+
+	//auth stuff
+	$rootScope.auth = $firebaseAuth($rootScope.rootRef);
 }]);
 
 /* DATA FACTORIES */
@@ -111,20 +114,41 @@ weinerControllers.controller('teams', ['$scope', function($scope) {
 	$scope.message = "teams page";
 }]);
 
-weinerControllers.controller('adminLogin', ['$scope', 'currentAuth', function($scope, currentAuth) {
+weinerControllers.controller('adminLogin', ['$scope', 'currentAuth', '$firebaseAuth', '$rootScope', '$state', function($scope, currentAuth, $firebaseAuth, $rootScope, $state) {
+	if (currentAuth !== null) {
+		$state.go('adminDash');
+	}
 	$scope.disabled = false;
-
+	
 	$scope.logIn = function () {
 		$scope.disabled = true;
-		$scope.entry = $scope.email + "   " + $scope.password;
+		//$scope.entry = $scope.email + "   " + $scope.password;
+		
+		$rootScope.auth.$authWithPassword({
+			email: $scope.email,
+			password: $scope.password
+		}).then(function (authData) {
+			$state.go('adminDash');
+		}).catch(function (error) {
+			 alert("We\'re sorry, an error has occurred.\n" + error);
+			 $scope.disabled = false;
+		});
+
 		$scope.email = null;
 		$scope.password = null;
 	}
-
-	$scope.auth = currentAuth;
-	console.log($scope.auth);
 }]);
 
-weinerControllers.controller('adminDash', ['$scope', '$firebaseArray', 'currentAuth', function($scope, $firebaseArray, currentAuth) {
-	$scope.welcome = "hello";
+weinerControllers.controller('adminDash', ['$scope', '$firebaseArray', 'currentAuth', '$rootScope', '$state', function($scope, $firebaseArray, currentAuth, $rootScope, $state) {
+	$scope.games = $firebaseArray($rootScope.gamesRef.orderByChild("index"));
+
+	//logout of Firebase method
+	$scope.logout = function () {
+		$rootScope.auth.$unauth();
+		$state.go('adminLogin');
+	};
 }]);
+
+weinerControllers.controller('gameEditor', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', function($scope, $firebaseObject, currentAuth, $rootScope, $state) {
+	
+}])

@@ -64,18 +64,27 @@ weinerApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvid
 		}).
 		state('adminLogin', {
 			url: '/admin',
-			templateUrl: 'templates/login.html',
+			templateUrl: 'templates/admin/login.html',
 			controller: 'adminLogin',
 			resolve: {
 				"currentAuth": ["Auth", function (Auth) {
-					return Auth.$requireAuth();
+					return Auth.$waitForAuth();
 				}]
 			}
 		}).
 		state('adminDash', {
 			url: '/admin/dash',
-			templateUrl: 'templates/dash.html',
-			controller: 'games',
+			templateUrl: 'templates/admin/dash.html',
+			controller: 'adminDash',
+			resolve: {
+				"currentAuth": ["Auth", function (Auth) {
+					return Auth.$requireAuth();
+				}]
+			}
+		}).state('gameEditor', {
+			url: '/admin/:gameCode',
+			templateUrl: 'templates/admin/set_games.html',
+			controller: 'gameEditor',
 			resolve: {
 				"currentAuth": ["Auth", function (Auth) {
 					return Auth.$requireAuth();

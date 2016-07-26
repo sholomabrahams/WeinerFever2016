@@ -1,0 +1,54 @@
+@blue: #23aeec;
+
+.inner-wrap.admin#dash {
+	font-family: 'Josefin sans', sans-serif;
+
+	h2 {
+		text-align: center;
+		font-weight: 700;
+	}
+
+	p {
+		font-size: 16.5px;
+		text-align: center;
+	}
+
+	table {
+		font-size: 16.5px;
+		
+		&.table-hover > tbody > tr:hover {
+			background-color: #eee;
+		}
+
+		th, td {
+			text-align: center;
+			&:first-child {
+				font-weight: 700;
+			}
+		}
+
+		a {
+			color: @blue;
+			transition: all 0.2s;
+
+			&:hover {
+				color: @blue;
+			}
+		}
+	}
+
+	div#logout {
+		margin-bottom: 15px;
+		button {
+			font-size: 18px;
+
+			&:focus, &:active {
+				outline: none;
+			}
+
+			span {
+				font-size: 16px;
+			}
+		}
+	}
+}
