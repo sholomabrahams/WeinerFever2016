@@ -149,6 +149,6 @@ weinerControllers.controller('adminDash', ['$scope', '$firebaseArray', 'currentA
 	};
 }]);
 
-weinerControllers.controller('gameEditor', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', function($scope, $firebaseObject, currentAuth, $rootScope, $state) {
-	
-}])
+weinerControllers.controller('gameEditor', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', '$stateParams', function($scope, $firebaseObject, currentAuth, $rootScope, $state, $stateParams) {
+	$scope.players = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode).child('stats'));
+}]);

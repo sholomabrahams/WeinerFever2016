@@ -1,7 +1,15 @@
 <section id="login" class="inner-wrap admin">
 	<form ng-submit="logIn()">
-		<input type="email" name="email" id="email" ng-model="email" placeholder="Email" ng-disabled="{{disabled}}">
-		<input type="password" name="pssword" id="password" required="true" ng-model="password" placeholder="Password" ng-disabled="{{disabled}}">
-		<input type="submit" name="submit" id="submit" required="true" value="Log In" ng-disabled="{{disabled}}">
+		<div class="form-group">
+			<label for="email">Email Address</label>
+			<input type="email" class="form-control" name="email" id="email" ng-model="email" placeholder="Email" ng-disabled="{{disabled}}">
+		</div>
+		<div class="form-group">
+			<label for="email">Password</label>
+			<input type="password" class="form-control" name="pssword" id="password" required="true" ng-model="password" placeholder="Password" ng-disabled="{{disabled}}">
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary form-control" name="submit" id="submit" ng-disabled="{{disabled}}">Log In</button>
+		</div>
 	</form>
 </section>

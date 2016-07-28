@@ -1,3 +1,11 @@
-<section class="inner-wrap admin">
-	
+<section class="inner-wrap admin" id="set-games">
+	<aside class="roster" id="home">
+		<div ng-repeat="(name, stats) in players.home">
+			<div class="wrap">
+				<h3 ng-bind="name"></h3>
+			</div>
+		</div>
+	</aside>
+
+	<aside class="roster" id="away"></aside>
 </section>
