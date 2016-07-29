@@ -151,4 +151,15 @@ weinerControllers.controller('adminDash', ['$scope', '$firebaseArray', 'currentA
 
 weinerControllers.controller('gameEditor', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', '$stateParams', function($scope, $firebaseObject, currentAuth, $rootScope, $state, $stateParams) {
 	$scope.players = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode).child('stats'));
+
+	$scope.selectedPlayer = null;
+	$scope.selectRow = function (event) {
+		event.stopPropagation();
+
+		if (event.currentTarget) {
+			// statement
+		} else {
+			// statement
+		}
+	};
 }]);

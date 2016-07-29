@@ -3,7 +3,8 @@ var weinerApp = angular.module('weinerApp', [
 	'weinerControllers',
 	'animations',
 	'firebase',
-	'ngSanitize'
+	'ngSanitize',
+	'truncate'
 ]);
 
 weinerApp.factory("Auth", ["$firebaseAuth", function($firebaseAuth) {

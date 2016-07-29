@@ -1,11 +1,23 @@
 <section class="inner-wrap admin" id="set-games">
-	<aside class="roster" id="home">
-		<div ng-repeat="(name, stats) in players.home">
-			<div class="wrap">
-				<h3 ng-bind="name"></h3>
-			</div>
-		</div>
+	<aside class="roster col-lg-3" id="home">
+		<table class="table table-condensed table-responsive">
+			<tr ng-repeat="(name, stats) in players.home">
+				<div class="wrap">
+					<td ng-bind="stats.number"</td><td ng-bind="name | characters:20: false"</td>
+				</div>
+			</tr>
+		</table>
 	</aside>
 
-	<aside class="roster" id="away"></aside>
+	<section class="col-lg-6"></section>
+
+	<aside class="roster col-lg-3" id="away">
+		<table class="table table-condensed table-responsive">
+			<tr ng-repeat="(name, stats) in players.away">
+				<div class="wrap">
+					<td ng-bind="stats.number"</td><td ng-bind="name | characters:20: false"</td>
+				</div>
+			</tr>
+		</table>
+	</aside>
 </section>
