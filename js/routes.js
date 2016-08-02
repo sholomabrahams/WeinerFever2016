@@ -81,10 +81,31 @@ weinerApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvid
 					return Auth.$requireAuth();
 				}]
 			}
-		}).state('gameEditor', {
-			url: '/admin/:gameCode',
-			templateUrl: 'templates/admin/set_games.html',
-			controller: 'gameEditor',
+		}).
+		state('gameEditorBoth', {
+			url: '/admin/edit/:gameCode/both',
+			templateUrl: 'templates/admin/set_games_both.html',
+			controller: 'gameEditorBoth',
+			resolve: {
+				"currentAuth": ["Auth", function (Auth) {
+					return Auth.$requireAuth();
+				}]
+			}
+		}).
+		state('gameEditorTime', {
+			url: '/admin/edit/:gameCode/time',
+			templateUrl: 'templates/admin/set_games_time.html',
+			controller: 'gameEditorTime',
+			resolve: {
+				"currentAuth": ["Auth", function (Auth) {
+					return Auth.$requireAuth();
+				}]
+			}
+		}).
+		state('gameEditorStats', {
+			url: '/admin/edit/:gameCode/stats',
+			templateUrl: 'templates/admin/set_games_stats.html',
+			controller: 'gameEditorStats',
 			resolve: {
 				"currentAuth": ["Auth", function (Auth) {
 					return Auth.$requireAuth();

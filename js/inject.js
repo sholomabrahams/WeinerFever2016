@@ -7,7 +7,8 @@ function size() {
 	wrapHeight = winHeight - topHeight - bottomHeight;
 	$("#outer-wrap").css('minHeight', wrapHeight);
 	//$("#set-games aside.roster").css('maxHeight', (wrapHeight));
-	$("<style type='text/css'>#set-games aside.roster { max-height: " + wrapHeight + "px }</style>").appendTo('body');
+	$("#script-style").remove();
+	$("<style type='text/css' id='script-style'>#set-games aside.roster { max-height: " + wrapHeight + "px }</style>").appendTo('body');
 }
 
 $(window).resize(size);

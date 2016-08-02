@@ -149,17 +149,21 @@ weinerControllers.controller('adminDash', ['$scope', '$firebaseArray', 'currentA
 	};
 }]);
 
-weinerControllers.controller('gameEditor', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', '$stateParams', function($scope, $firebaseObject, currentAuth, $rootScope, $state, $stateParams) {
+weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', '$stateParams', function($scope, $firebaseObject, currentAuth, $rootScope, $state, $stateParams) {
 	$scope.players = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode).child('stats'));
 
 	$scope.selectedPlayer = null;
-	$scope.selectRow = function (event) {
+	$scope.select = function (event) {
 		event.stopPropagation();
 
-		if (event.currentTarget) {
-			// statement
-		} else {
-			// statement
+		if (event.currentTarget != $scope.selectedPlayer) {
+			$(".roster tr").removeClass('info');
+			$(event.currentTarget).addClass('info');
+			$scope.selectedPlayer = $(event.currentTarget).children("td:last-of-type").text();
 		}
 	};
+
+	$scope.$on('$viewContentLoaded', function (event) {
+		size();
+	});
 }]);

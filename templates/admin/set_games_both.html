@@ -1,0 +1,21 @@
+<section class="inner-wrap admin" id="set-games">
+	<aside class="roster col-lg-3" id="home">
+		<table class="table table-condensed table-responsive">
+			<tr ng-repeat="(name, stats) in players.home" ng-click="select($event)">
+				<td ng-bind="stats.number"</td><td ng-bind="name | characters:20: false"</td>
+			</tr>
+		</table>
+	</aside>
+
+	<section class="col-lg-6" id="center">
+		
+	</section>
+
+	<aside class="roster col-lg-3" id="away">
+		<table class="table table-condensed table-responsive">
+			<tr ng-repeat="(name, stats) in players.away" ng-click="select($event)">
+				<td ng-bind="stats.number"</td><td ng-bind="name | characters:20: false"</td>
+			</tr>
+		</table>
+	</aside>
+</section>

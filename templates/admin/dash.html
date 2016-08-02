@@ -16,7 +16,7 @@
 		</tr>
 		<tr ng-repeat="game in games | orderBy: 'index'">
 			<td>
-				<a ui-sref="gameEditor({gameCode: game.$id})"> {{game.$id}} </a>
+				{{game.$id}} - <a ui-sref="gameEditorTime({gameCode: game.$id})"> Time </a> &nbsp; <a ui-sref="gameEditorStats({gameCode: game.$id})"> Stats </a> &nbsp; <a ui-sref="gameEditorBoth({gameCode: game.$id})"> Both </a>
 			</td>
 			<td>{{game.home}}</td>
 			<td>{{game.away}}</td>
