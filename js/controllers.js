@@ -152,7 +152,9 @@ weinerControllers.controller('adminDash', ['$scope', '$firebaseArray', 'currentA
 weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', '$stateParams', function($scope, $firebaseObject, currentAuth, $rootScope, $state, $stateParams) {
 	$scope.players = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode).child('stats'));
 
-	$scope.selectedPlayer = null;
+	$scope.selectedPlayer = "None Selected";
+	$scope.color = "rgba(22, 84, 136, 0.7)";
+	$scope.logo = "BT.png";
 	$scope.select = function (event) {
 		event.stopPropagation();
 

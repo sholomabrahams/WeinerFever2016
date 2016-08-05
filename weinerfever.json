@@ -1158,7 +1158,8 @@
 				"players" : [ "Alyse M", "Chloe N", "Hallie H", "Hannah C", "Jessica S", "Kelsey T", "Nina G", "Samantha B", "Sydney H", "Teva V" ],
 				"win" : 0
 			},
-			"picture" : "BT.png"
+			"picture" : "BT.png",
+			"color": "rgba(22, 84, 136, 0.7)"
 		},
 		"Boyar" : {
 			"boys" : {
@@ -1174,7 +1175,8 @@
 				"players" : [ "Lihy I", "Maya E", "Mira S", "Noa S", "Rotem R", "Shir C", "Tamar B" ],
 				"win" : 0
 			},
-			"picture" : "boyar.png"
+			"picture" : "boyar.png",
+			"color": "rgba(0, 96, 80, 0.7)"
 		},
 		"CHAT" : {
 			"boys" : {
@@ -1190,7 +1192,8 @@
 				"players" : [ "Lihy I", "Maya E", "Mira S", "Noa S", "Rotem R", "Shir C", "Tamar B" ],
 				"win" : 0
 			},
-			"picture" : "CHAT.png"
+			"picture" : "CHAT.png",
+			"color": "rgba(129, 190, 220, 0.7)"
 		},
 		"HANC" : {
 			"boys" : {
@@ -1206,7 +1209,8 @@
 				"players" : [ "Lihy I", "Maya E", "Mira S", "Noa S", "Rotem R", "Shir C", "Tamar B" ],
 				"win" : 0
 			},
-			"picture" : "HANC.png"
+			"picture" : "HANC.png",
+			"color": "rgba(34, 131, 227, 0.7)"
 		},
 		"Kushner" : {
 			"boys" : {
@@ -1216,7 +1220,8 @@
 				"win" : 0
 			},
 			"dimensions" : 341,
-			"picture" : "kushner_png.png"
+			"picture" : "kushner_png.png",
+			"color": "rgba(10, 23, 72, 0.7)"
 		},
 		"Ramaz" : {
 			"dimensions" : 69,
@@ -1226,7 +1231,8 @@
 				"players" : [ "Lihy I", "Maya E", "Mira S", "Noa S", "Rotem R", "Shir C", "Tamar B" ],
 				"win" : 0
 			},
-			"picture" : "Ramaz.png"
+			"picture" : "Ramaz.png",
+			"color": "rgba(30, 67, 111, 0.7)"
 		},
 		"Yavneh" : {
 			"boys" : {
@@ -1242,7 +1248,8 @@
 				"players" : [ "Lihy I", "Maya E", "Mira S", "Noa S", "Rotem R", "Shir C", "Tamar B" ],
 				"win" : 0
 			},
-			"picture" : "Yavneh.png"
+			"picture" : "Yavneh.png",
+			"color": "rgba(197, 9, 33, 0.7)"
 		}
 	}
 }

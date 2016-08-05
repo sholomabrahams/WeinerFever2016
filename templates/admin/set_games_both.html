@@ -8,7 +8,10 @@
 	</aside>
 
 	<section class="col-lg-6" id="center">
-		
+		<div id="stats" class="container-fluid" style="background-color: {{color}};">
+			<img class="name-logo" ng-src="/assets/img/logos/{{logo}}" width="33" height="33" ng-if="logo">
+			<h2 id="player-name" ng-bind="selectedPlayer"></h2>
+		</div>
 	</section>
 
 	<aside class="roster col-lg-3" id="away">

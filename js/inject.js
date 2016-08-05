@@ -1,8 +1,15 @@
-var winHeight, topHeight, bottomHeight, wrapHeight;
+var winHeight, winWidth, topHeight, bottomHeight, wrapHeight;
 function size() {
 	winHeight = $(window).height();
-	topHeight = $("nav.navbar").height() + 15;
-	bottomHeight = $("footer#page-foot").height();
+	winWidth = $(window).width();
+	if (winWidth > 991) {
+		topHeight = 98;
+	} else if (winWidth > 767) {
+		topHeight = 90;
+	} else {
+		topHeight = 65;
+	}
+	bottomHeight = 71;
 	//console.log(topHeight + "   " + bottomHeight);
 	wrapHeight = winHeight - topHeight - bottomHeight;
 	$("#outer-wrap").css('minHeight', wrapHeight);
