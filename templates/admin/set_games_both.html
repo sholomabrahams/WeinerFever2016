@@ -1,7 +1,8 @@
 <section class="inner-wrap admin" id="set-games">
 	<aside class="roster col-lg-3" id="home">
+		<h3 ng-bind=""></h3>
 		<table class="table table-condensed table-responsive">
-			<tr ng-repeat="(name, stats) in players.home" ng-click="select($event)">
+			<tr ng-repeat="(name, stats) in game.stats.home" ng-click="select($event)">
 				<td ng-bind="stats.number"</td><td ng-bind="name | characters:20: false"</td>
 			</tr>
 		</table>
@@ -15,8 +16,9 @@
 	</section>
 
 	<aside class="roster col-lg-3" id="away">
+		<h3 ng-bind=""></h3>
 		<table class="table table-condensed table-responsive">
-			<tr ng-repeat="(name, stats) in players.away" ng-click="select($event)">
+			<tr ng-repeat="(name, stats) in game.stats.away" ng-click="select($event)">
 				<td ng-bind="stats.number"</td><td ng-bind="name | characters:20: false"</td>
 			</tr>
 		</table>

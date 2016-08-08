@@ -34,6 +34,11 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$fire
 		}
 	});
 
+	//Static team data
+	$http.get("/js/data/teams.json").then(function (response) {
+		$rootScope.teamsData = response.data.teams;
+	});
+	//$rootScope.teamData = teamsJsObject;
 
 	//Makes firebase refs available
 	$rootScope.rootRef = new Firebase('https://weinerfever.firebaseio.com/');
@@ -68,7 +73,7 @@ weinerControllers.factory('stats', ['$firebaseObject', '$rootScope', function($f
 weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 'teamsObject', 'stats', function($scope, $rootScope, $firebaseArray, teamsObject, stats) {
 	$scope.liveGames = $firebaseArray($rootScope.gamesRef.orderByChild("live").equalTo(true));
 	$scope.otherGames = $firebaseArray($rootScope.gamesRef.orderByChild("live").equalTo(false));
-	$scope.teams = teamsObject;
+	$scope.teams = $.extend(true, $rootScope.teamsData, teamsObject);
 	$scope.stats = stats;
 	
 	//second games panel:
@@ -150,11 +155,11 @@ weinerControllers.controller('adminDash', ['$scope', '$firebaseArray', 'currentA
 }]);
 
 weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', '$stateParams', function($scope, $firebaseObject, currentAuth, $rootScope, $state, $stateParams) {
-	$scope.players = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode).child('stats'));
+	$scope.game = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode));
 
 	$scope.selectedPlayer = "None Selected";
-	$scope.color = "rgba(22, 84, 136, 0.7)";
-	$scope.logo = "BT.png";
+	$scope.color = "transparent";
+	$scope.logo = null;
 	$scope.select = function (event) {
 		event.stopPropagation();
 

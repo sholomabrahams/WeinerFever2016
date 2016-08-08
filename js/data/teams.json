@@ -1,0 +1,87 @@
+{
+	"teams" : {
+		"Beth Tfiloh" : {
+			"boys" : {
+				"coach" : "Ari Braun",
+				"players" : [ "Andrew S", "Brian F", "Dovid T", "Ethan H", "Jeremy F", "Kameron G", "Michael M", "Mitchell C", "Oren P", "Sammy G", "Sammy S", "Yair P" ]
+			},
+			"dimensions" : 440,
+			"girls" : {
+				"coach" : "Sonya Howell",
+				"players" : [ "Alyse M", "Chloe N", "Hallie H", "Hannah C", "Jessica S", "Kelsey T", "Nina G", "Samantha B", "Sydney H", "Teva V" ]
+			},
+			"picture" : "BT.png",
+			"color": "rgba(22, 84, 136, 0.7)"
+		},
+		"Boyar" : {
+			"boys" : {
+				"coach" : "null",
+				"players" : [ "David D", "Gilad M", "Israel G", "Itai H", "Roi N", "Ron Menashe N", "Tomer M", "Yair R", "Yoav R", "Yonatan P" ]
+			},
+			"dimensions" : 666,
+			"girls" : {
+				"coach" : "Tova Cohen",
+				"players" : [ "Lihy I", "Maya E", "Mira S", "Noa S", "Rotem R", "Shir C", "Tamar B" ]
+			},
+			"picture" : "boyar.png",
+			"color": "rgba(0, 96, 80, 0.7)"
+		},
+		"CHAT" : {
+			"boys" : {
+				"coach" : "Aubrey Zimmerman",
+				"players" : [ "David D", "Gilad M", "Israel G", "Itai H", "Roi N", "Ron Menashe N", "Tomer M", "Yair R", "Yoav R", "Yonatan P" ]
+			},
+			"dimensions" : 92,
+			"girls" : {
+				"coach" : "Aubrey Zimmerman",
+				"players" : [ "Lihy I", "Maya E", "Mira S", "Noa S", "Rotem R", "Shir C", "Tamar B" ]
+			},
+			"picture" : "CHAT.png",
+			"color": "rgba(129, 190, 220, 0.7)"
+		},
+		"HANC" : {
+			"boys" : {
+				"coach" : "Jonathan Gastwirth",
+				"players" : [ "David D", "Gilad M", "Israel G", "Itai H", "Roi N", "Ron Menashe N", "Tomer M", "Yair R", "Yoav R", "Yonatan P" ]
+			},
+			"dimensions" : 120,
+			"girls" : {
+				"coach" : "Adam Brick",
+				"players" : [ "Lihy I", "Maya E", "Mira S", "Noa S", "Rotem R", "Shir C", "Tamar B" ]
+			},
+			"picture" : "HANC.png",
+			"color": "rgba(34, 131, 227, 0.7)"
+		},
+		"Kushner" : {
+			"boys" : {
+				"coach" : "Jan Sandusky",
+				"players" : [ "David D", "Gilad M", "Israel G", "Itai H", "Roi N", "Ron Menashe N", "Tomer M", "Yair R", "Yoav R", "Yonatan P" ]
+			},
+			"dimensions" : 341,
+			"picture" : "kushner_png.png",
+			"color": "rgba(10, 23, 72, 0.7)"
+		},
+		"Ramaz" : {
+			"dimensions" : 69,
+			"girls" : {
+				"coach" : "Randy Dulny",
+				"players" : [ "Lihy I", "Maya E", "Mira S", "Noa S", "Rotem R", "Shir C", "Tamar B" ]
+			},
+			"picture" : "Ramaz.png",
+			"color": "rgba(30, 67, 111, 0.7)"
+		},
+		"Yavneh" : {
+			"boys" : {
+				"coach" : "David Zimmerman",
+				"players" : [ "David D", "Gilad M", "Israel G", "Itai H", "Roi N", "Ron Menashe N", "Tomer M", "Yair R", "Yoav R", "Yonatan P" ]
+			},
+			"dimensions" : 166.5,
+			"girls" : {
+				"coach" : "Derrick Martin",
+				"players" : [ "Lihy I", "Maya E", "Mira S", "Noa S", "Rotem R", "Shir C", "Tamar B" ]
+			},
+			"picture" : "Yavneh.png",
+			"color": "rgba(197, 9, 33, 0.7)"
+		}
+	}
+}
