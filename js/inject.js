@@ -14,8 +14,10 @@ function size() {
 	wrapHeight = winHeight - topHeight - bottomHeight;
 	$("#outer-wrap").css('minHeight', wrapHeight);
 	//$("#set-games aside.roster").css('maxHeight', (wrapHeight));
-	$("#script-style").remove();
-	$("<style type='text/css' id='script-style'>#set-games aside.roster { max-height: " + wrapHeight + "px }</style>").appendTo('body');
+	$(".script-style").remove();
+	$("<style type='text/css' class='script-style'>#set-games section#center { max-height: " + wrapHeight + "px }</style>").appendTo('body');
+	wrapHeight-= 55;
+	$("<style type='text/css' class='script-style'>#set-games aside.roster #table-wrap { max-height: " + wrapHeight + "px }</style>").appendTo('body');
 }
 
 $(window).resize(size);

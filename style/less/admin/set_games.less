@@ -4,40 +4,66 @@
 	font-family: 'Josefin sans', sans-serif;
 
 	aside.roster {
-		overflow-x: hidden;
-		overflow-y: auto;
 		height: 100%;
 		padding: 0;
 		//max-height: 100%;
 
-		h3 {
-			color: #eee;
-		}
+		&#home {
+			h2 {
+				margin-right: 15px;
+			}
 
-		/*&#home {
-			background-color: rgba(22, 84, 136, 0.7);
+			img {
+				left: 7.5px;
+			}
 		}
 
 		&#away {
-			background-color: rgba(34, 131, 227, 0.7);
-		}*/
-
-		table {
-			font-size: 23px;
-			font-weight: 600;
-			margin-bottom: 8px;
-
-			tr {
-				cursor: pointer;
-
-				td {
-					border: none;
-				}
+			h2 {
+				margin-left: 15px;
 			}
 
-			.wrap {
-				h3 {
-					font-weight: 700;
+			img {
+				left: 22.5px;
+			}
+		}
+
+		img {
+			position: absolute;
+			top: 15px;
+		}
+
+		h2 {
+			text-align: center;
+			padding: 7.5px 0 7.5px 0;
+			margin: 0;
+			margin-top: 10px;
+			color: #f8f8f8;
+			font-size: 28px;
+		}
+
+		#table-wrap {
+			height: 100%;
+			overflow-x: hidden;
+			overflow-y: auto;
+
+			table {
+				font-size: 23px;
+				font-weight: 600;
+				margin-bottom: 8px;
+
+				tr {
+					cursor: pointer;
+
+					td {
+						border: none;
+					}
+				}
+
+				.wrap {
+					h3 {
+						font-weight: 700;
+					}
 				}
 			}
 		}
@@ -45,21 +71,65 @@
 
 	section#center {
 		padding: 0;
+		overflow-y: auto;
+		overflow-x: hidden;
 		border-right: 1px solid #f8f8f8;
 		border-left: 1px solid #f8f8f8;
 
-		#stats {
+		#stats-top {
 			padding-bottom: 20px;
+			transition: all 0.15s;
+			border-radius: 5px;
+			margin: 10px 20px 0 20px;
 			
 			img.name-logo {
 				position: absolute;
-				top: 20px;
+				top: 30.5px;
 				left: 35px;
 			}
 
 			h2 {
 				text-align: center;
 				font-weight: 600;
+			}
+		}
+
+		#buttons-wrap {
+			padding-top: 5px;
+
+			button {
+				padding: 45.5px 16px;
+				margin: 5px;
+				transition: background-color 0.15s;
+				width: ~'calc(25% - 10px)';
+
+				&:active, &:focus {
+					outline: none;
+				}
+
+				&.btn-success:focus {
+					background-color: #5cb85c;
+					border-color: #4cae4c;
+				}
+
+				&.btn-success {
+					&:active, &:hover {
+						background-color: #449d44;
+						border-color: #398439;
+					}
+				}
+
+				&.btn-danger:focus {
+					background-color: #d9534f;
+					border-color: #d43f3a;
+				}
+
+				&.btn-danger {
+					&:active, &:hover {
+						background-color: #c9302c;
+						border-color: #ac2925;
+					}
+				}	
 			}
 		}
 	}

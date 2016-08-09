@@ -1,26 +1,48 @@
 <section class="inner-wrap admin" id="set-games">
 	<aside class="roster col-lg-3" id="home">
-		<h3 ng-bind=""></h3>
-		<table class="table table-condensed table-responsive">
-			<tr ng-repeat="(name, stats) in game.stats.home" ng-click="select($event)">
-				<td ng-bind="stats.number"</td><td ng-bind="name | characters:20: false"</td>
-			</tr>
-		</table>
+		<img ng-src="/assets/img/logos/{{teams[game.home].picture}}" height="35" width="35">
+		<h2 ng-bind="game.home" style="background-color: {{teams[game.home].color}}"></h2>
+		<div id="table-wrap">
+			<table class="table table-condensed table-responsive">
+				<tr ng-repeat="(name, stats) in game.stats.home" ng-click="select($event)">
+					<td ng-bind="stats.number"></td><td ng-bind="name | characters:20: false"></td>
+				</tr>
+			</table>
+		</div>
 	</aside>
 
 	<section class="col-lg-6" id="center">
-		<div id="stats" class="container-fluid" style="background-color: {{color}};">
-			<img class="name-logo" ng-src="/assets/img/logos/{{logo}}" width="33" height="33" ng-if="logo">
+		<div id="stats-top" class="container-fluid" style="background-color: {{color}};">
+			<img class="name-logo" ng-src="/assets/img/logos/{{logo}}" width="40" height="40" ng-if="logo">
 			<h2 id="player-name" ng-bind="selectedPlayer"></h2>
+
+			
+		</div>
+		<div class="container-fluid" id="buttons-wrap">
+			<div ng-bind=""></div>
+			<div ng-bind=""></div>
+			<div ng-bind=""></div>
+			<div ng-bind=""></div>
+			<button type="button" class="btn btn-lg col-sm-3 btn-success">+1</button>
+			<button type="button" class="btn btn-lg col-sm-3 btn-success">+2</button>
+			<button type="button" class="btn btn-lg col-sm-3 btn-success">+3</button>
+			<button type="button" class="btn btn-lg col-sm-3 btn-success">+f</button>
+			<button type="button" class="btn btn-lg col-sm-3 btn-danger">-1</button>
+			<button type="button" class="btn btn-lg col-sm-3 btn-danger">-2</button>
+			<button type="button" class="btn btn-lg col-sm-3 btn-danger">-3</button>
+			<button type="button" class="btn btn-lg col-sm-3 btn-danger">-f</button>
 		</div>
 	</section>
 
 	<aside class="roster col-lg-3" id="away">
-		<h3 ng-bind=""></h3>
-		<table class="table table-condensed table-responsive">
-			<tr ng-repeat="(name, stats) in game.stats.away" ng-click="select($event)">
-				<td ng-bind="stats.number"</td><td ng-bind="name | characters:20: false"</td>
-			</tr>
-		</table>
+		<img ng-src="/assets/img/logos/{{teams[game.away].picture}}" height="35" width="35">
+		<h2 ng-bind="game.away" style="background-color: {{teams[game.away].color}}"></h2>
+		<div id="table-wrap">
+			<table class="table table-condensed table-responsive">
+				<tr ng-repeat="(name, stats) in game.stats.away" ng-click="select($event)">
+					<td ng-bind="stats.number"></td><td ng-bind="name | characters:20: false"></td>
+				</tr>
+			</table>
+		</div>
 	</aside>
 </section>
