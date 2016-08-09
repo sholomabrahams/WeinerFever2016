@@ -54,26 +54,27 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$fire
 }]);
 
 /* DATA FACTORIES */
-weinerControllers.factory('teamsList', ['$firebaseArray', '$firebaseObject', '$rootScope', function($firebaseArray, $firebaseObject, $rootScope) {
-	var teamsQuery = $rootScope.teamsRef.orderByKey();
-	var gamesQuery = $rootScope.gamesRef.orderByChild('index');
-	return [$firebaseArray(teamsQuery), $firebaseObject(gamesQuery)];
+weinerControllers.factory('teamsObject', ['$firebaseObject', '$rootScope', function($firebaseObject, $rootScope) {
+	console.log($.extend(true, {}, ($rootScope.teamsData), ($firebaseObject($rootScope.teamsRef.orderByKey()))));
+	return $.extend(true, {}, $firebaseObject($rootScope.teamsRef.orderByKey()), $rootScope.teamsData);
 }]);
 
-weinerControllers.factory('teamsObject', ['$firebaseObject', '$rootScope', function($firebaseObject, $rootScope) {
-	return $firebaseObject($rootScope.teamsRef.orderByKey());
-}]);
+/*weinerControllers.factory('teamsList', ['$firebaseObject', '$rootScope', function($firebaseObject, $rootScope) {
+	var gamesQuery = $rootScope.gamesRef.orderByChild('index');
+	return [$firebaseArray(teamsQuery), $firebaseObject(gamesQuery)];
+}]);*/
 
 weinerControllers.factory('stats', ['$firebaseObject', '$rootScope', function($firebaseObject, $rootScope) {
 	return $firebaseObject($rootScope.statsRef.orderByKey());
-}])
+}]);
 
 
 /*CONTROLLERS*/
 weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 'teamsObject', 'stats', function($scope, $rootScope, $firebaseArray, teamsObject, stats) {
 	$scope.liveGames = $firebaseArray($rootScope.gamesRef.orderByChild("live").equalTo(true));
 	$scope.otherGames = $firebaseArray($rootScope.gamesRef.orderByChild("live").equalTo(false));
-	$scope.teams = $.extend(true, $rootScope.teamsData, teamsObject);
+	$scope.teams = teamsObject;
+	console.log($scope.teams);
 	$scope.stats = stats;
 	
 	//second games panel:
@@ -154,8 +155,9 @@ weinerControllers.controller('adminDash', ['$scope', '$firebaseArray', 'currentA
 	};
 }]);
 
-weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', '$stateParams', function($scope, $firebaseObject, currentAuth, $rootScope, $state, $stateParams) {
+weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', '$stateParams', 'teamsObject', function($scope, $firebaseObject, currentAuth, $rootScope, $state, $stateParams, teamsObject) {
 	$scope.game = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode));
+	$scope.teams = teamsObject;
 
 	$scope.selectedPlayer = "None Selected";
 	$scope.color = "transparent";
@@ -167,6 +169,8 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 			$(".roster tr").removeClass('info');
 			$(event.currentTarget).addClass('info');
 			$scope.selectedPlayer = $(event.currentTarget).children("td:last-of-type").text();
+			$scope.color = $scope.teams[$(event.currentTarget).parents("#table-wrap").prev("h2").text()].color;
+			$scope.logo = $scope.teams[$(event.currentTarget).parents("#table-wrap").prev("h2").text()].picture;
 		}
 	};
 
