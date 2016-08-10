@@ -11,9 +11,9 @@
 									<a ng-href="/#teams/{{game.home}}/{{getGender(game.name)}}">
 										<div>
 											<h4 class="home-name" ng-bind="game.home"></h4>
-											<p class="record">{{teams[game.home][getGender(game.name)].win}}-{{teams[game.home][getGender(game.name)].los}}</p>
+											<p class="record">{{teams.dynamic[game.home][getGender(game.name)].win}}-{{teams.dynamic[game.home][getGender(game.name)].los}}</p>
 										</div>
-										<img ng-src="/assets/img/logos/{{teams[game.home].picture}}" width="60" height="60">
+										<img ng-src="/assets/img/logos/{{teams.static[game.home].picture}}" width="60" height="60">
 									</a>
 									<h2 class="score">{{game.hScore}}</h2>
 								</div>
@@ -22,9 +22,9 @@
 									<a ng-href="/#teams/{{game.away}}/{{getGender(game.name)}}">
 										<div>
 											<h4 class="away-name" ng-bind="game.away"></h4>
-											<p class="record">{{teams[game.away][getGender(game.name)].win}}-{{teams[game.away][getGender(game.name)].los}}</p>
+											<p class="record">{{teams.dynamic[game.away][getGender(game.name)].win}}-{{teams.dynamic[game.away][getGender(game.name)].los}}</p>
 										</div>
-										<img ng-src="/assets/img/logos/{{teams[game.away].picture}}" width="60" height="60">
+										<img ng-src="/assets/img/logos/{{teams.static[game.away].picture}}" width="60" height="60">
 									</a>
 									<h2 class="score">{{game.aScore}}</h2>
 								</div>
@@ -58,9 +58,9 @@
 									<a ng-href="/#teams/{{game.home}}/{{getGender(game.name)}}">
 										<div>
 											<h4 class="home-name" ng-bind="game.home"></h4>
-											<p class="record">{{teams[game.home][getGender(game.name)].win}}-{{teams[game.home][getGender(game.name)].los}}</p>
+											<p class="record">{{teams.dynamic[game.home][getGender(game.name)].win}}-{{teams.dynamic[game.home][getGender(game.name)].los}}</p>
 										</div>
-										<img ng-src="/assets/img/logos/{{teams[game.home].picture}}" width="60" height="60">
+										<img ng-src="/assets/img/logos/{{teams.static[game.home].picture}}" width="60" height="60">
 									</a>
 									<!--<h2 class="score">{{game.hScore}}</h2>-->
 								</div>
@@ -69,9 +69,9 @@
 									<a ng-href="/#teams/{{game.away}}/{{getGender(game.name)}}">
 										<div>
 											<h4 class="away-name" ng-bind="game.away"></h4>
-											<p class="record">{{teams[game.away][getGender(game.name)].win}}-{{teams[game.away][getGender(game.name)].los}}</p>
+											<p class="record">{{teams.dynamic[game.away][getGender(game.name)].win}}-{{teams.dynamic[game.away][getGender(game.name)].los}}</p>
 										</div>
-										<img ng-src="/assets/img/logos/{{teams[game.away].picture}}" width="60" height="60">
+										<img ng-src="/assets/img/logos/{{teams.static[game.away].picture}}" width="60" height="60">
 									</a>
 									<!--<h2 class="score">{{game.aScore}}</h2>-->
 								</div>

@@ -55,8 +55,7 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$fire
 
 /* DATA FACTORIES */
 weinerControllers.factory('teamsObject', ['$firebaseObject', '$rootScope', function($firebaseObject, $rootScope) {
-	console.log($.extend(true, {}, ($rootScope.teamsData), ($firebaseObject($rootScope.teamsRef.orderByKey()))));
-	return $.extend(true, {}, $firebaseObject($rootScope.teamsRef.orderByKey()), $rootScope.teamsData);
+	return {dynamic: $firebaseObject($rootScope.teamsRef.orderByKey()), static: $rootScope.teamsData};
 }]);
 
 /*weinerControllers.factory('teamsList', ['$firebaseObject', '$rootScope', function($firebaseObject, $rootScope) {
@@ -74,7 +73,6 @@ weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 
 	$scope.liveGames = $firebaseArray($rootScope.gamesRef.orderByChild("live").equalTo(true));
 	$scope.otherGames = $firebaseArray($rootScope.gamesRef.orderByChild("live").equalTo(false));
 	$scope.teams = teamsObject;
-	console.log($scope.teams);
 	$scope.stats = stats;
 	
 	//second games panel:
@@ -156,10 +154,15 @@ weinerControllers.controller('adminDash', ['$scope', '$firebaseArray', 'currentA
 }]);
 
 weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', '$stateParams', 'teamsObject', function($scope, $firebaseObject, currentAuth, $rootScope, $state, $stateParams, teamsObject) {
+	$scope.$on('$viewContentLoaded', function (event) {
+		size();
+	});
+
 	$scope.game = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode));
 	$scope.teams = teamsObject;
 
 	$scope.selectedPlayer = "None Selected";
+	$scope.selectedTeam = null;
 	$scope.color = "transparent";
 	$scope.logo = null;
 	$scope.select = function (event) {
@@ -169,12 +172,49 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 			$(".roster tr").removeClass('info');
 			$(event.currentTarget).addClass('info');
 			$scope.selectedPlayer = $(event.currentTarget).children("td:last-of-type").text();
-			$scope.color = $scope.teams[$(event.currentTarget).parents("#table-wrap").prev("h2").text()].color;
-			$scope.logo = $scope.teams[$(event.currentTarget).parents("#table-wrap").prev("h2").text()].picture;
+			$scope.selectedTeam = $(event.currentTarget).parents("#table-wrap").prev("h2").text();
+			$scope.color = $scope.teams.static[$scope.selectedTeam].color;
+			$scope.logo = $scope.teams.static[$scope.selectedTeam].picture;
 		}
 	};
 
-	$scope.$on('$viewContentLoaded', function (event) {
-		size();
-	});
+	//var gameStatsRef = null;
+	var whichTeam = function () {
+		if ($scope.selectedTeam == $scope.game.home) {
+			return "home";
+		}
+		return "away";
+	};
+	var player = null;
+	//operation: + or -    type: key of player's stats object     val: how many points or foul
+	$scope.statsEdit = function (operation, type, val) {
+		//gameStatsRef = $rootScope.gamesRef.child($scope.game.$id + "/stats/" + whichTeam() + "/");
+		if ($scope.selectedPlayer == "None Selected" || !$scope.selectedPlayer) {
+			return;
+		}
+
+		player = $scope.game.stats[whichTeam()][$scope.selectedPlayer];
+		switch (operation) {
+			case "plus":
+				if (angular.isNumber(val)) {
+					player.pt += val;
+					player[type] += val;
+					$scope.game.$save();
+				} else {
+					player.fo ++;
+					$scope.game.$save();
+				}
+				break;
+			case "minus":
+				if (angular.isNumber(val) && player[type] > 0) {
+					player.pt -= val;
+					player[type] -= val;
+					$scope.game.$save();
+				} else if (player.fo > 0) {
+					player.fo --;
+					$scope.game.$save();
+				}
+				break;
+		}
+	};
 }]);

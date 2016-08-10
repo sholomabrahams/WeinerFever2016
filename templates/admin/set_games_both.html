@@ -1,7 +1,7 @@
 <section class="inner-wrap admin" id="set-games">
 	<aside class="roster col-lg-3" id="home">
-		<img ng-src="/assets/img/logos/{{teams[game.home].picture}}" height="35" width="35">
-		<h2 ng-bind="game.home" style="background-color: {{teams[game.home].color}}"></h2>
+		<img ng-src="/assets/img/logos/{{teams.static[game.home].picture}}" height="35" width="35">
+		<h2 ng-bind="game.home" style="background-color: {{teams.static[game.home].color}}"></h2>
 		<div id="table-wrap">
 			<table class="table table-condensed table-responsive">
 				<tr ng-repeat="(name, stats) in game.stats.home" ng-click="select($event)">
@@ -23,20 +23,20 @@
 			<div ng-bind=""></div>
 			<div ng-bind=""></div>
 			<div ng-bind=""></div>
-			<button type="button" class="btn btn-lg col-sm-3 btn-success">+1</button>
-			<button type="button" class="btn btn-lg col-sm-3 btn-success">+2</button>
-			<button type="button" class="btn btn-lg col-sm-3 btn-success">+3</button>
-			<button type="button" class="btn btn-lg col-sm-3 btn-success">+f</button>
-			<button type="button" class="btn btn-lg col-sm-3 btn-danger">-1</button>
-			<button type="button" class="btn btn-lg col-sm-3 btn-danger">-2</button>
-			<button type="button" class="btn btn-lg col-sm-3 btn-danger">-3</button>
-			<button type="button" class="btn btn-lg col-sm-3 btn-danger">-f</button>
+			<button type="button" ng-click="statsEdit('plus', 'ft', 1)" class="btn btn-lg col-sm-3 btn-success">+1</button>
+			<button type="button" ng-click="statsEdit('plus', 'p2', 2)" class="btn btn-lg col-sm-3 btn-success">+2</button>
+			<button type="button" ng-click="statsEdit('plus', 'p3', 3)" class="btn btn-lg col-sm-3 btn-success">+3</button>
+			<button type="button" ng-click="statsEdit('plus', 'fo', 'f')" class="btn btn-lg col-sm-3 btn-success">+f</button>
+			<button type="button" ng-click="statsEdit('minus', 'ft', 1)" class="btn btn-lg col-sm-3 btn-danger">-1</button>
+			<button type="button" ng-click="statsEdit('minus', 'p2', 2)" class="btn btn-lg col-sm-3 btn-danger">-2</button>
+			<button type="button" ng-click="statsEdit('minus', 'p3', 3)" class="btn btn-lg col-sm-3 btn-danger">-3</button>
+			<button type="button" ng-click="statsEdit('minus', 'fo', 'f')" class="btn btn-lg col-sm-3 btn-danger">-f</button>
 		</div>
 	</section>
 
 	<aside class="roster col-lg-3" id="away">
-		<img ng-src="/assets/img/logos/{{teams[game.away].picture}}" height="35" width="35">
-		<h2 ng-bind="game.away" style="background-color: {{teams[game.away].color}}"></h2>
+		<img ng-src="/assets/img/logos/{{teams.static[game.away].picture}}" height="35" width="35">
+		<h2 ng-bind="game.away" style="background-color: {{teams.static[game.away].color}}"></h2>
 		<div id="table-wrap">
 			<table class="table table-condensed table-responsive">
 				<tr ng-repeat="(name, stats) in game.stats.away" ng-click="select($event)">
