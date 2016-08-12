@@ -77,15 +77,91 @@
 		border-right: 1px solid #f8f8f8;
 		border-left: 1px solid #f8f8f8;
 
+		#manual-time {
+			h2 {
+				margin: 20px 5px 0 5px;
+				text-align: center;
+				width: 100%;
+			}
+
+			hr {
+				width: 61.80339887%;
+				margin-top: 15px;
+				margin-bottom: 10px;
+				min-width: 300px;
+				border-color: #ddd;
+			}
+
+			form {
+				table {
+					margin: auto;
+					margin-top: 15px;
+					width: 90%;
+					max-width: 300px;
+
+					th, td {
+						vertical-align: middle;
+						text-align: center;
+					}
+
+					th {
+						font-size: 18px;
+					}
+
+					td {
+						padding: 10px;
+					}
+
+					.glyphicon {
+						text-decoration: none;
+						font-size: 12px;
+						color: #333;
+						transition: color 0.15s;
+
+						&:hover, &:active {
+							color: #337ab7;
+						}
+					}
+
+					input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+						-webkit-appearance: none;
+						margin: 0;
+					}
+
+					.form-control {
+						display: inline-block;
+						vertical-align: middle;
+						width: auto;
+					}
+				}
+
+				button {
+					margin: auto;
+					margin-top: 5px;
+					display: block;
+					outline: none;
+				}
+			}
+		}
+
+		hr#main-divider {
+			margin-bottom: 15px;
+			margin-top: 20px;
+			border-color: #aaa;
+			width: 95%;
+			min-width: 300px;
+		}
+
 		#stats-top {
 			padding-bottom: 10px;
 			transition: all 0.15s;
 			border-radius: 5px;
-			margin: 10px 20px 0 20px;
+			margin: 0 20px;
+			margin-bottom: 5px;
 			
 			img.name-logo {
 				position: absolute;
-				top: 25.5px;
+				top: 265px;
 				left: 35px;
 			}
 

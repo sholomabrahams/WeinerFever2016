@@ -12,12 +12,36 @@
 	</aside>
 
 	<section class="col-lg-6" id="center">
-		<div id="stats-top" class="container-fluid" style="background-color: {{color}};">
-			<img class="name-logo" ng-src="/assets/img/logos/{{logo}}" width="40" height="40" ng-if="logo">
-			<h2 id="player-name" ng-bind="selectedPlayer"></h2>
-
-			
+		<div id="manual-time">
+			<h2 ng-bind="game.playTime"></h2>
+			<hr>
+			<form>
+				<table class="form-group">
+						<tr>
+							<th>Min<sup><a class="glyphicon glyphicon-info-sign"></a></sup></th>
+							<th>Sec</th>
+							<th>MS</th>
+						</tr>
+						<tr>
+							<td><input class="form-control" type="number" name="min" id="min" size="2" maxlength="2" max="10" min="00"></td>
+							<td><input class="form-control" type="number" name="sec" id="sec" size="2" maxlength="2" max="59" min="00"></td>
+							<td><input class="form-control" type="number" name="mms" id="mms" size="2" maxlength="2" max="99" min="00"></td>
+						</tr>
+				</table>
+				<div class="form-group">
+					<button type="submit" class="btn btn-lg btn-info">Update Time</button>
+				</div>
+			</form>
 		</div>
+
+		<hr id="main-divider">
+
+		<div id="stats-top" class="container-fluid" style="background-color: {{color}};">
+			
+			<h2 id="player-name" ng-bind="selectedPlayer"></h2>
+			<img class="name-logo" ng-src="/assets/img/logos/{{logo}}" width="40" height="40" ng-if="logo">
+		</div>
+
 		<div class="container-fluid" id="buttons-wrap">
 			<div ng-bind=""></div>
 			<div ng-bind=""></div>

@@ -163,7 +163,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 
 	$scope.selectedPlayer = "None Selected";
 	$scope.selectedTeam = null;
-	$scope.color = "transparent";
+	$scope.color = "rgba(96, 96, 96, 0.7)";
 	$scope.logo = null;
 	$scope.select = function (event) {
 		event.stopPropagation();
