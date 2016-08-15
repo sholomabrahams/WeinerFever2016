@@ -1,0 +1,46 @@
+<!-- How to Edit Time - Info Modal -->
+<div class="modal fade" tabindex="-1" id="info-modal" aria-labelledby="info-header">
+	<div class="modal-lg modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="modal-title" id="info-header">How to Manually Edit Play Time</h2>
+			</div>
+
+			<div class="modal-body">
+				<ul>
+					<li>The time above will be displayed in the format <samp>m:SS.ms</samp>. When minutes or milliseconds are <samp>0</samp>, they will not show.</li>
+					<li>Each input will take an input of up to 2 characters.</li>
+					<li>You need not enter a value into every input, but if you do, either minutes or milliseconds must be <samp>0</samp></li>
+					<li>After you enter two characters, your cursor will automatically jump to the next input (or to the submit button after MS).</li>
+				</ul>
+			</div>
+
+			<div class="modal-footer">
+				<button class="btn btn-primary btn-close" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Modal -->
+
+<h2 ng-bind="game.playTime"></h2>
+<hr>
+<form autocomplete="off">
+	<table class="form-group">
+			<tr>
+				<th>Min<sup><a class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info-modal"></a></sup></th>
+				<th>Sec</th>
+				<th>MS</th>
+				</tr>
+			<tr>
+				<td><input class="form-control" ng-readonly="processing" ng-model="min" type="number" name="min" id="min" size="1" maxlength="1" max="9" min="00"></td>
+				<td><input class="form-control" ng-readonly="processing" ng-model="sec" type="number" name="sec" id="sec" size="2" maxlength="2" max="59" min="00"></td>
+				<td><input class="form-control" ng-readonly="processing" ng-model="mms" type="number" name="mms" id="mms" size="2" maxlength="2" max="99" min="00"></td>
+			</tr>
+	</table>
+	<div class="form-group">
+		<button type="submit" class="btn btn-lg btn-info">Update Time</button>
+	</div>
+</form>
+
+<hr id="main-divider">

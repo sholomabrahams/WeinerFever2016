@@ -5,39 +5,20 @@
 		<div id="table-wrap">
 			<table class="table table-condensed table-responsive">
 				<tr ng-repeat="(name, stats) in game.stats.home" ng-click="select($event)">
-					<td ng-bind="stats.number"></td><td ng-bind="name | characters:20: false"></td>
+					<td ng-bind="stats.number"></td><td ng-bind="name"></td>
 				</tr>
 			</table>
 		</div>
 	</aside>
 
-	<section class="col-lg-6" id="center">
-		<div id="manual-time">
-			<h2 ng-bind="game.playTime"></h2>
-			<hr>
-			<form>
-				<table class="form-group">
-						<tr>
-							<th>Min<sup><a class="glyphicon glyphicon-info-sign"></a></sup></th>
-							<th>Sec</th>
-							<th>MS</th>
-						</tr>
-						<tr>
-							<td><input class="form-control" type="number" name="min" id="min" size="2" maxlength="2" max="10" min="00"></td>
-							<td><input class="form-control" type="number" name="sec" id="sec" size="2" maxlength="2" max="59" min="00"></td>
-							<td><input class="form-control" type="number" name="mms" id="mms" size="2" maxlength="2" max="99" min="00"></td>
-						</tr>
-				</table>
-				<div class="form-group">
-					<button type="submit" class="btn btn-lg btn-info">Update Time</button>
-				</div>
-			</form>
-		</div>
-
-		<hr id="main-divider">
+	<section class="col-lg-6 {{both ? 'both' : ''}}" id="center">
+		<!-- MANUAL TIME EDITING - ONLY FOR BOTH -->
+			<div id="manual-time" ng-if="both">
+				<div ng-include="'/templates/partials/manual_time.html'"></div>
+			</div>
+		<!-- END BOTH -->
 
 		<div id="stats-top" class="container-fluid" style="background-color: {{color}};">
-			
 			<h2 id="player-name" ng-bind="selectedPlayer"></h2>
 			<img class="name-logo" ng-src="/assets/img/logos/{{logo}}" width="40" height="40" ng-if="logo">
 		</div>
@@ -47,14 +28,14 @@
 			<div ng-bind=""></div>
 			<div ng-bind=""></div>
 			<div ng-bind=""></div>
-			<button type="button" ng-click="statsEdit('plus', 'ft', 1)" class="btn btn-lg col-sm-3 btn-success">+1</button>
-			<button type="button" ng-click="statsEdit('plus', 'p2', 2)" class="btn btn-lg col-sm-3 btn-success">+2</button>
-			<button type="button" ng-click="statsEdit('plus', 'p3', 3)" class="btn btn-lg col-sm-3 btn-success">+3</button>
-			<button type="button" ng-click="statsEdit('plus', 'fo', 'f')" class="btn btn-lg col-sm-3 btn-success">+f</button>
-			<button type="button" ng-click="statsEdit('minus', 'ft', 1)" class="btn btn-lg col-sm-3 btn-danger">-1</button>
-			<button type="button" ng-click="statsEdit('minus', 'p2', 2)" class="btn btn-lg col-sm-3 btn-danger">-2</button>
-			<button type="button" ng-click="statsEdit('minus', 'p3', 3)" class="btn btn-lg col-sm-3 btn-danger">-3</button>
-			<button type="button" ng-click="statsEdit('minus', 'fo', 'f')" class="btn btn-lg col-sm-3 btn-danger">-f</button>
+			<button type="button" ng-click="statsEdit($event, 'plus', 'ft', 1)" class="btn btn-lg col-sm-3 btn-success">+1</button>
+			<button type="button" ng-click="statsEdit($event, 'plus', 'p2', 2)" class="btn btn-lg col-sm-3 btn-success">+2</button>
+			<button type="button" ng-click="statsEdit($event, 'plus', 'p3', 3)" class="btn btn-lg col-sm-3 btn-success">+3</button>
+			<button type="button" ng-click="statsEdit($event, 'plus', 'fo', 'f')" class="btn btn-lg col-sm-3 btn-success">+f</button>
+			<button type="button" ng-click="statsEdit($event, 'minus', 'ft', 1)" class="btn btn-lg col-sm-3 btn-danger">-1</button>
+			<button type="button" ng-click="statsEdit($event, 'minus', 'p2', 2)" class="btn btn-lg col-sm-3 btn-danger">-2</button>
+			<button type="button" ng-click="statsEdit($event, 'minus', 'p3', 3)" class="btn btn-lg col-sm-3 btn-danger">-3</button>
+			<button type="button" ng-click="statsEdit($event, 'minus', 'fo', 'f')" class="btn btn-lg col-sm-3 btn-danger">-f</button>
 		</div>
 	</section>
 
@@ -64,7 +45,7 @@
 		<div id="table-wrap">
 			<table class="table table-condensed table-responsive">
 				<tr ng-repeat="(name, stats) in game.stats.away" ng-click="select($event)">
-					<td ng-bind="stats.number"></td><td ng-bind="name | characters:20: false"></td>
+					<td ng-bind="stats.number"></td><td ng-bind="name"></td>
 				</tr>
 			</table>
 		</div>

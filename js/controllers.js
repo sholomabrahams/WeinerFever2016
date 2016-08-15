@@ -153,10 +153,16 @@ weinerControllers.controller('adminDash', ['$scope', '$firebaseArray', 'currentA
 	};
 }]);
 
-weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', '$stateParams', 'teamsObject', function($scope, $firebaseObject, currentAuth, $rootScope, $state, $stateParams, teamsObject) {
+weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', '$stateParams', 'teamsObject', '$interval', '$timeout', function($scope, $firebaseObject, currentAuth, $rootScope, $state, $stateParams, teamsObject, $interval, $timeout) {
 	$scope.$on('$viewContentLoaded', function (event) {
 		size();
 	});
+
+	if ($state.current.name == "gameEditorBoth") {
+		$scope.both = true;
+	} else {
+		$scope.both = false;
+	}
 
 	$scope.game = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode));
 	$scope.teams = teamsObject;
@@ -168,13 +174,19 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 	$scope.select = function (event) {
 		event.stopPropagation();
 
-		if (event.currentTarget != $scope.selectedPlayer) {
+		if ($(event.currentTarget).children("td:last-child").text() != $scope.selectedPlayer) {
 			$(".roster tr").removeClass('info');
 			$(event.currentTarget).addClass('info');
 			$scope.selectedPlayer = $(event.currentTarget).children("td:last-of-type").text();
 			$scope.selectedTeam = $(event.currentTarget).parents("#table-wrap").prev("h2").text();
 			$scope.color = $scope.teams.static[$scope.selectedTeam].color;
 			$scope.logo = $scope.teams.static[$scope.selectedTeam].picture;
+		} else {
+			$(".roster tr").removeClass('info');
+			$scope.selectedPlayer = "None Selected";
+			$scope.selectedTeam = null;
+			$scope.color = "rgba(96, 96, 96, 0.7)";
+			$scope.logo = null;
 		}
 	};
 
@@ -187,7 +199,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 	};
 	var player = null;
 	//operation: + or -    type: key of player's stats object     val: how many points or foul
-	$scope.statsEdit = function (operation, type, val) {
+	$scope.statsEdit = function (event, operation, type, val) {
 		//gameStatsRef = $rootScope.gamesRef.child($scope.game.$id + "/stats/" + whichTeam() + "/");
 		if ($scope.selectedPlayer == "None Selected" || !$scope.selectedPlayer) {
 			return;
@@ -216,5 +228,121 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 				}
 				break;
 		}
+
+		$(event.currentTarget).blur();
 	};
+
+	var currentInput, inputLength, timeString;
+	$scope.processing = false;
+	$("#manual-time input").keyup(function (event) {
+		if (event.keyCode == 38 || event.keyCode == 40) {
+			return;
+		} else if (event.keyCode == 13) {
+			$("min").focus();
+			return;
+		}
+		currentInput = $(event.target).attr('id');
+		inputLength = $(event.target).val().length;
+		//console.log($scope.min + "   " + $scope.sec + "   " + $scope.mms);
+
+		if (inputLength > 2 || currentInput == "min" && inputLength > 1) {
+			$(event.target).val(substr(currentNumInput-2, 2));
+		} else if (inputLength == 2 || currentInput == "min" && inputLength == 1) {
+			switch (currentInput) {
+				case "min":
+					$("#sec").focus();
+					break;
+				case "sec":
+					$("#mms").focus();
+					break;
+				case "mms":
+					$("#manual-time form button[type= 'submit']").focus();
+					break;
+				default:
+					console.log('Error in time form processing.');
+					break;
+			}
+		}
+	});
+
+	var timer, flash;
+	var setTimer = function () {
+		timer = $timeout(function () {
+			flash = $interval(function () {
+				$("#manual-time table input, #manual-time table button").toggleClass('flash');
+			}, 680);
+		}, 30000); 
+	};
+
+	$("#manual-time form").submit(function (event) {
+		event.preventDefault();
+		$scope.processing = true;
+		timeString = "";
+
+		$timeout.cancel(timer);
+		$interval.cancel(flash);
+		
+		if (!$scope.sec) {
+			$scope.sec = 0;
+		}
+
+		if (!(!$scope.min) && !(!$scope.mms)) {
+			alert("Either minutes or milliseconds must be 0.");
+			$scope.processing = false;
+			return;
+		}
+
+		if ($scope.min >= 10) {
+			alert("Minutes must be less than 10.");
+			$scope.processing = false;
+			return;
+		}
+		if ($scope.sec >= 60) {
+			alert("Seconds must be less than 60.");
+			$scope.processing = false;
+			return;
+		}
+		if ($scope.mms >= 100) {
+			alert("Milliseconds must be less than 100.");
+			$scope.processing = false;
+			return;
+		}
+
+
+		if (!$scope.min || $scope.min <= 0) {
+			if ($scope.sec < 10) {
+				timeString += "0";
+			}
+			timeString += $scope.sec + ".";
+			if ($scope.sec < 10) {
+				timeString += "0"
+			}
+			timeString += $scope.mms;
+			
+		} else {
+			timeString += $scope.min + ":";
+			if ($scope.sec < 10) {
+				timeString += "0";
+			}
+			timeString += $scope.sec;
+		}
+
+		$scope.game.playTime = timeString;
+		$scope.game.$save().then(function () {
+			$scope.processing = false;
+			$scope.min = null;
+			$scope.sec = null;
+			$scope.mms = null;
+		}, function (error) {
+			alert("An error occurred while syncing the play time with the database.\nHere is the error info:\n" + error);
+			$scope.processing = false;
+		});
+		$("#min").focus();
+		//console.log(timeString);
+		setTimer();
+	});
+}]);
+
+weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$firebaseObject', 'currentAuth', function ($scope, $rootScope, $firebaseObject, currentAuth) {
+	
 }]);

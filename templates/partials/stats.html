@@ -3,7 +3,7 @@
 	<table>
 		<tr>
 			<th>Name</th>
-			<th>grade</th>
+			<th>#</th>
 			<th>pts</th>
 			<th>ft</th>
 			<th>2p</th>
@@ -12,7 +12,7 @@
 		</tr>
 		<tr ng-repeat="(playerName, player) in game.stats.home">
 			<td ng-bind="playerName"></td>
-			<td ng-bind="player.grade"></td>
+			<td ng-bind="player.number"></td>
 			<td ng-bind="player.pt"></td>
 			<td ng-bind="player.ft"></td>
 			<td ng-bind="player.p2"></td>
@@ -27,7 +27,7 @@
 	<table>
 		<tr>
 			<th>Name</th>
-			<th>grade</th>
+			<th>#</th>
 			<th>pts</th>
 			<th>ft</th>
 			<th>2p</th>
@@ -36,7 +36,7 @@
 		</tr>
 		<tr ng-repeat="(playerName, player) in game.stats.away">
 			<td ng-bind="playerName"></td>
-			<td ng-bind="player.grade"></td>
+			<td ng-bind="player.number"></td>
 			<td ng-bind="player.pt"></td>
 			<td ng-bind="player.ft"></td>
 			<td ng-bind="player.p2"></td>
