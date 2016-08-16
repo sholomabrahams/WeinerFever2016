@@ -25,7 +25,7 @@
 
 <h2 ng-bind="game.playTime"></h2>
 <hr>
-<form autocomplete="off" ng-submit="submitForm($event)">
+<form autocomplete="off">
 	<table class="form-group">
 			<tr>
 				<th>Min<sup><a class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info-modal"></a></sup></th>
@@ -33,9 +33,9 @@
 				<th>MS</th>
 				</tr>
 			<tr>
-				<td><input class="form-control" ng-readonly="processing" ng-keyup="keyRegister($event)" ng-model="min" type="number" name="min" id="min" size="1" maxlength="1" max="9" min="00"></td>
-				<td><input class="form-control" ng-readonly="processing" ng-keyup="keyRegister($event)" ng-model="sec" type="number" name="sec" id="sec" size="2" maxlength="2" max="59" min="00"></td>
-				<td><input class="form-control" ng-readonly="processing" ng-keyup="keyRegister($event)" ng-model="mms" type="number" name="mms" id="mms" size="2" maxlength="2" max="99" min="00"></td>
+				<td><input class="form-control" ng-readonly="processing" ng-model="min" type="number" name="min" id="min" size="1" maxlength="1" max="9" min="00"></td>
+				<td><input class="form-control" ng-readonly="processing" ng-model="sec" type="number" name="sec" id="sec" size="2" maxlength="2" max="59" min="00"></td>
+				<td><input class="form-control" ng-readonly="processing" ng-model="mms" type="number" name="mms" id="mms" size="2" maxlength="2" max="99" min="00"></td>
 			</tr>
 	</table>
 	<div class="form-group">

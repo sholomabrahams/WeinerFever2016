@@ -158,8 +158,6 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		size();
 	});
 
-	console.log(currentAuth);
-
 	if ($state.current.name == "gameEditorBoth") {
 		$scope.both = true;
 	} else {
@@ -236,7 +234,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 
 	var currentInput, inputLength, timeString;
 	$scope.processing = false;
-	$scope.keyRegister = function (event) {
+	$("#manual-time input").keyup(function (event) {
 		if (event.keyCode == 38 || event.keyCode == 40) {
 			return;
 		} else if (event.keyCode == 13) {
@@ -265,7 +263,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 					break;
 			}
 		}
-	};
+	});
 
 	var timer, flash;
 	var setTimer = function () {
@@ -276,7 +274,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		}, 30000); 
 	};
 
-	$scope.submitForm = function (event) {
+	$("#manual-time form").submit(function (event) {
 		event.preventDefault();
 		$scope.processing = true;
 		timeString = "";
@@ -330,7 +328,6 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		}
 
 		$scope.game.playTime = timeString;
-		console.log($scope.game.playTime);
 		$scope.game.$save().then(function () {
 			$scope.processing = false;
 			$scope.min = null;
@@ -343,7 +340,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		$("#min").focus();
 		//console.log(timeString);
 		setTimer();
-	};
+	});
 }]);
 
 weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$firebaseObject', 'currentAuth', function ($scope, $rootScope, $firebaseObject, currentAuth) {
