@@ -158,8 +158,6 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		size();
 	});
 
-	console.log(currentAuth);
-
 	if ($state.current.name == "gameEditorBoth") {
 		$scope.both = true;
 	} else {
@@ -193,7 +191,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 	};
 
 	//var gameStatsRef = null;
-	var whichTeam = function () {
+	$scope.whichTeam = function () {
 		if ($scope.selectedTeam == $scope.game.home) {
 			return "home";
 		}
@@ -202,12 +200,12 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 	var player = null;
 	//operation: + or -    type: key of player's stats object     val: how many points or foul
 	$scope.statsEdit = function (event, operation, type, val) {
-		//gameStatsRef = $rootScope.gamesRef.child($scope.game.$id + "/stats/" + whichTeam() + "/");
+		//gameStatsRef = $rootScope.gamesRef.child($scope.game.$id + "/stats/" + $scope.whichTeam() + "/");
 		if ($scope.selectedPlayer == "None Selected" || !$scope.selectedPlayer) {
 			return;
 		}
 
-		player = $scope.game.stats[whichTeam()][$scope.selectedPlayer];
+		player = $scope.game.stats[$scope.whichTeam()][$scope.selectedPlayer];
 		switch (operation) {
 			case "plus":
 				if (angular.isNumber(val)) {
@@ -330,7 +328,6 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		}
 
 		$scope.game.playTime = timeString;
-		console.log($scope.game.playTime);
 		$scope.game.$save().then(function () {
 			$scope.processing = false;
 			$scope.min = null;
@@ -341,7 +338,6 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 			$scope.processing = false;
 		});
 		$("#min").focus();
-		//console.log(timeString);
 		setTimer();
 	};
 }]);

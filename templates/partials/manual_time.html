@@ -33,9 +33,9 @@
 				<th>MS</th>
 				</tr>
 			<tr>
-				<td><input class="form-control" ng-readonly="processing" ng-keyup="keyRegister($event)" ng-model="min" type="number" name="min" id="min" size="1" maxlength="1" max="9" min="00"></td>
-				<td><input class="form-control" ng-readonly="processing" ng-keyup="keyRegister($event)" ng-model="sec" type="number" name="sec" id="sec" size="2" maxlength="2" max="59" min="00"></td>
-				<td><input class="form-control" ng-readonly="processing" ng-keyup="keyRegister($event)" ng-model="mms" type="number" name="mms" id="mms" size="2" maxlength="2" max="99" min="00"></td>
+				<td><input class="form-control" ng-readonly="processing" ng-keyup="keyRegister($event)" ng-model="$parent.$parent.min" type="number" name="min" id="min" size="1" maxlength="1" max="9" min="00"></td>
+				<td><input class="form-control" ng-readonly="processing" ng-keyup="keyRegister($event)" ng-model="$parent.$parent.sec" type="number" name="sec" id="sec" size="2" maxlength="2" max="59" min="00"></td>
+				<td><input class="form-control" ng-readonly="processing" ng-keyup="keyRegister($event)" ng-model="$parent.$parent.mms" type="number" name="mms" id="mms" size="2" maxlength="2" max="99" min="00"></td>
 			</tr>
 	</table>
 	<div class="form-group">
