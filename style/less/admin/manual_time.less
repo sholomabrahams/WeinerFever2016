@@ -76,6 +76,20 @@
 			display: block;
 			outline: none;
 		}
+
+		//flash inputs and submit button red when they havent been edited recently
+		input, button {
+			transition: background-color linear 0.68s, border-color linear 0.68s;
+		}
+
+		.flash {
+			background-color: #f02530 !important;
+			border-color: #f02530 !important;
+
+			&:focus {
+				background-color: transparent !important;	
+			}
+		}
 	}
 }
 
@@ -85,4 +99,36 @@ hr#main-divider {
 	border-color: #aaa;
 	width: 95%;
 	min-width: 300px;
+}
+
+//compact mode - for short browser windows
+@media screen and (max-height: 783px) {
+	#manual-time {
+		h2 {
+			margin-top: 10px;
+		}
+
+		hr {
+			margin-top: 7.5px;
+			margin-bottom: 5px;
+		}
+
+		form {
+			table {
+				margin-top: 7.5px;
+
+				tr:last-child td {
+					padding-bottom: 7.5px;
+				}
+			}
+
+			div.form-group {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	hr#main-divider {
+		margin-top: 10px;
+	}
 }

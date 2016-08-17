@@ -241,6 +241,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 			$("min").focus();
 			return;
 		}
+		$scope.endTimer();
 		currentInput = $(event.target).attr('id');
 		inputLength = $(event.target).val().length;
 		//console.log($scope.min + "   " + $scope.sec + "   " + $scope.mms);
@@ -269,9 +270,16 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 	var setTimer = function () {
 		timer = $timeout(function () {
 			flash = $interval(function () {
-				$("#manual-time table input, #manual-time table button").toggleClass('flash');
+				$("#manual-time table input, #manual-time button#submit").toggleClass('flash');
+				console.log('toggle');
 			}, 680);
-		}, 30000); 
+		}, 20000 /*DEV-ONLY:5000*/); 
+	};
+
+	$scope.endTimer = function () {
+		$interval.cancel(flash);
+		$timeout.cancel(timer);
+		$("#manual-time table input, #manual-time button#submit").removeClass('flash');
 	};
 
 	$scope.submitForm = function (event) {
@@ -279,8 +287,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		$scope.processing = true;
 		timeString = "";
 
-		$timeout.cancel(timer);
-		$interval.cancel(flash);
+		$scope.endTimer();		
 		
 		if (!$scope.sec) {
 			$scope.sec = 0;
@@ -338,7 +345,9 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 			$scope.processing = false;
 		});
 		$("#min").focus();
-		setTimer();
+		if (timeString != "7:00") {
+			setTimer();
+		}
 	};
 }]);
 
