@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="x-ua-compatible" content="IE=edge">
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<base href="/">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-touch-fullscreen" content="yes">
 	<title>Weiner Fever 2016</title>
@@ -41,13 +42,13 @@
 	<div id="hidden-nav" class="{{menuOpen ? 'open' : 'closed'}}">
 		<ul >
 			<li>
-				<a href="#/" class="button first" ng-click="menuOpen = !menuOpen"> <span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
+				<a ui-sref="home" class="button first" ng-click="menuOpen = !menuOpen"> <span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
 			</li>
 			<li>
-				<a href="#/games" class="button" ng-click="menuOpen = !menuOpen"> <span class="glyphicon glyphicon-calendar"></span>&nbsp;Games</a>
+				<a ui-sref="games" class="button" ng-click="menuOpen = !menuOpen"> <span class="glyphicon glyphicon-calendar"></span>&nbsp;Games</a>
 			</li>
 			<li>
-				<a href="#/teams" class="button last" ng-click="menuOpen = !menuOpen"> <span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
+				<a ui-sref="teams" class="button last" ng-click="menuOpen = !menuOpen"> <span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
 			</li>
 		</ul>
 	</div>
@@ -57,19 +58,19 @@
 			<div class="container">
 				<div class="navbar-header">
 					<nav id="hamburger" ng-click="menuOpen = !menuOpen"><span class="glyphicon glyphicon-menu-hamburger"></span></nav>
-					<span class="navbar-brand" ng-click="menuOpen = false"><a href="#/">Weiner 2016</a> <span>30<sup>th</sup> Annual Florence &amp; Joseph Weiner Basketball Tournament @BT</span></span>
+					<span class="navbar-brand" ng-click="menuOpen = false"><a ui-sref="home">Weiner 2016</a> <span>30<sup>th</sup> Annual Florence &amp; Joseph Weiner Basketball Tournament @BT</span></span>
 				</div>
 
 				<div id="top-navbar" ng-click="menuOpen = false">
 					<ul >
 						<li>
-							<a href="#/" class="button first"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
+							<a ui-sref="home" class="button first"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
 						</li>
 						<li>
-							<a href="#/games" class="button"><span class="glyphicon glyphicon-calendar"></span>&nbsp;Games</a>
+							<a ui-sref="games" class="button"><span class="glyphicon glyphicon-calendar"></span>&nbsp;Games</a>
 						</li>
 						<li>
-							<a href="#/teams" class="button last"><span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
+							<a ui-sref="teams" class="button last"><span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
 						</li>
 					</ul>
 				</div>

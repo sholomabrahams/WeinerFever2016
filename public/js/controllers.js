@@ -282,6 +282,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		$("#manual-time table input, #manual-time button#submit").removeClass('flash');
 	};
 
+	$scope.quarter = "1";
 	$scope.submitForm = function (event) {
 		event.preventDefault();
 		$scope.processing = true;
@@ -293,8 +294,9 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 			$scope.sec = 0;
 		}
 
-		if (!(!$scope.min) && !(!$scope.mms)) {
+		if (!$scope.min && !$scope.mms) {
 			alert("Either minutes or milliseconds must be 0.");
+			$scope.sec = null;
 			$scope.processing = false;
 			return;
 		}

@@ -23,6 +23,14 @@
 </div>
 <!-- End Modal -->
 
+<div id="options">
+	<button class="btn btn-default" id="option-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-option-vertical"></span></button>
+
+	<ul class="dropdown-menu" aria-labelledby="dLabel">
+		<li><a>Change Quarter Time</a></li>
+	</ul>
+</div>
+
 <h2 ng-bind="game.playTime"></h2>
 <hr>
 <form autocomplete="off" ng-submit="submitForm($event)">
@@ -32,13 +40,13 @@
 				<th>Sec</th>
 				<th>MS</th>
 				<th>Qt</th>
-				</tr>
+			</tr>
 			<tr>
 				<td><input class="form-control" ng-readonly="processing" ng-keyup="keyRegister($event)" ng-model="$parent.$parent.min" type="number" name="min" id="min" size="1" maxlength="1" max="9" min="00"></td>
 				<td><input class="form-control" ng-readonly="processing" ng-keyup="keyRegister($event)" ng-model="$parent.$parent.sec" type="number" name="sec" id="sec" size="2" maxlength="2" max="59" min="00"></td>
 				<td><input class="form-control" ng-readonly="processing" ng-keyup="keyRegister($event)" ng-model="$parent.$parent.mms" type="number" name="mms" id="mms" size="2" maxlength="2" max="99" min="00"></td>
 				<td>
-					<select name="" id="input" class="form-control" required="required" ng-model="$parent.$parent.quarter">
+					<select name="" id="quarter" class="form-control" required="required" ng-model="$parent.$parent.quarter">
 						<option value="1">Q1</option>
 						<option value="2">Q2</option>
 						<option value="3">Q3</option>
