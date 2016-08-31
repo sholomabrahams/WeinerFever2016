@@ -232,6 +232,11 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		$(event.currentTarget).blur();
 	};
 
+	//manual-time
+	/*$scope.changeQuarterPrompt = function (event) {
+		event.preventDefault();
+	};*/
+
 	var currentInput, inputLength, timeString;
 	$scope.processing = false;
 	$scope.keyRegister = function (event) {

@@ -21,15 +21,36 @@
 		</div>
 	</div>
 </div>
-<!-- End Modal -->
 
-<div id="options">
+<!-- Change Quarter Time - Quarter Modal 
+<div class="modal fade" tabindex="-1" id="quarter-modal" aria-labelledby="change-quarter-length">
+	<div class="modal-sm modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="modal-title" id="info-header">Change Quarter Length</h2>
+			</div>
+
+			<div class="modal-body">
+				<form>
+					
+				</form>
+			</div>
+
+			<div class="modal-footer">
+				<button class="btn btn-primary btn-close" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>-->
+<!-- End Modals -->
+
+<!--<div id="options">
 	<button class="btn btn-default" id="option-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><p class="glyphicon glyphicon-option-vertical"></p></button>
 
 	<ul class="dropdown-menu" aria-labelledby="dLabel">
-		<li><a>Change Quarter Time</a></li>
+		<li><a ng-click="changeQuarterPrompt($event)">Change Quarter Time</a></li>
 	</ul>
-</div>
+</div>-->
 
 <h2 ng-bind="game.playTime"></h2>
 <hr>
