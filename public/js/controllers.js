@@ -27,6 +27,13 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$fire
 		}
 	};
 
+	//ordinal function - returns ordinal for the inputted int
+	$rootScope.ordinal = function (input) {
+		var s=["th","st","nd","rd"],
+		v=input%100;
+		return s[(v-20)%10]||s[v]||s[0];
+	};
+
 	//firebase auth handles on routes
 	$rootScope.$on("$stateChangeError", function(event, toState, toParams, fromState, fromParams, error) {
 		if (error === "AUTH_REQUIRED") {
@@ -358,6 +365,21 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 	};
 }]);
 
-weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$firebaseObject', 'currentAuth', function ($scope, $rootScope, $firebaseObject, currentAuth) {
-	
+weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$firebaseObject', 'currentAuth', '$stateParams', function ($scope, $rootScope, $firebaseObject, currentAuth, $stateParams) {
+	$scope.game = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode));
+	console.log($scope.game);
+
+	var currentQ;
+	$scope.processQuarter = function () {
+		currentQ = $scope.game.quarter;
+		if (currentQ >= 1 && currentQ <= 4) {
+			return currentQ + "<sup>" + $rootScope.ordinal(currentQ) + "</sup> Quarter";
+		} else if (currentQ === false) {
+			return "Game Over";
+		} else if (currentQ == 0) {
+			return "Pre-Game";
+		} else if (angular.isString(currentQ) && currentQ.toLowerCase().substr(0, 2) == 'ot' && (parseInt(currentQ.charAt(2)) == 1 || parseInt(currentQ.charAt(2)) == 2)) {
+			return parseInt(currentQ.charAt(2)) + "<sup>" + $rootScope.ordinal(parseInt(currentQ.charAt(2))) + "</sup> Half Over Time";
+		}
+	};
 }]);

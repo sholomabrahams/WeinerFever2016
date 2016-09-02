@@ -1,3 +1,52 @@
 <section class="inner-wrap admin" id="set-time">
-	
+	<!-- CHANGE QUARTER LENGTH MODAL -->
+	<div class="modal fade" tabindex="-1" id="quarter-modal" aria-labelledby="change-quarter-length">
+		<div class="modal-sm modal-dialog">
+			<form class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title" id="info-header">Change Quarter Length</h2>
+				</div>
+
+				<div class="modal-body">
+					
+				</div>
+
+				<div class="modal-footer">
+					<button class="btn btn-primary btn-close" data-dismiss="modal">Close</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- HELP MODAL -->
+	<div class="modal fade" tabindex="-1" id="help-modal" aria-labelledby="change-quarter-length">
+		<div class="modal-lg modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title" id="info-header">How to Edit Time</h2>
+				</div>
+
+				<div class="modal-body">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+
+				<div class="modal-footer">
+					<button class="btn btn-primary btn-close" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END MODALS -->
+
+	<main>
+		<h1>{{game.playTime}}&nbsp;&nbsp;-&nbsp;&nbsp;<span ng-bind-html="processQuarter()"></span></h1>
+		<hr>
+
+
+	</main>
 </section>

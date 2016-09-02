@@ -15,9 +15,11 @@ function size() {
 	$("#outer-wrap").css('minHeight', wrapHeight);
 	//$("#set-games aside.roster").css('maxHeight', (wrapHeight));
 	$(".script-style").remove();
-	$("<style type='text/css' class='script-style'>#set-games section#center { max-height: " + wrapHeight + "px }</style>").appendTo('body');
-	wrapHeight-= 55;
-	$("<style type='text/css' class='script-style'>#set-games aside.roster #table-wrap { max-height: " + wrapHeight + "px }</style>").appendTo('body');
+	if (!(window.location.pathname.substr(1, 5) != "admin")) {
+		$("<style type='text/css' class='script-style'>#set-games section#center { max-height: " + wrapHeight + "px }</style>").appendTo('body');
+		wrapHeight-= 55;
+		$("<style type='text/css' class='script-style'>#set-games aside.roster #table-wrap { max-height: " + wrapHeight + "px }</style>").appendTo('body');
+	};
 }
 
 $(window).resize(size);
