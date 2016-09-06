@@ -1,5 +1,5 @@
 <section class="inner-wrap admin" id="set-games">
-	<aside class="roster col-lg-3" id="home">
+	<aside class="roster col-md-3" id="home">
 		<img ng-src="/assets/img/logos/{{teams.static[game.home].picture}}" height="35" width="35">
 		<h2 ng-bind="game.home" style="background-color: {{teams.static[game.home].color}}"></h2>
 		<div id="table-wrap">
@@ -11,7 +11,7 @@
 		</div>
 	</aside>
 
-	<section class="col-lg-6" id="center">
+	<section class="col-md-6" id="center">
 		<!-- MANUAL TIME EDITING - ONLY FOR BOTH -->
 			<div id="manual-time" ng-if="both">
 				<div ng-include="'/templates/partials/manual_time.html'"></div>
@@ -39,7 +39,7 @@
 		</div>
 	</section>
 
-	<aside class="roster col-lg-3" id="away">
+	<aside class="roster col-md-3" id="away">
 		<img ng-src="/assets/img/logos/{{teams.static[game.away].picture}}" height="35" width="35">
 		<h2 ng-bind="game.away" style="background-color: {{teams.static[game.away].color}}"></h2>
 		<div id="table-wrap">

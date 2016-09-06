@@ -81,6 +81,14 @@ weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 
 	$scope.otherGames = $firebaseArray($rootScope.gamesRef.orderByChild("live").equalTo(false));
 	$scope.teams = teamsObject;
 	$scope.stats = stats;
+
+	$scope.displayQuarter = function (num) {
+		if (num >= 1 && num <= 4) {
+			return num + "<sup>" + $rootScope.ordinal(num) + "</sup> Quarter";
+		} else if (angular.isString(num) && num.toLowerCase().substr(0, 2) == 'ot' && (parseInt(num.charAt(2)) == 1 || parseInt(num.charAt(2)) == 2)) {
+			return parseInt(num.charAt(2)) + "<sup>" + $rootScope.ordinal(parseInt(num.charAt(2))) + "</sup> Half Over Time";
+		}
+	};
 	
 	//second games panel:
 	//	panelTwoTitle: either upcoming, recent, or other - 	depending on time
@@ -365,21 +373,110 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 	};
 }]);
 
-weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$firebaseObject', 'currentAuth', '$stateParams', function ($scope, $rootScope, $firebaseObject, currentAuth, $stateParams) {
+weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$firebaseObject', 'currentAuth', '$stateParams', '$state', function ($scope, $rootScope, $firebaseObject, currentAuth, $stateParams, $state) {
 	$scope.game = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode));
 	console.log($scope.game);
 
-	var currentQ;
+	var currentQuarter;
 	$scope.processQuarter = function () {
-		currentQ = $scope.game.quarter;
-		if (currentQ >= 1 && currentQ <= 4) {
-			return currentQ + "<sup>" + $rootScope.ordinal(currentQ) + "</sup> Quarter";
-		} else if (currentQ === false) {
+		currentQuarter = $scope.game.quarter;
+		if (currentQuarter >= 1 && currentQuarter <= 4) {
+			return currentQuarter + "<sup>" + $rootScope.ordinal(currentQuarter) + "</sup> Quarter";
+		} else if (currentQuarter === false) {
 			return "Game Over";
-		} else if (currentQ == 0) {
+		} else if (currentQuarter == 0) {
 			return "Pre-Game";
-		} else if (angular.isString(currentQ) && currentQ.toLowerCase().substr(0, 2) == 'ot' && (parseInt(currentQ.charAt(2)) == 1 || parseInt(currentQ.charAt(2)) == 2)) {
-			return parseInt(currentQ.charAt(2)) + "<sup>" + $rootScope.ordinal(parseInt(currentQ.charAt(2))) + "</sup> Half Over Time";
+		} else if (angular.isString(currentQuarter) && currentQuarter.toLowerCase().substr(0, 2) == 'ot' && (parseInt(currentQuarter.charAt(2)) == 1 || parseInt(currentQuarter.charAt(2)) == 2)) {
+			return parseInt(currentQuarter.charAt(2)) + "<sup>" + $rootScope.ordinal(parseInt(currentQuarter.charAt(2))) + "</sup> Half Over Time";
 		}
+	};
+
+	$scope.env = {
+		quarterLength: "7:00",
+		otQLength: "3:00"
+	};
+
+	//button and quarter logic:
+	$scope.button = {
+		text: "Start 1<sup>st</sup> Quarter",
+		context: "primary",
+		/*
+			states:
+				0:  start-game
+				1:  start quarter
+				2:  pause
+				3:  resume
+				4:  verify quarter
+				5:  verify game (end)
+				6:  verify game (continue to ot)
+				7:  start ot #1
+				8:  verify ot #1 (end)
+				9:  verify ot #1 (continue)
+				10: start ot #2
+				11: verify ot #2
+		*/
+		state: 0
+	};
+
+	$scope.buttonClick = function (event) {
+		event.preventDefault();
+		$(event.currentTarget).blur();
+		console.log($scope.button.state);
+
+		//currentQuarter = $scope.game.quarter;
+		if ($scope.button.state === 0) {
+			//start clock - $scope.game.playTime
+			$scope.game.live = true;
+			$scope.game.quarter = 1;
+			$scope.game.$save();
+			$scope.button.state = 2;
+		} else if ($scope.button.state === 1) {
+			//start clock - $scope.game.playTime
+			$scope.button.state = 2;
+		} else if ($scope.button.state === 2) {
+			//pause clock
+			$scope.button.state = 3;
+		} else if ($scope.button.state === 3) {
+			//resume clock
+			$scope.button.state = 2;
+		} else if ($scope.button.state === 4) {
+			$scope.game.playTime = $scope.env.quarterLength;
+			$scope.game.quarter ++;
+			$scope.game.$save();
+			$scope.button.state = 1;
+		} else if ($scope.button.state === 5) {
+			$scope.game.live = false;
+			$scope.game.quarter = false;
+			$scope.game.$save();
+			$state.go('adminDash');
+		} else if ($scope.button.state === 6) {
+			$scope.game.quarter = 'OT1';
+			$scope.game.playTime = $scope.env.otQLength;
+			$scope.game.ot = true;
+			$scope.game.$save();
+			$scope.button.state = 7;
+		} else if ($scope.button.state === 7) {
+			//start clock - $scope.game.playTime
+			$scope.button.state = 2;
+		} else if ($scope.button.state === 8) {
+			$scope.game.live = false;
+			$scope.game.quarter = false;
+			$scope.game.$save();
+			$state.go('adminDash');
+		} else if ($scope.button.state === 9) {
+			$scope.game.quarter = 'OT2';
+			$scope.game.playTime = $scope.env.otQLength;
+			$scope.game.$save();
+			$scope.button.state = 2;
+		} else if ($scope.button.state === 10) {
+			//start clock - $scope.game.playTime
+			$scope.button.state = 2;
+		} else if ($scope.button.state === 11) {
+			$scope.game.live = false;
+			$scope.game.quarter = false;
+			$scope.game.$save();
+			$state.go('adminDash');
+		}
+		console.log($scope.button.state);
 	};
 }]);

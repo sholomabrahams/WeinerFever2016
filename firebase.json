@@ -6,6 +6,11 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "ignore": [
+        "/style/less/**",
+        "**/*.ini",
+        "/bower_components/**/*@(map|json|md|gzip|lock|yml|less)"
     ]
   }
 }

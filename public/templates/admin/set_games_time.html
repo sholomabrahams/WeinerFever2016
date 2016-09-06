@@ -19,7 +19,7 @@
 	</div>
 
 	<!-- HELP MODAL -->
-	<div class="modal fade" tabindex="-1" id="help-modal" aria-labelledby="change-quarter-length">
+	<div class="modal fade" tabindex="-1" id="help-modal" aria-labelledby="how-to-edit-time">
 		<div class="modal-lg modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -43,10 +43,14 @@
 	</div>
 	<!-- END MODALS -->
 
-	<main>
-		<h1>{{game.playTime}}&nbsp;&nbsp;-&nbsp;&nbsp;<span ng-bind-html="processQuarter()"></span></h1>
-		<hr>
+	<main class="col-xs-12 col-md-9">
+		<h1 ng-bind="game.playTime"></h1>
+		<h3 ng-bind-html="processQuarter()"></h3>
 
-
+		<div class="container-fluid col-xs-12 col-md-8" id="button-container">
+			<button class="col-xs-9 btn btn-lg btn-{{button.context}}" ng-click="buttonClick($event)">
+				<p ng-bind-html="button.text"></p>
+			</button>
+		</div>
 	</main>
 </section>

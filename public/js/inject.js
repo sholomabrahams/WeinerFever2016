@@ -16,9 +16,9 @@ function size() {
 	//$("#set-games aside.roster").css('maxHeight', (wrapHeight));
 	$(".script-style").remove();
 	if (!(window.location.pathname.substr(1, 5) != "admin")) {
-		$("<style type='text/css' class='script-style'>#set-games section#center { max-height: " + wrapHeight + "px }</style>").appendTo('body');
+		$("<style type='text/css' class='script-style'>#set-games section#center { max-height: " + wrapHeight + "px; } #set-time { min-height: " + wrapHeight + "px; }</style>").appendTo('head');
 		wrapHeight-= 55;
-		$("<style type='text/css' class='script-style'>#set-games aside.roster #table-wrap { max-height: " + wrapHeight + "px }</style>").appendTo('body');
+		$("<style type='text/css' class='script-style'>#set-games aside.roster #table-wrap { max-height: " + wrapHeight + "px }</style>").appendTo('head');
 	};
 }
 

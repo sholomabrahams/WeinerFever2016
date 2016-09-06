@@ -38,9 +38,9 @@
 								</div>
 								<div class="info">
 									<h4 ng-bind-html="game.name"></h4>
-									<h2> {{game.playTime}} </h2>
-									<h6> {{game.quarter}} </h6>
-									<p> {{game.gym}} </p>
+									<h2 ng-bind="game.playTime"> </h2>
+									<h6 ng-bind-html="displayQuarter(game.quarter)"></h6>
+									<p ng-bind="game.gym"> </p>
 								</div>
 							</div>
 						</div>

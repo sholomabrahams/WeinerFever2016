@@ -1,19 +1,49 @@
-h1 {
-	margin: 20px auto 0 auto;
-	text-align: center;
-	width: 100%;
-	font-weight: 600;
+section.admin#set-time {
+	display: flex;
+	font-family: 'Josefin sans', sans-serif;
 
-	span {
-		font-size: 24px;
-		font-weight: 400;
+	main {
+		margin: auto;
+		padding: 0;
+		position: relative;
+
+		h1 {
+			margin: 15px auto 0 auto;
+			text-align: center;
+			width: 100%;
+			font-weight: 600;
+
+			
+		}
+
+		h3 {
+			font-size: 24px;
+			text-align: center;
+			margin: 10px auto 15px auto;
+			width: 100%;
+			font-weight: 400;
+		}
+
+		/*
+			***** IMPORTANTS SHOULD BE ABLE TO GO FOR PRODUCTION DEPLOYMENT *****
+		*/
+		div#button-container {
+			margin: auto !important;
+			float: none !important;
+			padding: 0 !important;
+
+			button {
+				float: none !important;
+				margin: auto !important;
+				display: flex;
+				height: @golden-ratio * 100 - 100px;
+				transition: background 0.2s;
+				outline: none;
+
+				p {
+					margin: auto;
+				}
+			}
+		}
 	}
-}
-
-hr {
-	width: 61.80339887%;
-	margin-top: 15px;
-	margin-bottom: 10px;
-	min-width: 300px;
-	border-color: #ddd;
 }
