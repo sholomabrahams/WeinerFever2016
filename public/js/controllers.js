@@ -375,7 +375,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 
 weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$firebaseObject', 'currentAuth', '$stateParams', '$state', function ($scope, $rootScope, $firebaseObject, currentAuth, $stateParams, $state) {
 	$scope.game = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode));
-	//console.log($scope.game);
+	console.log($scope.game);
 
 	var currentQuarter;
 	$scope.processQuarter = function () {
@@ -519,7 +519,42 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 				$scope.game.$save();
 			},
 			onComplete: function () {
-				
+				switch(quarter) {
+					case 1 || 2 || 3:
+						$scope.button.state = 4;
+						$scope.button.text = "End " + quarter + "<sup>" + $rootScope.ordinal(quarter) + "</sup>" + " with score:\n" + $scope.game.home + ": " + $scope.game.hScore + " & " + $scope.game.away + ": " + $scope.game.aScore;
+						$scope.button.context = "warning";
+						break;
+					case 4:
+						if ($scope.game.hScore == $scope.game.aScore) {
+							$scope.game.ot = true;
+							$scope.game.$save();
+							$scope.button.state = 6;
+							$scope.button.text = "End standard time with score tied at " + $scope.game.hScore;
+							$scope.button.context = "warning";
+						} else {
+							$scope.button.state = 5;
+							$scope.button.text = "End game with final score \n" + $scope.game.home + ": " + $scope.game.hScore + " & " + $scope.game.away + ": " + $scope.game.aScore;
+							$scope.button.context = "danger";
+						}
+						break;
+					case "OT1":
+						if ($scope.game.hScore == $scope.game.aScore) {
+							$scope.button.state = 9;
+							$scope.button.text = "End 1<sup>st</sup> half OT with score tied at " + $scope.game.hScore;
+							$scope.button.context = "warning";
+						} else {
+							$scope.button.state = 8;
+							$scope.button.text = "End game after 1 half OT with final score \n" + $scope.game.home + ": " + $scope.game.hScore + " & " + $scope.game.away + ": " + $scope.game.aScore;
+							$scope.button.context = "danger";
+						}
+						break;
+					case "OT2":
+						$scope.button.state = 11;
+						$scope.button.text = "End game after 2 halfs OT with final score \n" + $scope.game.home + ": " + $scope.game.hScore + " & " + $scope.game.away + ": " + $scope.game.aScore;
+						$scope.button.context = "danger";
+						break;
+				}
 			}
 		};
 		clock = new Tock(options);
