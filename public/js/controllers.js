@@ -375,7 +375,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 
 weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$firebaseObject', 'currentAuth', '$stateParams', '$state', function ($scope, $rootScope, $firebaseObject, currentAuth, $stateParams, $state) {
 	$scope.game = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode));
-	console.log($scope.game);
+	//console.log($scope.game);
 
 	var currentQuarter;
 	$scope.processQuarter = function () {
@@ -421,7 +421,7 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 	$scope.buttonClick = function (event) {
 		event.preventDefault();
 		$(event.currentTarget).blur();
-		console.log($scope.button.state);
+		//console.log($scope.button.state);
 
 		//currentQuarter = $scope.game.quarter;
 		if ($scope.button.state === 0) {
@@ -430,20 +430,30 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 			$scope.game.quarter = 1;
 			$scope.game.$save();
 			$scope.button.state = 2;
+			$scope.button.text = "Pause";
+			$scope.button.context = "warning";
 		} else if ($scope.button.state === 1) {
 			//start clock - $scope.game.playTime
 			$scope.button.state = 2;
+			$scope.button.text = "Pause";
+			$scope.button.context = "warning";
 		} else if ($scope.button.state === 2) {
 			//pause clock
 			$scope.button.state = 3;
+			$scope.button.text = "Resume";
+			$scope.button.context = "success";
 		} else if ($scope.button.state === 3) {
 			//resume clock
 			$scope.button.state = 2;
+			$scope.button.text = "Pause";
+			$scope.button.context = "warning";
 		} else if ($scope.button.state === 4) {
 			$scope.game.playTime = $scope.env.quarterLength;
 			$scope.game.quarter ++;
 			$scope.game.$save();
 			$scope.button.state = 1;
+			$scope.button.text = "Start Quarter";
+			$scope.button.context = "primary";
 		} else if ($scope.button.state === 5) {
 			$scope.game.live = false;
 			$scope.game.quarter = false;
@@ -455,9 +465,13 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 			$scope.game.ot = true;
 			$scope.game.$save();
 			$scope.button.state = 7;
+			$scope.button.text = "Start 1<sup>st</sup> Half Over Time";
+			$scope.button.context = "info";
 		} else if ($scope.button.state === 7) {
 			//start clock - $scope.game.playTime
 			$scope.button.state = 2;
+			$scope.button.text = "Pause";
+			$scope.button.context = "warning";
 		} else if ($scope.button.state === 8) {
 			$scope.game.live = false;
 			$scope.game.quarter = false;
@@ -468,15 +482,46 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 			$scope.game.playTime = $scope.env.otQLength;
 			$scope.game.$save();
 			$scope.button.state = 2;
+			$scope.button.text = "Pause";
+			$scope.button.context = "warning";
 		} else if ($scope.button.state === 10) {
 			//start clock - $scope.game.playTime
 			$scope.button.state = 2;
+			$scope.button.text = "Pause";
+			$scope.button.context = "warning";
 		} else if ($scope.button.state === 11) {
 			$scope.game.live = false;
 			$scope.game.quarter = false;
 			$scope.game.$save();
 			$state.go('adminDash');
 		}
-		console.log($scope.button.state);
+		//console.log($scope.button.state);
+	};
+
+	var clock, options, formatString, interval;
+	function startClock (time, quarter) {
+		if ($scope.game.playTime.indexOf(':') != -1) {
+			interval = 1000;
+		} else {
+			interval = 100;
+		}
+		options = {
+			countdown: true,
+			interval: interval,
+			onTick: function () {
+				if ($scope.game.playTime.indexOf(':') != -1) {
+					formatString = "{m}:{ss}";
+				} else {
+					formatString = "{s}.{L}";
+				}
+				$scope.game.playTime = clock.lap(formatString);
+				console.log($scope.game.playTime);
+				$scope.game.$save();
+			},
+			onComplete: function () {
+				
+			}
+		};
+		clock = new Tock(options);
 	};
 }]);

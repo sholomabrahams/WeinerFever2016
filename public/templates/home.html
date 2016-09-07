@@ -86,9 +86,9 @@
 								</div>
 								<div class="info">
 									<h4 ng-bind-html="game.name"></h4>
-									<h2> {{game.time}} </h2>
-									<h6> {{game.gym}} </h6>
-									<h5> Dec. {{game.day}} </h5>
+									<h2 ng-bind="game.time"> </h2>
+									<h6 ng-bind="game.gym"> </h6>
+									<h5> Dec. <span ng-bind="game.day"></span> </h5>
 								</div>
 							</div>
 						</div>

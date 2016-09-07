@@ -71,6 +71,11 @@ weinerApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', f
 				"currentAuth": ["Auth", function (Auth) {
 					return Auth.$waitForAuth();
 				}]
+			},
+			onEnter: function () {
+				if (!$("admin-style")) {
+					$("head").append('<link id="admin-style" rel="stylesheet" type="text/less" href="style/admin.main.css" async>');
+				}
 			}
 		}).
 		state('adminDash', {
@@ -81,6 +86,11 @@ weinerApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', f
 				"currentAuth": ["Auth", function (Auth) {
 					return Auth.$requireAuth();
 				}]
+			},
+			onEnter: function () {
+				if (!$("admin-style")) {
+					$("head").append('<link id="admin-style" rel="stylesheet" type="text/less" href="style/admin.main.css" async>');
+				}
 			}
 		}).
 		state('gameEditorBoth', {
@@ -91,6 +101,11 @@ weinerApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', f
 				"currentAuth": ["Auth", function (Auth) {
 					return Auth.$requireAuth();
 				}]
+			},
+			onEnter: function () {
+				if (!$("admin-style")) {
+					$("head").append('<link id="admin-style" rel="stylesheet" type="text/less" href="style/admin.main.css" async>');
+				}
 			}
 		}).
 		state('gameEditorStats', {
@@ -101,6 +116,11 @@ weinerApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', f
 				"currentAuth": ["Auth", function (Auth) {
 					return Auth.$requireAuth();
 				}]
+			},
+			onEnter: function () {
+				if (!$("admin-style")) {
+					$("head").append('<link id="admin-style" rel="stylesheet" type="text/less" href="style/admin.main.css" async>');
+				}
 			}
 		}).
 		state('gameEditorTime', {
@@ -111,6 +131,12 @@ weinerApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', f
 				"currentAuth": ["Auth", function (Auth) {
 					return Auth.$requireAuth();
 				}]
+			},
+			onEnter: function () {
+				$.getScript('/bower_components/tock-js/tock.min.js');
+				if (!$("admin-style")) {
+					$("head").append('<link id="admin-style" rel="stylesheet" type="text/less" href="style/admin.main.css" async>');
+				}
 			}
 		});
 }]);
