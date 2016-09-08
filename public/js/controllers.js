@@ -515,34 +515,24 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 		options = {
 			countdown: true,
 			interval: 1000,
-			startTime: toMs(time) - 60000,
+			startTime: toMs(time),
 			onTick: function () {
-				$scope.game.playTime = clock.lap("{m}:{ss}");
+				if (clock.lap() < 60000) {
+					formatString = "{ss}.{ll}"
+				} else {
+					formatString = "{m}:{ss}";
+				}
+				$scope.game.playTime = clock.lap(formatString).substr(0, 5);
 				console.log($scope.game.playTime);
 				$scope.game.$save();
 			},
 			onComplete: function () {
-				countdown(quarter);
-			}
-		};
-		clock = new Tock(options);
-		clock.start();
-	};
-
-	function countdown (quarter) {
-		countdownClock = new Tock({
-			countdown: true,
-			interval: 10,
-			startTime: 60000,
-			onTock: function () {
-				$scope.game.playTime = clock.lap("{s}.{L}");
-				$scope.game.$save();
-			},
-			onComplete: function () {
-				switch(quarter) {
-					case 1 || 2 || 3:
+				switch($scope.game.quarter) {
+					case 2:
+					case 1:
+					case 3:
 						$scope.button.state = 4;
-						$scope.button.text = "End " + quarter + "<sup>" + $rootScope.ordinal(quarter) + "</sup>" + " with score:\n" + $scope.game.home + ": " + $scope.game.hScore + " & " + $scope.game.away + ": " + $scope.game.aScore;
+						$scope.button.text = "End " + $scope.game.quarter + "<sup>" + $rootScope.ordinal($scope.game.quarter) + "</sup>" + " with score:\n" + $scope.game.home + ": " + $scope.game.hScore + " & " + $scope.game.away + ": " + $scope.game.aScore;
 						$scope.button.context = "warning";
 						break;
 					case 4:
@@ -576,6 +566,8 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 						break;
 				}
 			}
-		});
-	}
+		};
+		clock = new Tock(options);
+		clock.start();
+	};
 }]);
