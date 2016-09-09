@@ -392,8 +392,8 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 	};
 
 	$scope.env = {
-		quarterLength:/* "7:00"*/ "1:05",
-		otQLength: "3:00"
+		quarterLength:/* "7:00"*/ "35.20",
+		otQLength: "32.68"
 	};
 
 	//button and quarter logic:
@@ -452,7 +452,7 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 			$scope.game.quarter ++;
 			$scope.game.$save();
 			$scope.button.state = 1;
-			$scope.button.text = "Start Quarter";
+			$scope.button.text = "Start" + $scope.game.quarter + "<sup>" + $rootScope.ordinal($scope.game.quarter) + "</sup> Quarter";
 			$scope.button.context = "primary";
 		} else if ($scope.button.state === 5) {
 			$scope.game.live = false;
@@ -481,9 +481,9 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 			$scope.game.quarter = 'OT2';
 			$scope.game.playTime = $scope.env.otQLength;
 			$scope.game.$save();
-			$scope.button.state = 2;
-			$scope.button.text = "Pause";
-			$scope.button.context = "warning";
+			$scope.button.state = 10;
+			$scope.button.text = "Start 2<sup>nd</sup> Half Over Time";
+			$scope.button.context = "Primary";
 		} else if ($scope.button.state === 10) {
 			startClock($scope.env.otQLength, $scope.game.quarter);
 			$scope.button.state = 2;
@@ -527,43 +527,36 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 				$scope.game.$save();
 			},
 			onComplete: function () {
-				switch($scope.game.quarter) {
-					case 2:
-					case 1:
-					case 3:
-						$scope.button.state = 4;
-						$scope.button.text = "End " + $scope.game.quarter + "<sup>" + $rootScope.ordinal($scope.game.quarter) + "</sup>" + " with score:\n" + $scope.game.home + ": " + $scope.game.hScore + " & " + $scope.game.away + ": " + $scope.game.aScore;
+				if ($scope.game.quarter == 1 || $scope.game.quarter == 2 || $scope.game.quarter == 3) {
+					$scope.button.state = 4;
+					$scope.button.text = "End " + $scope.game.quarter + "<sup>" + $rootScope.ordinal($scope.game.quarter) + "</sup> quarter with score:<br>" + $scope.game.home + ": " + $scope.game.hScore + " & " + $scope.game.away + ": " + $scope.game.aScore;
+					$scope.button.context = "warning";
+				} else if ($scope.game.quarter == 4) {
+					if ($scope.game.hScore == $scope.game.aScore) {
+						$scope.game.ot = true;
+						$scope.game.$save();
+						$scope.button.state = 6;
+						$scope.button.text = "End standard time with score tied at " + $scope.game.hScore;
 						$scope.button.context = "warning";
-						break;
-					case 4:
-						if ($scope.game.hScore == $scope.game.aScore) {
-							$scope.game.ot = true;
-							$scope.game.$save();
-							$scope.button.state = 6;
-							$scope.button.text = "End standard time with score tied at " + $scope.game.hScore;
-							$scope.button.context = "warning";
-						} else {
-							$scope.button.state = 5;
-							$scope.button.text = "End game with final score \n" + $scope.game.home + ": " + $scope.game.hScore + " & " + $scope.game.away + ": " + $scope.game.aScore;
-							$scope.button.context = "danger";
-						}
-						break;
-					case "OT1":
-						if ($scope.game.hScore == $scope.game.aScore) {
-							$scope.button.state = 9;
-							$scope.button.text = "End 1<sup>st</sup> half OT with score tied at " + $scope.game.hScore;
-							$scope.button.context = "warning";
-						} else {
-							$scope.button.state = 8;
-							$scope.button.text = "End game after 1 half OT with final score \n" + $scope.game.home + ": " + $scope.game.hScore + " & " + $scope.game.away + ": " + $scope.game.aScore;
-							$scope.button.context = "danger";
-						}
-						break;
-					case "OT2":
-						$scope.button.state = 11;
-						$scope.button.text = "End game after 2 halfs OT with final score \n" + $scope.game.home + ": " + $scope.game.hScore + " & " + $scope.game.away + ": " + $scope.game.aScore;
+					} else {
+						$scope.button.state = 5;
+						$scope.button.text = "End game with final score <br>" + $scope.game.home + ": " + $scope.game.hScore + " & " + $scope.game.away + ": " + $scope.game.aScore;
 						$scope.button.context = "danger";
-						break;
+					}
+				} else if ($scope.game.quarter == "OT1") {
+					if ($scope.game.hScore == $scope.game.aScore) {
+						$scope.button.state = 9;
+						$scope.button.text = "End 1<sup>st</sup> half OT with score tied at " + $scope.game.hScore;
+						$scope.button.context = "warning";
+					} else {
+						$scope.button.state = 8;
+						$scope.button.text = "End game after 1 half OT with final score <br>" + $scope.game.home + ": " + $scope.game.hScore + " & " + $scope.game.away + ": " + $scope.game.aScore;
+						$scope.button.context = "danger";
+					}
+				} else if ($scope.game.quarter == "OT2") {
+					$scope.button.state = 11;
+					$scope.button.text = "End game after 2 halfs OT with final score <br>" + $scope.game.home + ": " + $scope.game.hScore + " & " + $scope.game.away + ": " + $scope.game.aScore;
+					$scope.button.context = "danger";
 				}
 			}
 		};
