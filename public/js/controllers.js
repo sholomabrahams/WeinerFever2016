@@ -427,13 +427,15 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 		if ($scope.button.state === 0) {
 			$scope.game.live = true;
 			$scope.game.quarter = 1;
-			startClock($scope.env.quarterLength, 1);
+			initClock($scope.env.quarterLength, 1);
+			clock.start();
 			$scope.game.$save();
 			$scope.button.state = 2;
 			$scope.button.text = "Pause";
 			$scope.button.context = "warning";
 		} else if ($scope.button.state === 1) {
-			startClock($scope.env.quarterLength, $scope.game.quarter);
+			initClock($scope.env.quarterLength, $scope.game.quarter);
+			clock.start();
 			$scope.button.state = 2;
 			$scope.button.text = "Pause";
 			$scope.button.context = "warning";
@@ -468,7 +470,8 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 			$scope.button.text = "Start 1<sup>st</sup> Half Over Time";
 			$scope.button.context = "info";
 		} else if ($scope.button.state === 7) {
-			startClock($scope.env.otQLength, $scope.game.quarter);
+			initClock($scope.env.otQLength, $scope.game.quarter);
+			clock.start();
 			$scope.button.state = 2;
 			$scope.button.text = "Pause";
 			$scope.button.context = "warning";
@@ -485,7 +488,8 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 			$scope.button.text = "Start 2<sup>nd</sup> Half Over Time";
 			$scope.button.context = "Primary";
 		} else if ($scope.button.state === 10) {
-			startClock($scope.env.otQLength, $scope.game.quarter);
+			initClock($scope.env.otQLength, $scope.game.quarter);
+			clock.start();
 			$scope.button.state = 2;
 			$scope.button.text = "Pause";
 			$scope.button.context = "warning";
@@ -511,7 +515,7 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 		}
 	};
 
-	function startClock (time, quarter) {
+	function initClock (time, quarter) {
 		options = {
 			countdown: true,
 			interval: 1000,
@@ -561,6 +565,16 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 			}
 		};
 		clock = new Tock(options);
-		clock.start();
 	};
+
+	//set initial values for button - if not default
+	function init () {
+		//if all default
+		if ($scope.game.quarter != 0) {
+			if ($scope.game.playTime == "7:00") {
+
+			}
+		}
+	};
+	init();
 }]);
