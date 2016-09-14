@@ -1,14 +1,38 @@
 <section class="inner-wrap admin" id="set-time">
 	<!-- CHANGE QUARTER LENGTH MODAL -->
-	<div class="modal fade" tabindex="-1" id="quarter-modal" aria-labelledby="change-quarter-length">
-		<div class="modal-sm modal-dialog">
+	<div class="modal fade" tabindex="-1" id="info-modal" aria-labelledby="Info Modal">
+		<div class="modal-md modal-dialog">
 			<form class="modal-content">
-				<div class="modal-header">
-					<h2 class="modal-title" id="info-header">Change Quarter Length</h2>
-				</div>
+				<!--<div class="modal-header">
+					<h2 class="modal-title" id="info-header"></h2>
+				</div>-->
 
 				<div class="modal-body">
-					
+					<div id="tab-comtainer">
+						<button class="">Edit Quarter Length</button>
+						<button class="">Edit Time</button>
+						<button class="">Reset Game</button>
+						<button class="">End Game</button>
+						<button class=""></button>
+					</div>
+
+					<div class="tab-content">
+						<div id="edit-quarter">
+							<p>Edit Quarter Length</p>
+						</div>
+						<div id="edit-time">
+							<p>Edit Game Time</p>
+						</div>
+						<div id="reset-game">
+							<p>Reset Game</p>
+						</div>
+						<div id="end-game">
+							<p>End Game</p>
+						</div>
+						<div id="">
+							
+						</div>
+					</div>
 				</div>
 
 				<div class="modal-footer">
@@ -17,33 +41,12 @@
 			</form>
 		</div>
 	</div>
-
-	<!-- HELP MODAL -->
-	<div class="modal fade" tabindex="-1" id="help-modal" aria-labelledby="how-to-edit-time">
-		<div class="modal-lg modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h2 class="modal-title" id="info-header">How to Edit Time</h2>
-				</div>
-
-				<div class="modal-body">
-					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-				</div>
-
-				<div class="modal-footer">
-					<button class="btn btn-primary btn-close" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- END MODALS -->
+	<!-- END MODAL -->
 
 	<main class="col-xs-12 col-md-9">
+		<button data-toggle="modal" data-target="#info-modal" id="modal-toggle">
+			<span class="glyphicon glyphicon-option-vertical"></span>
+		</button>
 		<h1 ng-bind="game.playTime"></h1>
 		<h3 ng-bind-html="processQuarter()"></h3>
 
