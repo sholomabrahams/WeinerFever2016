@@ -1,44 +1,44 @@
 <section class="inner-wrap admin" id="set-time">
 	<!-- CHANGE QUARTER LENGTH MODAL -->
 	<div class="modal fade" tabindex="-1" id="info-modal" aria-labelledby="Info Modal">
-		<div class="modal-md modal-dialog">
-			<form class="modal-content">
-				<!--<div class="modal-header">
-					<h2 class="modal-title" id="info-header"></h2>
-				</div>-->
+		<div class="modal-lg modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title">Menu</h2>
+				</div>
 
-				<div class="modal-body">
-					<div id="tab-comtainer">
-						<button class="">Edit Quarter Length</button>
-						<button class="">Edit Time</button>
-						<button class="">Reset Game</button>
-						<button class="">End Game</button>
-						<button class=""></button>
+				<div class="modal-body {{sectionOpenB}}">
+					<div id="tab-container">
+						<button ng-click="selectTab($event)" id="edit-quarter" class="btn btn-lg btn-info">Edit Quarter Length</button>
+						<button ng-click="selectTab($event)" id="edit-time" class="btn btn-lg btn-success">Edit Time</button>
+						<button ng-click="selectTab($event)" id="reset-game" class="btn btn-lg btn-danger">Reset Game</button>
+						<button ng-click="selectTab($event)" id="end-game" class="btn btn-lg btn-danger">End Game</button>
+						<button ng-click="selectTab($event)" id="" class="btn btn-lg btn-warning">Other Button</button>
 					</div>
 
 					<div class="tab-content">
-						<div id="edit-quarter">
+						<div class="content" id="edit-quarter">
 							<p>Edit Quarter Length</p>
 						</div>
-						<div id="edit-time">
+						<div class="content" id="edit-time">
 							<p>Edit Game Time</p>
 						</div>
-						<div id="reset-game">
+						<div class="content" id="reset-game">
 							<p>Reset Game</p>
 						</div>
-						<div id="end-game">
+						<div class="content" id="end-game">
 							<p>End Game</p>
 						</div>
-						<div id="">
+						<div class="content" id="">
 							
 						</div>
 					</div>
 				</div>
 
 				<div class="modal-footer">
-					<button class="btn btn-primary btn-close" data-dismiss="modal">Close</button>
+					<button class="btn btn-lg btn-primary btn-close" data-dismiss="modal">Close</button>
 				</div>
-			</form>
+			</div>
 		</div>
 	</div>
 	<!-- END MODAL -->

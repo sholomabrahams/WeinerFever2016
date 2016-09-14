@@ -2,6 +2,68 @@ section.admin#set-time {
 	display: flex;
 	font-family: 'Josefin sans', sans-serif;
 
+	.modal {
+		button {
+			outline: none;
+		}
+
+		.modal-lg {
+			transition: height 0.2s;
+
+			.modal-title {
+				margin: 0;
+			}
+
+			.modal-body {
+				min-height: 275px;
+				position: relative;
+				padding-top: 60px;
+
+				&.open {
+					#tab-container {
+						left: 0%;
+						max-width: 100%;
+						top: 0%;
+						transform: translate(0%, 0%);
+
+						button {
+							margin: auto;
+							transform: translate(0%, 0%);
+						}
+					}
+				}
+
+				#tab-container {
+					position: absolute;
+					left: 50%;
+					max-width: 178.11px;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					//transition: all 1s;
+
+					button {
+						//display: block !important;
+						margin: 3.75px auto 3.75px 50%;
+						transform: translate(-50%, 0);
+						//transition: all 1s;
+					}
+
+
+				}
+
+				.tab-content {
+					.content {
+						display: none;
+
+						&.active {
+							display: block !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	main {
 		margin: auto;
 		padding: 0;

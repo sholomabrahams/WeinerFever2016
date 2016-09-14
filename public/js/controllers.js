@@ -373,7 +373,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 	};
 }]);
 
-weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$firebaseObject', 'currentAuth', '$stateParams', '$state', function ($scope, $rootScope, $firebaseObject, currentAuth, $stateParams, $state) {
+weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$firebaseObject', 'currentAuth', '$stateParams', '$state', '$timeout', function ($scope, $rootScope, $firebaseObject, currentAuth, $stateParams, $state, $timeout) {
 	$scope.game = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode));
 	console.log($scope.game);
 
@@ -577,4 +577,21 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 		}
 	};
 	init();
+
+
+	//MODAL section
+	var id;
+	$scope.sectionOpenB = null;
+	$scope.sectionOpen = false;
+	$scope.selectTab = function (event) {
+		event.preventDefault();
+		console.log($(event.currentTarget).attr('id'));
+		id = $(event.currentTarget).attr('id');
+		$("#tab-container").fadeOut(400, function() {
+			$scope.sectionOpen = id;
+			$scope.sectionOpenB = 'open';
+			$("#tab-container").fadeIn();
+			console.log($scope.sectionOpen);
+		});
+	};
 }]);
