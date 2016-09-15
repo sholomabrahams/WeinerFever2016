@@ -584,11 +584,19 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 	$scope.sectionOpenB = null;
 	$scope.selectTab = function (event) {
 		event.preventDefault();
+		event.stopPropagation();
+		event.stopImmediatePropagation();
 		id = $(event.currentTarget).attr('id');
-		$("#tab-container").fadeOut(400, function () {
-			$(".modal-body").addClass('open');
-			$("#tab-container").fadeIn();
-			$("#tab-content div#" + id).slideDown();
-		});
+		if (!$(".modal-body").hasClass('open')) {
+			$("#tab-container").fadeOut(400, function () {
+				$(".modal-body").addClass('open');
+				$("#tab-container").fadeIn();
+				$(".tab-content div#" + id).slideDown(1000);
+			});
+		} else {
+			$(".tab-content div.content").slideUp(400, function () {
+				
+			});$(".tab-content div#" + id).slideDown(1000);
+		}
 	};
 }]);

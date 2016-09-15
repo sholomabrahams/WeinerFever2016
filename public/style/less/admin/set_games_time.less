@@ -19,20 +19,6 @@ section.admin#set-time {
 				position: relative;
 				padding-top: 60px;
 
-				&.open {
-					#tab-container {
-						left: 0%;
-						max-width: 100%;
-						top: 0%;
-						transform: translate(0%, 0%);
-
-						button {
-							margin: auto;
-							transform: translate(0%, 0%);
-						}
-					}
-				}
-
 				#tab-container {
 					position: absolute;
 					left: 50%;
@@ -47,13 +33,30 @@ section.admin#set-time {
 						transform: translate(-50%, 0);
 						//transition: all 1s;
 					}
+				}
 
+				&.open {
+					#tab-container {
+						left: 0%;
+						max-width: 100%;
+						top: 0%;
+						transform: translate(0%, 0%);
 
+						button {
+							margin: 5px 2.5px;
+							transform: translate(0%, 0%);
+
+							&:first-child {
+								margin-left: 7.5px;
+							}
+						}
+					}
 				}
 
 				.tab-content {
 					.content {
 						display: none;
+						font-size: 16px;
 
 						&.active {
 							display: block !important;
