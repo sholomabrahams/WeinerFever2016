@@ -34,6 +34,107 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$fire
 		return s[(v-20)%10]||s[v]||s[0];
 	};
 
+
+	//for manual time forms
+	var currentInput, inputLength, timeString;
+	$rootScope.processing = false;
+	$rootScope.keyRegister = function (event) {
+		if (event.keyCode == 38 || event.keyCode == 40) {
+			return;
+		} else if (event.keyCode == 13) {
+			$("min").focus();
+			return;
+		}
+		currentInput = $(event.target).attr('id');
+		inputLength = $(event.target).val().length;
+		//console.log($scope.min + "   " + $scope.sec + "   " + $scope.mms);
+
+		if (inputLength > 2 || currentInput == "min" && inputLength > 1) {
+			$(event.target).val(substr(currentNumInput-2, 2));
+		} else if (inputLength == 2 || currentInput == "min" && inputLength == 1) {
+			switch (currentInput) {
+				case "min":
+					$("#sec").focus();
+					break;
+				case "sec":
+					$("#mms").focus();
+					break;
+				case "mms":
+					$("#manual-time form button[type= 'submit']").focus();
+					break;
+				default:
+					console.log('Error in time form processing.');
+					break;
+			}
+		}
+	};
+
+	$rootScope.processManualTime = function (min, sec, mms, qtr) {
+		timeString = "";
+
+		//always need sec to be something or 0
+		if (!sec) {
+			sec = 0;
+		}
+
+		/*  validate  */
+		// must have quarter
+		if (!qtr) {
+			alert("You must enter a quarter.");
+			$rootScope.processing = false;
+			return false;
+		}
+
+		//can't have mins and milliseconds
+		if (!min && !mms) {
+			alert("Either minutes or milliseconds must be 0.");
+			sec = null;
+			$rootScope.processing = false;
+			return false;
+		}
+
+		//can't have too many minutes, seconds, or milliseconds
+		if (min >= 10) {
+			alert("Minutes must be less than 10.");
+			$rootScope.processing = false;
+			return false;
+		}
+		if (sec >= 60) {
+			alert("Seconds must be less than 60.");
+			$rootScope.processing = false;
+			return false;
+		}
+		if (mms >= 100) {
+			alert("Milliseconds must be less than 100.");
+			$rootScope.processing = false;
+			return false;
+		}
+
+		/*  set timeString  */
+		//if no minutes then add sec and mms
+		//add leading zeros for sec and mms if they are less than 10
+		if (!min || min <= 0) {
+			if (sec < 10) {
+				timeString += "0";
+			}
+			timeString += sec + ".";
+			if (mms < 10) {
+				timeString += "0"
+			}
+			timeString += mms;
+		} else {
+			//if minutes add min and sec
+			timeString += min + ":";
+			if (sec < 10) {
+				timeString += "0";
+			}
+			timeString += sec;
+		}
+
+		return [timeString, qtr];
+	};
+
+
 	//firebase auth handles on routes
 	$rootScope.$on("$stateChangeError", function(event, toState, toParams, fromState, fromParams, error) {
 		if (error === "AUTH_REQUIRED") {
@@ -252,40 +353,6 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		event.preventDefault();
 	};*/
 
-	var currentInput, inputLength, timeString;
-	$scope.processing = false;
-	$scope.keyRegister = function (event) {
-		if (event.keyCode == 38 || event.keyCode == 40) {
-			return;
-		} else if (event.keyCode == 13) {
-			$("min").focus();
-			return;
-		}
-		$scope.endTimer();
-		currentInput = $(event.target).attr('id');
-		inputLength = $(event.target).val().length;
-		//console.log($scope.min + "   " + $scope.sec + "   " + $scope.mms);
-
-		if (inputLength > 2 || currentInput == "min" && inputLength > 1) {
-			$(event.target).val(substr(currentNumInput-2, 2));
-		} else if (inputLength == 2 || currentInput == "min" && inputLength == 1) {
-			switch (currentInput) {
-				case "min":
-					$("#sec").focus();
-					break;
-				case "sec":
-					$("#mms").focus();
-					break;
-				case "mms":
-					$("#manual-time form button[type= 'submit']").focus();
-					break;
-				default:
-					console.log('Error in time form processing.');
-					break;
-			}
-		}
-	};
-
 	var timer, flash;
 	var setTimer = function () {
 		timer = $timeout(function () {
@@ -302,72 +369,25 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		$("#manual-time table input, #manual-time button#submit").removeClass('flash');
 	};
 
-	$scope.quarter = "1";
 	$scope.submitForm = function (event) {
 		event.preventDefault();
-		$scope.processing = true;
-		timeString = "";
-
+		$rootScope.processing = true;
+		
 		$scope.endTimer();		
 		
-		if (!$scope.sec) {
-			$scope.sec = 0;
-		}
-
-		if (!$scope.min && !$scope.mms) {
-			alert("Either minutes or milliseconds must be 0.");
-			$scope.sec = null;
-			$scope.processing = false;
-			return;
-		}
-
-		if ($scope.min >= 10) {
-			alert("Minutes must be less than 10.");
-			$scope.processing = false;
-			return;
-		}
-		if ($scope.sec >= 60) {
-			alert("Seconds must be less than 60.");
-			$scope.processing = false;
-			return;
-		}
-		if ($scope.mms >= 100) {
-			alert("Milliseconds must be less than 100.");
-			$scope.processing = false;
-			return;
-		}
-
-
-		if (!$scope.min || $scope.min <= 0) {
-			if ($scope.sec < 10) {
-				timeString += "0";
-			}
-			timeString += $scope.sec + ".";
-			if ($scope.sec < 10) {
-				timeString += "0"
-			}
-			timeString += $scope.mms;
-			
-		} else {
-			timeString += $scope.min + ":";
-			if ($scope.sec < 10) {
-				timeString += "0";
-			}
-			timeString += $scope.sec;
-		}
-
-		$scope.game.playTime = timeString;
+		$scope.game.playTime = processManualTime($scope.min, $scope.sec, $scope.mms, $scope.quarter);
 		$scope.game.$save().then(function () {
-			$scope.processing = false;
+			$rootScope.processing = false;
 			$scope.min = null;
 			$scope.sec = null;
 			$scope.mms = null;
 		}, function (error) {
 			alert("An error occurred while syncing the play time with the database.\nHere is the error info:\n" + error);
-			$scope.processing = false;
+			$rootScope.processing = false;
 		});
+		
 		$("#min").focus();
-		if (timeString != "7:00") {
+		if ($scope.game.playTime != "7:00") {
 			setTimer();
 		}
 	};
@@ -580,10 +600,72 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 
 
 	//MODAL section
-	var id;
+	var id, inputtedString, quarterEntry;
 	$scope.sectionOpenB = null;
 	$scope.changeQuarter = function (event) {
 		event.preventDefault();
-		
+		$(".modal").modal('hide');
+		quarterEntry = $("#edit-quarter input[type= 'text']").val();
+		try {
+			if (!parseInt(quarterEntry.charAt(0)) || parseInt(quarterEntry.charAt(0)) < 0 || parseInt(quarterEntry.charAt(0)) > 7) {
+				alert("You must set a value for minutes which is between 0 and 7.");
+				return;
+			} else if (quarterEntry.charAt(1) != ':') {
+				alert("The second character must be a semicolon \(:\).");
+				return;
+			} else if (!parseInt(quarterEntry.substring(2, (quarterEntry.length - 1))) || parseInt(quarterEntry.substring(2, (quarterEntry.length - 1))) >= 60 || parseInt(quarterEntry.substring(2, (quarterEntry.length - 1))) < 0) {
+				alert("You must enter a value for seconds which is between 0 and 59");
+				return;
+			}
+		} catch(error) {
+			alert("An error occured:\n" + error);
+		}
+		$("#edit-quarter input[type= 'text']").val('');
+		$scope.env.quarterLength = quarterEntry;
+	};
+	$scope.manualTimeForm = function (event) {
+		event.preventDefault();
+
+		inputtedString = $rootScope.processManualTime($scope.manualTime.min, $scope.manualTime.sec, $scope.manualTime.mms, $scope.manualTime.quarter);
+		if (!inputtedString) {
+			return;
+		}
+		$scope.game.playTime = inputtedString[0];
+		$scope.game.quarter = inputtedString[1];
+		$scope.game.$save().then(function () {
+			$rootScope.processing = false;
+			$scope.manualTime.min = null;
+			$scope.manualTime.sec = null;
+			$scope.manualTime.mms = null;
+			$(".modal").modal('hide');
+		}, function (error) {
+			alert("An error occurred while syncing the play time with the database.\nHere is the error info:\n" + error);
+		});
+	};
+	$scope.resetGame = function (event) {
+		event.preventDefault();
+
+		if (confirm("Doing this will irrevocably reset the game as if it did not happen.\n\(Note\: this will not impact stats and scores\)\nAre you sure you want to continue?")) {
+			$scope.game.playTime = "7:00";
+			$scope.game.quarter = 0;
+			$scope.game.live = false;
+			$scope.game.finished = false;
+			$scope.game.ot = false;
+			$scope.game.aScore = 0;
+			$scope.game.hScore = 0;
+		}
+
+		$(".modal").modal('hide');
+	};
+	$scope.endGame = function (event) {
+		event.preventDefault();
+
+		if (confirm("Doing this will irrevocably reset the game as if it did not happen.\n\(Note\: this will not impact stats and scores\)\nAre you sure you want to continue?")) {
+			$scope.game.quarter = false;
+			$scope.game.live = false;
+			$scope.game.finished = true;
+		}
+
+		$(".modal").modal('hide');
 	};
 }]);

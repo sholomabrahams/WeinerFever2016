@@ -55,10 +55,10 @@
 
 <h2 ng-bind="game.playTime"></h2>
 <hr>
-<form autocomplete="off" ng-submit="submitForm($event)">
+<form autocomplete="off" ng-submit="submitManualTime($event)" class="manual-time">
 	<table class="form-group">
 			<tr>
-				<th>Min<sup><a class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info-modal"></a></sup></th>
+				<th>Min</th>
 				<th>Sec</th>
 				<th>MS</th>
 				<th>Qt</th>
@@ -69,6 +69,7 @@
 				<td><input class="form-control" ng-readonly="processing" ng-keyup="keyRegister($event)" ng-model="$parent.$parent.mms" type="number" name="mms" id="mms" size="2" maxlength="2" max="99" min="00"></td>
 				<td>
 					<select id="quarter" class="form-control" required="required" ng-model="$parent.$parent.quarter">
+						<option value="0">Pre</option>
 						<option value="1">Q1</option>
 						<option value="2">Q2</option>
 						<option value="3">Q3</option>
