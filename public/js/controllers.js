@@ -34,6 +34,28 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$fire
 		return s[(v-20)%10]||s[v]||s[0];
 	};
 
+	//for displaying the human-readable quarter for live games (1st quarter, ect.)
+	$rootScope.displayQuarter = function (num) {
+		if (num >= 1 && num <= 4) {
+			return num + "<sup>" + $rootScope.ordinal(num) + "</sup> Quarter";
+		} else if (angular.isString(num) && num.toLowerCase().substr(0, 2) == 'ot' && (parseInt(num.charAt(2)) == 1 || parseInt(num.charAt(2)) == 2)) {
+			return parseInt(num.charAt(2)) + "<sup>" + $rootScope.ordinal(parseInt(num.charAt(2))) + "</sup> Half Over Time";
+		}
+	};
+
+	//for managing stats buttons on / and /games
+	$rootScope.whichStats = null;
+	$rootScope.openStats = function(event) {
+		event.stopPropagation();
+		if (event.currentTarget != $rootScope.whichStats) {
+			$(".stats").slideUp(350);
+			$(event.currentTarget).parents(".game-out-wrap").siblings(".stats").slideDown(350);
+			$rootScope.whichStats = event.currentTarget;
+		} else {
+			$(event.currentTarget).parents(".game-out-wrap").siblings(".stats").slideUp(350);
+			$rootScope.whichStats = null;
+		}
+	};
 
 	//for manual time forms
 	var currentInput, inputLength, timeString;
@@ -182,14 +204,6 @@ weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 
 	$scope.otherGames = $firebaseArray($rootScope.gamesRef.orderByChild("live").equalTo(false));
 	$scope.teams = teamsObject;
 	$scope.stats = stats;
-
-	$scope.displayQuarter = function (num) {
-		if (num >= 1 && num <= 4) {
-			return num + "<sup>" + $rootScope.ordinal(num) + "</sup> Quarter";
-		} else if (angular.isString(num) && num.toLowerCase().substr(0, 2) == 'ot' && (parseInt(num.charAt(2)) == 1 || parseInt(num.charAt(2)) == 2)) {
-			return parseInt(num.charAt(2)) + "<sup>" + $rootScope.ordinal(parseInt(num.charAt(2))) + "</sup> Half Over Time";
-		}
-	};
 	
 	//second games panel:
 	//	panelTwoTitle: either upcoming, recent, or other - 	depending on time
@@ -208,26 +222,17 @@ weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 
 
 	$scope.now = new Date();
 
-	$scope.whichStats = null;
-	$scope.openStats = function(event) {
-		event.stopPropagation();
-		if (event.currentTarget != $scope.whichStats) {
-			$(".stats").slideUp(350);
-			$(event.currentTarget).parents(".game-out-wrap").siblings(".stats").slideDown(350);
-			$scope.whichStats = event.currentTarget;
-		} else {
-			$(event.currentTarget).parents(".game-out-wrap").siblings(".stats").slideUp(350);
-			$scope.whichStats = null;
-		}
-	};
+	$$rootScope.whichStats = null;
 }]);
 
 weinerControllers.controller('games', ['$scope', '$rootScope', '$firebaseArray', 'teamsObject', function ($scope, $rootScope, $firebaseArray, teamsObject) {
 	$scope.games = {
-		boys: $firebaseArray($rootScope.gamesRef.orderByChild("name").startAt("Boys")),
-		girls: $firebaseArray($rootScope.gamesRef.orderByChild("name").startAt("Girls"))
+		boys: $firebaseArray($rootScope.gamesRef.orderByChild("name").limitToFirst(20)),
+		girls: $firebaseArray($rootScope.gamesRef.orderByChild("name").limitToLast(20))
 	};
 	$scope.teams = teamsObject;
+
+	$rootScope.whichStats = null;
 }]);
 
 weinerControllers.controller('teams', ['$scope', function($scope) {
