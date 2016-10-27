@@ -63,6 +63,16 @@ weinerApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', f
 			templateUrl: 'templates/teams.html',
 			controller: 'teams'
 		}).
+		state('teamsSchool', {
+			url: '/teams/:team',
+			templateUrl: 'templates/teams.html',
+			controller: 'teams'
+		}).
+		state('teamsSelected', {
+			url: '/teams/:team/:gender',
+			templateUrl: 'templates/teams.html',
+			controller: 'teams'
+		}).
 		state('adminLogin', {
 			url: '/admin',
 			templateUrl: 'templates/admin/login.html',

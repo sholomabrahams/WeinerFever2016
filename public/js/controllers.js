@@ -222,7 +222,7 @@ weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 
 
 	$scope.now = new Date();
 
-	$$rootScope.whichStats = null;
+	$rootScope.whichStats = null;
 }]);
 
 weinerControllers.controller('games', ['$scope', '$rootScope', '$firebaseArray', 'teamsObject', function ($scope, $rootScope, $firebaseArray, teamsObject) {
@@ -235,8 +235,9 @@ weinerControllers.controller('games', ['$scope', '$rootScope', '$firebaseArray',
 	$rootScope.whichStats = null;
 }]);
 
-weinerControllers.controller('teams', ['$scope', function($scope) {
-	$scope.message = "teams page";
+weinerControllers.controller('teams', ['$scope', '$rootScope', 'teamsObject', function($scope, $rootScope, teamsObject) {
+	$scope.teams = teamsObject;
+	console.log($scope.teams);
 }]);
 
 weinerControllers.controller('adminLogin', ['$scope', 'currentAuth', '$firebaseAuth', '$rootScope', '$state', function($scope, currentAuth, $firebaseAuth, $rootScope, $state) {

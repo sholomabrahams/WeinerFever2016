@@ -1,8 +1,9 @@
 <section class="inner-wrap" id="teams">
-	<h2>Teams</h2>
-	<p>{{message}}</p>
+	<h2 id="title">Chose a Team:</h2>
 
-	<div ng-repeat="team in teams">
-		<p>{{team.picture}}</p>
+	<div ng-repeat="team in teams.static">
+		<div class="team-box">
+			{{team}}
+		</div>
 	</div>
 </section>
