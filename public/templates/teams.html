@@ -1,9 +1,12 @@
 <section class="inner-wrap" id="teams">
-	<h2 id="title">Chose a Team:</h2>
+	<h2 id="title">Select a Team:</h2>
 
-	<div ng-repeat="team in teams.static">
-		<div class="team-box">
-			{{team}}
+	<div id="teams-container">
+		<div ng-repeat="(teamName, teamData) in ::teams.static" class="team-box col-xs-12 col-sm-6 col-md-4">
+			<a class="color-wrap" ng-href="/teams/{{::teamName}}">
+				<h3 ng-bind="::teamName"></h3>
+				<img ng-src="/assets/img/logos/{{::teamData.picture}}" alt="{{::teamName}} Logo" width="300" height="300">
+			</a>
 		</div>
 	</div>
 </section>

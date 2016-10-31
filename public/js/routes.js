@@ -50,28 +50,28 @@ weinerApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', f
 			templateUrl: 'templates/games.html',
 			controller: 'games'
 		}).
-		state('games.showStats', {
+		/*state('games.showStats', {
 			url: '/:team/:gender',
 			resolve: {
 				gamepStats: ['$firebaseArray', '$rootScope', function ($firebaseArray, $rootScope) {
-					return /*$firebaseArray($rootScope.rootRef.child("stats").child(gender).child(team).orderByKey())*/;
+					return /*$firebaseArray($rootScope.rootRef.child("stats").child(gender).child(team).orderByKey());
 				}]
 			}
-		}).
+		}).*/
 		state('teams', {
 			url: '/teams',
 			templateUrl: 'templates/teams.html',
 			controller: 'teams'
 		}).
-		state('teamsSchool', {
+		/*state('teamsSchool', {
 			url: '/teams/:team',
-			templateUrl: 'templates/teams.html',
-			controller: 'teams'
-		}).
+			templateUrl: 'templates/teams_selected.html',
+			controller: 'teamsSelected'
+		}).*/
 		state('teamsSelected', {
 			url: '/teams/:team/:gender',
-			templateUrl: 'templates/teams.html',
-			controller: 'teams'
+			templateUrl: 'templates/teams_selected.html',
+			controller: 'teamsSelected'
 		}).
 		state('adminLogin', {
 			url: '/admin',

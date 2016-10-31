@@ -237,7 +237,10 @@ weinerControllers.controller('games', ['$scope', '$rootScope', '$firebaseArray',
 
 weinerControllers.controller('teams', ['$scope', '$rootScope', 'teamsObject', function($scope, $rootScope, teamsObject) {
 	$scope.teams = teamsObject;
-	console.log($scope.teams);
+}]);
+
+weinerControllers.contrller('teamsSelected', ['$scope', '$rootScope', 'teamsObject', '$state', function($scope, $rootScope, teamsObject, $state) {
+	$scope.team = teamsObject;
 }]);
 
 weinerControllers.controller('adminLogin', ['$scope', 'currentAuth', '$firebaseAuth', '$rootScope', '$state', function($scope, currentAuth, $firebaseAuth, $rootScope, $state) {

@@ -6,16 +6,99 @@
 			"day" : 7,
 			"finished" : false,
 			"gym" : "Hurwitz",
-			"hScore" : 0,
+			"hScore" : 3,
 			"home" : "Beth Tfiloh",
 			"index" : 4,
-			"live" : false,
+			"live" : true,
+			"month" : "Nov",
 			"name" : "Boys",
-			"ot" : false,
-			"playTime" : "7:00",
-			"quarter" : 0,
+			"ot" : true,
+			"playTime" : "34.08",
+			"quarter" : 1,
 			"special" : false,
 			"stats" : {
+				"away" : {
+					"David D" : {
+						"fo" : 0,
+						"ft" : 0,
+						"number" : 35,
+						"p2" : 0,
+						"p3" : 0,
+						"pt" : 0
+					},
+					"Gilad M" : {
+						"fo" : 0,
+						"ft" : 0,
+						"number" : 42,
+						"p2" : 0,
+						"p3" : 0,
+						"pt" : 0
+					},
+					"Israel G" : {
+						"fo" : 0,
+						"ft" : 0,
+						"number" : 15,
+						"p2" : 0,
+						"p3" : 0,
+						"pt" : 0
+					},
+					"Itai H" : {
+						"fo" : 0,
+						"ft" : 0,
+						"number" : 21,
+						"p2" : 0,
+						"p3" : 0,
+						"pt" : 0
+					},
+					"Roi N" : {
+						"fo" : 0,
+						"ft" : 0,
+						"number" : 1,
+						"p2" : 0,
+						"p3" : 0,
+						"pt" : 0
+					},
+					"Ron Menashe N" : {
+						"fo" : 0,
+						"ft" : 0,
+						"number" : 14,
+						"p2" : 0,
+						"p3" : 0,
+						"pt" : 0
+					},
+					"Tomer M" : {
+						"fo" : 0,
+						"ft" : 0,
+						"number" : 4,
+						"p2" : 0,
+						"p3" : 0,
+						"pt" : 0
+					},
+					"Yair R" : {
+						"fo" : 0,
+						"ft" : 0,
+						"number" : 33,
+						"p2" : 0,
+						"p3" : 0,
+						"pt" : 0
+					},
+					"Yoav R" : {
+						"fo" : 0,
+						"ft" : 0,
+						"number" : 9,
+						"p2" : 0,
+						"p3" : 0,
+						"pt" : 0
+					},
+					"Yonatan P" : {
+						"fo" : 0,
+						"ft" : 0,
+						"number" : 64,
+						"p2" : 0,
+						"p3" : 0,
+						"pt" : 0
+					}
+				},
 				"home" : {
 					"Andrew S" : {
 						"fo" : 0,
@@ -109,70 +192,6 @@
 						"p3" : 0,
 						"pt" : 0
 					}
-				},
-
-				"away": {
-					"David D" : {
-						"fo" : 0,
-						"ft" : 0,
-						"p2" : 0,
-						"p3" : 0,
-						"pt" : 0
-					}, "Gilad M" : {
-						"fo" : 0,
-						"ft" : 0,
-						"p2" : 0,
-						"p3" : 0,
-						"pt" : 0
-					}, "Israel G" : {
-						"fo" : 0,
-						"ft" : 0,
-						"p2" : 0,
-						"p3" : 0,
-						"pt" : 0
-					}, "Itai H" : {
-						"fo" : 0,
-						"ft" : 0,
-						"p2" : 0,
-						"p3" : 0,
-						"pt" : 0
-					}, "Roi N" : {
-						"fo" : 0,
-						"ft" : 0,
-						"p2" : 0,
-						"p3" : 0,
-						"pt" : 0
-					}, "Ron Menashe N" : {
-						"fo" : 0,
-						"ft" : 0,
-						"p2" : 0,
-						"p3" : 0,
-						"pt" : 0
-					}, "Tomer M" : {
-						"fo" : 0,
-						"ft" : 0,
-						"p2" : 0,
-						"p3" : 0,
-						"pt" : 0
-					}, "Yair R" : {
-						"fo" : 0,
-						"ft" : 0,
-						"p2" : 0,
-						"p3" : 0,
-						"pt" : 0
-					}, "Yoav R" : {
-						"fo" : 0,
-						"ft" : 0,
-						"p2" : 0,
-						"p3" : 0,
-						"pt" : 0
-					}, "Yonatan P" : {
-						"fo" : 0,
-						"ft" : 0,
-						"p2" : 0,
-						"p3" : 0,
-						"pt" : 0
-					}
 				}
 			},
 			"time" : "3:30PM"
@@ -187,6 +206,7 @@
 			"home" : "Beth Tfiloh",
 			"index" : 5,
 			"live" : false,
+			"month" : "Nov",
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "00:00",
@@ -204,6 +224,7 @@
 			"home" : "Beth Tfiloh",
 			"index" : 6,
 			"live" : false,
+			"month" : "Nov",
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -221,6 +242,7 @@
 			"home" : "Kushner",
 			"index" : 10,
 			"live" : false,
+			"month" : "Nov",
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -526,7 +548,7 @@
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
 			"index" : 2,
-			"live" : true,
+			"live" : false,
 			"name" : "Girls",
 			"ot" : false,
 			"playTime" : "00:00",
@@ -1184,13 +1206,11 @@
 				"win" : 0
 			}
 		},
-		"Kushner" : {
-			"boys" : {
-				"los" : 0,
-				"win" : 0
-			}
-		},
 		"Ramaz" : {
+			"boys": {
+				"los": 0,
+				"win": 0
+			},
 			"girls" : {
 				"los" : 0,
 				"win" : 0
