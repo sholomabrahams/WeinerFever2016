@@ -1,7 +1,14 @@
 var weinerControllers = angular.module('weinerControllers', []);
 
 /* FACTORIES */
-weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$firebaseAuth', function($rootScope, $http, $firebaseArray, $state, $firebaseAuth) {
+weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$firebaseAuth', '$location', '$window', function($rootScope, $http, $firebaseArray, $state, $firebaseAuth, $location, $window) {
+	//analytics
+	$window.ga('create', 'UA-86786641-1', 'auto');
+	$rootScope.$on('$stateChangeSuccess', function (event) {
+		$window.ga('send', 'pageview', $location.path());
+	});
+ 
+
 	//Set body class no-touch if not touchscreen
 	if (!('ontouchstart' in window || navigator.maxTouchPoints)) {
 		$rootScope.touch = "no-touch";
@@ -239,8 +246,8 @@ weinerControllers.controller('teams', ['$scope', '$rootScope', 'teamsObject', fu
 	$scope.teams = teamsObject;
 }]);
 
-weinerControllers.contrller('teamsSelected', ['$scope', '$rootScope', 'teamsObject', '$state', function($scope, $rootScope, teamsObject, $state) {
-	$scope.team = teamsObject;
+weinerControllers.controller('teams', ['$scope', '$rootScope', 'teamsObject', '$state', function($scope, $rootScope, teamsObject, $state) {
+	$scope.teams = teamsObject;
 }]);
 
 weinerControllers.controller('adminLogin', ['$scope', 'currentAuth', '$firebaseAuth', '$rootScope', '$state', function($scope, currentAuth, $firebaseAuth, $rootScope, $state) {
