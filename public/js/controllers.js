@@ -391,7 +391,17 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		
 		$scope.endTimer();		
 		
-		$scope.game.playTime = processManualTime($scope.min, $scope.sec, $scope.mms, $scope.quarter);
+		var playTime = $rootScope.processManualTime($scope.min, $scope.sec, $scope.mms, $scope.quarter);
+		console.log(playTime);
+		$scope.game.playTime = playTime[0];
+		$scope.game.quarter = playTime[1];
+		if ($scope.game.quarter == 0 || !$scope.game.quarter) {
+			console.log($scope.game.quarter);
+			$scope.game.live = false;
+		} else {
+			$scope.game.live = true;
+		}
+		console.log($scope.game.playTime);
 		$scope.game.$save().then(function () {
 			$rootScope.processing = false;
 			$scope.min = null;
@@ -411,7 +421,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 
 weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$firebaseObject', 'currentAuth', '$stateParams', '$state', function ($scope, $rootScope, $firebaseObject, currentAuth, $stateParams, $state) {
 	$scope.game = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode));
-	console.log($scope.game);
+	//console.log($scope.game);
 
 	var currentQuarter;
 	$scope.processQuarter = function () {
@@ -623,13 +633,13 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 		$(".modal").modal('hide');
 		quarterEntry = $("#edit-quarter input[type= 'text']").val();
 		try {
-			if (!parseInt(quarterEntry.charAt(0)) || parseInt(quarterEntry.charAt(0)) < 0 || parseInt(quarterEntry.charAt(0)) > 7) {
+			if (parseInt(quarterEntry.charAt(0)) === null || parseInt(quarterEntry.charAt(0)) < 0 || parseInt(quarterEntry.charAt(0)) > 7) {
 				alert("You must set a value for minutes which is between 0 and 7.");
 				return;
 			} else if (quarterEntry.charAt(1) != ':') {
 				alert("The second character must be a semicolon \(:\).");
 				return;
-			} else if (!parseInt(quarterEntry.substring(2, (quarterEntry.length - 1))) || parseInt(quarterEntry.substring(2, (quarterEntry.length - 1))) >= 60 || parseInt(quarterEntry.substring(2, (quarterEntry.length - 1))) < 0) {
+			} else if (parseInt(quarterEntry.substring(2, (quarterEntry.length - 1))) === null || parseInt(quarterEntry.substring(2, (quarterEntry.length - 1))) >= 60 || parseInt(quarterEntry.substring(2, (quarterEntry.length - 1))) < 0) {
 				alert("You must enter a value for seconds which is between 0 and 59");
 				return;
 			}
@@ -648,6 +658,11 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 		}
 		$scope.game.playTime = inputtedString[0];
 		$scope.game.quarter = inputtedString[1];
+		if ($scope.game.quarter == 0 || !$scope.game.quarter) {
+			$scope.game.live = false;
+		} else {
+			$scope.game.live = true;
+		}
 		$scope.game.$save().then(function () {
 			$rootScope.processing = false;
 			$scope.manualTime.min = null;
