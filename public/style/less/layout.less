@@ -7,6 +7,8 @@
 
 @golden-ratio: 1.61803398875;
 
+@top-back: #3b588e;
+
 body {
 	background: url(/assets/img/background/basketball2.jpg) no-repeat center center fixed;
 	background-size: cover;
@@ -41,9 +43,9 @@ body {
 }
 
 #top-head {
-	background-color: #165488;
+	background-color: @top-back;
 	border-radius: 0;
-	color: #ffd500;
+	color: #eaba63;
 	//height: 200px;
 	//padding: 0 0 15px 0;
 	padding: 0;
@@ -82,7 +84,7 @@ body {
 	left: 0;
 	width: 200px;
 	height: 100%;
-	background-color: #165488;
+	background-color: @top-back;
 	color: #eee;
 	font-size: 1.8rem;
 	padding-top: 51.29682px;
@@ -133,7 +135,7 @@ body {
 				a {
 					font-family: 'Black Ops One', cursive;
 					font-size: 8rem;
-					color: #ffd500;
+					color: #eaba63;
 					margin-top: 2rem;
 					display: inline-block;
 
@@ -218,7 +220,7 @@ body {
 }
 
 .navbar, #top-navbar {
-	background-color: #165488;
+	background-color: @top-back;
 	color: #f8f8f8;
 	border: none;
 }
@@ -310,7 +312,7 @@ body.no-touch {
 //no gap between top bar and content and size changes
 @media screen and (max-width: 767px) {
 	body {
-		background: #165488;
+		background: @top-back;
 	}
 
 	#outer-wrap {
