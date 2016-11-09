@@ -3,18 +3,18 @@
 		"b01" : {
 			"aScore" : 0,
 			"away" : "HANC",
-			"day" : 7,
+			"day" : 30,
 			"finished" : false,
 			"gym" : "Hurwitz",
 			"hScore" : 3,
 			"home" : "Beth Tfiloh",
 			"index" : 4,
-			"live" : true,
+			"live" : false,
 			"month" : "Nov",
 			"name" : "Boys",
-			"ot" : true,
-			"playTime" : "34.08",
-			"quarter" : 1,
+			"ot" : false,
+			"playTime" : "7:00",
+			"quarter" : "0",
 			"special" : false,
 			"stats" : {
 				"away" : {
@@ -194,16 +194,16 @@
 					}
 				}
 			},
-			"time" : "3:30PM"
+			"time" : "5:00PM"
 		},
 		"b02" : {
 			"aScore" : 0,
-			"away" : "Boyar",
-			"day" : 7,
+			"away" : "Yavneh",
+			"day" : 30,
 			"finished" : false,
-			"gym" : "Hurwitz",
+			"gym" : "Green",
 			"hScore" : 0,
-			"home" : "Beth Tfiloh",
+			"home" : "Ramaz",
 			"index" : 5,
 			"live" : false,
 			"month" : "Nov",
@@ -212,16 +212,16 @@
 			"playTime" : "00:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM"
+			"time" : "5:00PM"
 		},
 		"b03" : {
 			"aScore" : 0,
 			"away" : "CHAT",
-			"day" : 7,
+			"day" : 30,
 			"finished" : false,
-			"gym" : "Hurwitz",
+			"gym" : "Zimmerman",
 			"hScore" : 0,
-			"home" : "Beth Tfiloh",
+			"home" : "Boyar",
 			"index" : 6,
 			"live" : false,
 			"month" : "Nov",
@@ -230,16 +230,16 @@
 			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM"
+			"time" : "5:00PM"
 		},
 		"b04" : {
 			"aScore" : 0,
-			"away" : "HANC",
-			"day" : 7,
+			"away" : "Beth Tfiloh",
+			"day" : 30,
 			"finished" : false,
 			"gym" : "Hurwitz",
 			"hScore" : 0,
-			"home" : "Kushner",
+			"home" : "CHAT",
 			"index" : 10,
 			"live" : false,
 			"month" : "Nov",
@@ -248,24 +248,25 @@
 			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM"
+			"time" : "8:00PM"
 		},
 		"b05" : {
 			"aScore" : 0,
-			"away" : "HANC",
-			"day" : 7,
+			"away" : "Boyar",
+			"day" : 30,
 			"finished" : false,
 			"gym" : "Hurwitz",
 			"hScore" : 0,
-			"home" : "Boyar",
+			"home" : "Yavneh",
 			"index" : 11,
+			"month": "Nov",
 			"live" : false,
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "7:00",
 			"quarter" : 0,
 			"special" : false,
-			"time" : "3:30PM"
+			"time" : "8:00PM"
 		},
 		"b06" : {
 			"aScore" : 0,
@@ -1207,9 +1208,9 @@
 			}
 		},
 		"Ramaz" : {
-			"boys": {
-				"los": 0,
-				"win": 0
+			"boys" : {
+				"los" : 0,
+				"win" : 0
 			},
 			"girls" : {
 				"los" : 0,
