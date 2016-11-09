@@ -39,7 +39,7 @@
 							<h4 ng-bind-html="game.name"></h4>
 								<h2 ng-bind="game.playTime"> </h2>
 								<h6 ng-bind-html="displayQuarter(game.quarter)"></h6>
-								<p ng-bind="game.gym"> </p>
+								<p ng-bind="game.gym + ' Gym'"> </p>
 							</div>
 						</div>
 					</div>
@@ -79,7 +79,7 @@
 							<div class="info">
 								<h4 ng-bind-html="game.name"></h4>
 								<h2 ng-bind="game.time"> </h2>
-								<h6 ng-bind="game.gym"> </h6>
+								<h6 ng-bind="game.gym + ' Gym'"> </h6>
 								<h5 ng-bind-html="game.month + '. ' + game.day + '<sup>' + ordinal(game.day) + '</sup>'"></h5>
 							</div>
 						</div>
@@ -129,7 +129,7 @@
 							<h4 ng-bind-html="game.name"></h4>
 								<h2 ng-bind="game.playTime"> </h2>
 								<h6 ng-bind-html="displayQuarter(game.quarter)"></h6>
-								<p ng-bind="game.gym"> </p>
+								<p ng-bind="game.gym + ' Gym'"> </p>
 							</div>
 						</div>
 					</div>
@@ -169,7 +169,7 @@
 							<div class="info">
 								<h4 ng-bind-html="game.name"></h4>
 								<h2 ng-bind="game.time"> </h2>
-								<h6 ng-bind="game.gym"> </h6>
+								<h6 ng-bind="game.gym + ' Gym'"> </h6>
 								<h5 ng-bind-html="game.month + '. ' + game.day + '<sup>' + ordinal(game.day) + '</sup>'"></h5>
 							</div>
 						</div>
