@@ -216,14 +216,14 @@ weinerControllers.controller('home', ['$scope', '$rootScope', '$firebaseArray', 
 	//	panelTwoTitle: either upcoming, recent, or other - 	depending on time
 	//	otherGameDay: which day's games should be put on the list
 	var date = new Date();
-	if (date < new Date("December 7, 2016 00:00:00")) {
+	if (date < new Date("November 30, 2016 00:00:00")) {
 		$scope.panelTwoTitle = "Upcoming Games";
-		$scope.otherGameDay = 7;
-	} else if (date > new Date("December 10, 2016 00:00:00")) {
+		$scope.otherGameDay = 30;
+	} else if (date > new Date("December 4, 2016 00:00:00")) {
 		$scope.panelTwoTitle = "Recent Games";
-		$scope.otherGameDay = 10;
+		$scope.otherGameDay = 3;
 	} else {
-		$scope.panelTwoTitle = "Other Games Today";
+		$scope.panelTwoTitle = "Today's Games";
 		$scope.otherGameDay = date.getDate();
 	}
 
