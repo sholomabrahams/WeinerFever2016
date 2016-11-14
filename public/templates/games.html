@@ -1,4 +1,4 @@
-<div class="col-xs-12 game-sec">
+<div class="col-xs-12 game-sec" id="games-page">
 	<section class="inner-wrap">
 		<div id="other-wrap" class="game-inner col-xs-12 col-sm-12 col-md-6">
 			<h2>Boys</h2>
@@ -12,7 +12,7 @@
 										<h4 class="home-name" ng-bind="game.home"></h4>
 										<p class="record" ng-bind="teams.dynamic[game.home][getGender(game.name)].win + '-' + teams.dynamic[game.home][getGender(game.name)].los"></p>
 									</div>
-									<img ng-src="/assets/img/logos/{{teams.static[game.home].picture}}" width="60" height="60">
+									<img ng-src="/assets/img/logos/{{game.home == 'TBD' ? 'TBD.png' : teams.static[game.home].picture}}" width="60" height="60">
 								</a>
 								<h2 class="score" ng-bind="game.hScore"></h2>
 							</div>
@@ -23,7 +23,7 @@
 										<h4 class="away-name" ng-bind="game.away"></h4>
 										<p class="record" ng-bind="teams.dynamic[game.away][getGender(game.name)].win + '-' + teams.dynamic[game.away][getGender(game.name)].los"></p>
 									</div>
-									<img ng-src="/assets/img/logos/{{teams.static[game.away].picture}}" width="60" height="60">
+									<img ng-src="/assets/img/logos/{{game.away == 'TBD' ? 'TBD.png' : teams.static[game.away].picture}}" width="60" height="60">
 								</a>
 								<h2 class="score" ng-bind="game.aScore"></h2>
 							</div>
@@ -53,7 +53,7 @@
 										<h4 class="home-name" ng-bind="game.home"></h4>
 										<p class="record" ng-bind="teams.dynamic[game.home][getGender(game.name)].win + '-' + teams.dynamic[game.home][getGender(game.name)].los"></p>
 									</div>
-									<img ng-src="/assets/img/logos/{{teams.static[game.home].picture}}" width="60" height="60">
+									<img ng-src="/assets/img/logos/{{game.home == 'TBD' ? 'TBD.png' : teams.static[game.home].picture}}" width="60" height="60">
 								</a>
 								<!--<h2 class="score">{{game.hScore}}</h2>-->
 							</div>
@@ -64,7 +64,7 @@
 										<h4 class="away-name" ng-bind="game.away"></h4>
 										<p class="record" ng-bind="teams.dynamic[game.away][getGender(game.name)].win + '-' + teams.dynamic[game.away][getGender(game.name)].los"></p>
 									</div>
-									<img ng-src="/assets/img/logos/{{teams.static[game.away].picture}}" width="60" height="60">
+									<img ng-src="/assets/img/logos/{{game.away == 'TBD' ? 'TBD.png' : teams.static[game.away].picture}}" width="60" height="60">
 								</a>
 								<!--<h2 class="score">{{game.aScore}}</h2>-->
 							</div>
@@ -102,7 +102,7 @@
 										<h4 class="home-name" ng-bind="game.home"></h4>
 										<p class="record" ng-bind="teams.dynamic[game.home][getGender(game.name)].win + '-' + teams.dynamic[game.home][getGender(game.name)].los"></p>
 									</div>
-									<img ng-src="/assets/img/logos/{{teams.static[game.home].picture}}" width="60" height="60">
+									<img ng-src="/assets/img/logos/{{game.home == 'TBD' ? 'TBD.png' : teams.static[game.home].picture}}" width="60" height="60">
 								</a>
 								<h2 class="score" ng-bind="game.hScore"></h2>
 							</div>
@@ -113,7 +113,7 @@
 										<h4 class="away-name" ng-bind="game.away"></h4>
 										<p class="record" ng-bind="teams.dynamic[game.away][getGender(game.name)].win + '-' + teams.dynamic[game.away][getGender(game.name)].los"></p>
 									</div>
-									<img ng-src="/assets/img/logos/{{teams.static[game.away].picture}}" width="60" height="60">
+									<img ng-src="/assets/img/logos/{{game.away == 'TBD' ? 'TBD.png' : teams.static[game.away].picture}}" width="60" height="60">
 								</a>
 								<h2 class="score" ng-bind="game.aScore"></h2>
 							</div>
@@ -143,7 +143,7 @@
 										<h4 class="home-name" ng-bind="game.home"></h4>
 										<p class="record" ng-bind="teams.dynamic[game.home][getGender(game.name)].win + '-' + teams.dynamic[game.home][getGender(game.name)].los"></p>
 									</div>
-									<img ng-src="/assets/img/logos/{{teams.static[game.home].picture}}" width="60" height="60">
+									<img ng-src="/assets/img/logos/{{game.home == 'TBD' ? 'TBD.png' : teams.static[game.home].picture}}" width="60" height="60">
 								</a>
 								<!--<h2 class="score">{{game.hScore}}</h2>-->
 							</div>
@@ -154,7 +154,7 @@
 										<h4 class="away-name" ng-bind="game.away"></h4>
 										<p class="record" ng-bind="teams.dynamic[game.away][getGender(game.name)].win + '-' + teams.dynamic[game.away][getGender(game.name)].los"></p>
 									</div>
-									<img ng-src="/assets/img/logos/{{teams.static[game.away].picture}}" width="60" height="60">
+									<img ng-src="/assets/img/logos/{{game.away == 'TBD' ? 'TBD.png' : teams.static[game.away].picture}}" width="60" height="60">
 								</a>
 								<!--<h2 class="score">{{game.aScore}}</h2>-->
 							</div>

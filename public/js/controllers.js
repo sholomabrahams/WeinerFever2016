@@ -246,7 +246,11 @@ weinerControllers.controller('teams', ['$scope', '$rootScope', 'teamsObject', fu
 	$scope.teams = teamsObject;
 }]);
 
-weinerControllers.controller('teams', ['$scope', '$rootScope', 'teamsObject', '$state', function($scope, $rootScope, teamsObject, $state) {
+weinerControllers.controller('teamsSelected', ['$scope', '$rootScope', 'teamsObject', '$state', '$stateParams', function($scope, $rootScope, teamsObject, $state, $stateParams) {
+	if ($stateParams.team == 'TBD') {
+		$state.go('home');
+	}
+
 	$scope.teams = teamsObject;
 }]);
 
