@@ -171,10 +171,6 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$fire
 		}
 	});
 
-	//Static team data
-	$http.get("/js/data/teams.json").then(function (response) {
-		$rootScope.teamsData = response.data.teams;
-	});
 	//$rootScope.teamData = teamsJsObject;
 
 	//Makes firebase refs available
@@ -192,17 +188,17 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$fire
 
 /* DATA FACTORIES */
 weinerControllers.factory('teamsObject', ['$firebaseObject', '$rootScope', function($firebaseObject, $rootScope) {
-	return {dynamic: $firebaseObject($rootScope.teamsRef.orderByKey()), static: $rootScope.teamsData};
+	return $firebaseObject($rootScope.teamsRef.orderByKey());
 }]);
 
 /*weinerControllers.factory('teamsList', ['$firebaseObject', '$rootScope', function($firebaseObject, $rootScope) {
 	var gamesQuery = $rootScope.gamesRef.orderByChild('index');
 	return [$firebaseArray(teamsQuery), $firebaseObject(gamesQuery)];
-}]);*/
+}]);
 
 weinerControllers.factory('stats', ['$firebaseObject', '$rootScope', function($firebaseObject, $rootScope) {
 	return $firebaseObject($rootScope.statsRef.orderByKey());
-}]);
+}]);*/
 
 
 /*CONTROLLERS*/
@@ -242,16 +238,35 @@ weinerControllers.controller('games', ['$scope', '$rootScope', '$firebaseArray',
 	$rootScope.whichStats = null;
 }]);
 
-weinerControllers.controller('teams', ['$scope', '$rootScope', 'teamsObject', function($scope, $rootScope, teamsObject) {
-	$scope.teams = teamsObject;
+weinerControllers.controller('teams', ['$scope', '$rootScope', 'teamsObject', '$http', function($scope, $rootScope, teamsObject, $http) {
+	$scope.teams = {};
+	$http.get("/js/data/teams.json").then(function (response) {
+		$scope.teams.static = response.data.teams;
+	});
+	$scope.teams.dynamic = teamsObject;
 }]);
 
-weinerControllers.controller('teamsSelected', ['$scope', '$rootScope', 'teamsObject', '$state', '$stateParams', function($scope, $rootScope, teamsObject, $state, $stateParams) {
+weinerControllers.controller('teamsSelected', ['$scope', '$rootScope', 'teamsObject', '$state', '$stateParams', '$http', '$firebaseObject', function($scope, $rootScope, teamsObject, $state, $stateParams, $http, $firebaseObject) {
 	if ($stateParams.team == 'TBD') {
 		$state.go('home');
 	}
+	$scope.params = {team: $stateParams.team, gender: $stateParams.gender};
+	$scope.teams = {};
+	$http.get("/js/data/teams.json").then(function (response) {
+		$scope.teams.static = response.data.teams;
 
-	$scope.teams = teamsObject;
+	});
+
+	$scope.teams.dynamic = teamsObject;
+
+	$scope.game = {
+		stats: {
+			//home = boys
+			home: $firebaseObject($rootScope.statsRef.child($stateParams.team).child("boys").orderByKey()),
+			//away = girls
+			away: $firebaseObject($rootScope.statsRef.child($stateParams.team).child("girls").orderByKey()),
+		}
+	} 
 }]);
 
 weinerControllers.controller('adminLogin', ['$scope', 'currentAuth', '$firebaseAuth', '$rootScope', '$state', function($scope, currentAuth, $firebaseAuth, $rootScope, $state) {

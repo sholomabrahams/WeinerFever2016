@@ -2,10 +2,10 @@
 	<h2 id="title">Select a Team:</h2>
 
 	<div id="teams-container">
-		<div ng-repeat="(teamName, teamData) in ::teams.static" class="team-box col-xs-12 col-sm-6 col-md-4">
-			<a class="color-wrap" ng-href="/teams/{{::teamName}}">
-				<h3 ng-bind="::teamName"></h3>
-				<img ng-src="/assets/img/logos/{{::teamData.picture}}" alt="{{::teamName}} Logo" width="300" height="300">
+		<div ng-repeat="(teamName, teamData) in teams.static" class="team-box col-xs-12 col-sm-6 col-md-4">
+			<a class="color-wrap" ui-sref="teamsSelected({team: teamName})">
+				<h3 ng-bind="teamName"></h3>
+				<img ng-src="/assets/img/logos/{{teamData.picture}}" alt="{{teamName}} Logo" width="300" height="300">
 			</a>
 		</div>
 	</div>

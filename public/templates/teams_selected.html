@@ -1,3 +1,19 @@
 <section class="inner-wrap" id="teams-selected">
-	<h1>Teams Selected</h1>
+	<div class="side summary col-sm-12 col-md-6" id="boys">
+		<div class="wrap">
+			<h2>Boys</h2>
+			<img class="img-responsive" ng-src="/assets/img/team_pics - 16 9/{{teams.static[params.team].boys.picture}}" alt="Home Team" width="600" height="337.5">
+
+			<section class="stats" ng-include="'/templates/partials/stats.html'" scope="" onload=""></section>
+		</div>
+	</div>
+
+	<div class="side summary col-sm-12 col-md-6" id="girls">
+		<div class="wrap">
+			<h2>Girls</h2>
+			<img class="img-responsive" ng-src="/assets/img/team_pics - 16 9/{{teams.static[params.team].girls.picture}}" alt="Home Team" width="600" height="337.5">
+
+			<section class="stats" ng-include="'/templates/partials/stats.html'" scope="" onload=""></section>
+		</div>
+	</div>
 </section>
