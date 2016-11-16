@@ -69,13 +69,37 @@
 		img {
 			width: 95%;
 			margin: auto;
+			margin-bottom: 7.5px;
 		}
 
+		button {
+			width:  58.713%;
+			display: block;
+			margin: auto;
+			margin-bottom: 7.5px;
+			font-size: 22px;
+			font-family: 'Helvetica', sans-serif;
+			
+			&.selected {
+				margin-bottom: 0;
+			}
+		}
+
+		.wrap {
+			section.stats {
+				padding: 7.5px 7.5px 0 12.5px;
+
+				div {
+					margin-bottom: 7.5px;
+				}
+			}
+		}
 
 		@media screen and (min-width: 992px) {
 			.wrap {
 				border: 2px solid #3b588e;
 				margin-top: 15px;
+				margin-bottom: 10px;
 				border-radius: 5px;
 			}
 

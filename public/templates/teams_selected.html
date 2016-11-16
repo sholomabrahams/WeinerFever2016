@@ -3,8 +3,32 @@
 		<div class="wrap">
 			<h2>Boys</h2>
 			<img class="img-responsive" ng-src="/assets/img/team_pics - 16 9/{{teams.static[params.team].boys.picture}}" alt="Home Team" width="600" height="337.5">
+			<button class="btn btn-large btn-primary" id="boys" ng-click="select('boys')">Select</button>
 
-			<section class="stats" ng-include="'/templates/partials/stats.html'" scope="" onload=""></section>
+			<section class="stats" ng-if="selection == 'boys'">
+				<div>
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>#</th>
+							<th>pts</th>
+							<th>ft</th>
+							<th>2p</th>
+							<th>3p</th>
+							<th>fouls</th>
+						</tr>
+						<tr ng-repeat="(playerName, player) in game.stats.boys">
+							<td ng-bind="playerName"></td>
+							<td ng-bind="player.number"></td>
+							<td ng-bind="player.pt"></td>
+							<td ng-bind="player.ft"></td>
+							<td ng-bind="player.p2"></td>
+							<td ng-bind="player.p3"></td>
+							<td ng-bind="player.fo"></td>
+						</tr>
+					</table>
+				</div>
+			</section>
 		</div>
 	</div>
 
@@ -12,8 +36,32 @@
 		<div class="wrap">
 			<h2>Girls</h2>
 			<img class="img-responsive" ng-src="/assets/img/team_pics - 16 9/{{teams.static[params.team].girls.picture}}" alt="Home Team" width="600" height="337.5">
+			<button class="btn btn-large btn-primary" id="girls" ng-click="select('girls')">Select</button>
 
-			<section class="stats" ng-include="'/templates/partials/stats.html'" scope="" onload=""></section>
+			<section class="stats" ng-if="selection == 'girls'">
+				<div>
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>#</th>
+							<th>pts</th>
+							<th>ft</th>
+							<th>2p</th>
+							<th>3p</th>
+							<th>fouls</th>
+						</tr>
+						<tr ng-repeat="(playerName, player) in game.stats.girls">
+							<td ng-bind="playerName"></td>
+							<td ng-bind="player.number"></td>
+							<td ng-bind="player.pt"></td>
+							<td ng-bind="player.ft"></td>
+							<td ng-bind="player.p2"></td>
+							<td ng-bind="player.p3"></td>
+							<td ng-bind="player.fo"></td>
+						</tr>
+					</table>
+				</div>
+			</section>
 		</div>
 	</div>
 </section>
