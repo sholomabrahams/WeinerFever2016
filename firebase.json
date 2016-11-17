@@ -14,7 +14,10 @@
     "ignore": [
         "/style/less/**",
         "**/*.ini",
-        "/bower_components/**/*@(map|json|md|gzip|lock|yml|less)"
+        "/bower_components/**/*@(json|md|gzip|lock|yml|less)",
+        "/assets/img/team_pics/**",
+        "/assets/img/team_pics - 4 3/**",
+        "/assets/img/team_pics_old/**"
     ]
   }
 }
