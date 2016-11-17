@@ -23,4 +23,4 @@ function size() {
 }
 
 $(window).resize(size);
-$("#page-foot").prepend('<iframe src="https://www.spreaker.com/embed/player/mini?show_id=1294893&autoplay=false" style="width: 100%; height: 71px;" frameborder="0" scrolling="no"></iframe>');
+$("#page-foot").prepend('<iframe src="https://www.spreaker.com/embed/player/mini?show_id=1294893&autoplay=false" style="padding: 0; height: 71px;" frameborder="0" scrolling="no" class="col-xs-12 col-sm-12 col-md-12 col-lg-8"></iframe>');

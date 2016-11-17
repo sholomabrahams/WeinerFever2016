@@ -15,7 +15,33 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$fire
 	}
 
 	//initialise menu closed
+	//$rootScope.menuOpen = true;
 	$rootScope.menuOpen = false;
+
+	//list of broadcasters
+	$rootScope.broadcasters = [
+		{name: "Andrew A", grade: "\'17"},
+		{name: "Sholom A", grade: "\'18"},
+		{name: "Josh S", grade: "\'17"},
+		{name: "Ben S", grade: "\'17"},
+		{name: "Jonathan O", grade: "\'17"},
+		{name: "Jacob Z", grade: "\'17"},
+		{name: "Mitchell J", grade: "\'18"},
+		{name: "Ezra S", grade: "\'18"},
+		{name: "Betzalel M", grade: "\'18"},
+		{name: "Alex R", grade: "\'18"},
+		{name: "Yonathan M", grade: "\'18"},
+		{name: "Ben S", grade: "\'18"},
+		{name: "Jeremy G", grade: "\'19"},
+		{name: "Josh S", grade: "\'19"},
+		{name: "Jordan K", grade: "\'18"},
+		{name: "Howard S", grade: "\'18"},
+		{name: "Samantha W", grade: "\'18"},
+		{name: "Yisroel A", grade: "\'20"},
+		{name: "Daniel B", grade: "\'17"},
+		{name: "George S", grade: "\'18"},
+		{name: "Tyler S", grade: "\'20"}
+	];
 
 	//offline db bootstrap
 	/*var data;
@@ -274,25 +300,20 @@ weinerControllers.controller('teamsSelected', ['$scope', '$rootScope', 'teamsObj
 		}
 	};console.log($scope.game);
 
-	$scope.selection = 'boys';
+	$scope.selection = null;
 	$scope.select = function (gender) {
 		if (gender == 'boys') {
 			if ($scope.selection == 'boys') {
 				$scope.selection = null;
-				$("button#boys, button#girls").removeClass('selected');
 			} else {
 				$scope.selection = 'boys';
-				$("button#girls").removeClass('selected');
-				$("button#boys").addClass('selected');
 			}
 		} else {
 			if ($scope.selection == 'girls') {
 				$scope.selection = null;
-				$("button#boys, button#girls").removeClass('selected');
 			} else {
 				$scope.selection = 'girls';
-				$("button#boys").removeClass('selected');
-				$("button#girls").addClass('selected');
+
 			}
 		}
 	};

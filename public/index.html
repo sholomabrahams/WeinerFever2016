@@ -67,6 +67,19 @@
 				<a ui-sref="teams" class="button last" ng-click="menuOpen = !menuOpen"> <span class="glyphicon glyphicon-th-list"></span>&nbsp;Teams</a>
 			</li>
 		</ul>
+
+		<section class="info hidden-lg">
+			<a href="http://www.bethtfiloh.com/page/school" target="_blank" id="img-link">
+				<img src="/assets/img/bt_circle_logo.png" alt="Beth Tfiloh Logo" width="76" height="76" title="Beth Tfiloh Dahan Community School">	
+			</a>
+			<p id="caption">Beth Tfiloh Dahan Community High School</p>
+			
+			<div>
+				<p><b>Webmaster:</b> <a href="mailto:me@sholomabrahams.com?subject=Weiner Tournament 2016 Website">Sholom Abrahams</a></p>
+				<p><b>Broadcasting Team:</b> <span ng-repeat="student in ::broadcasters | orderBy: student.name.charAt(student.name.length - 1)">{{::student.name}}&nbsp;{{::student.grade}}&nbsp;</span></p>
+				<!--<p>&copy;2016,&nbsp;<a href="mailto:me@sholomabrahams.com?subject=Weiner Tournament 2016 Website">Sholom Abrahams</a></p>-->
+			</div>
+		</section>
 	</div>
 
 	<div id="out-container" class="container-fluid {{menuOpen ? 'open' : 'closed'}}">
@@ -102,6 +115,13 @@
 
 			<footer id="page-foot" class="container">
 				<!-- JS Inserts Spreaker -->
+				<section class="info hidden-sm hidden-xs hidden-md col-lg-4">
+					<a href="http://www.bethtfiloh.com/page/school" target="_blank"><img src="/assets/img/bt_circle_logo.png" alt="Beth Tfiloh Logo" width="66" height="66" title="Beth Tfiloh Dahan Community School"></a>
+					<div>
+						<p><b>Webmaster:</b> <a href="mailto:me@sholomabrahams.com?subject=Weiner Tournament 2016 Website">Sholom Abrahams</a></p>
+						<p><b>Broadcasting Team:</b> <span ng-repeat="student in ::broadcasters | orderBy: student.name.charAt(student.name.length - 1)">{{::student.name}}&nbsp;{{::student.grade}}&nbsp;</span></p>
+					</div>
+				</section>
 			</footer>
 		</div>
 	</div>
