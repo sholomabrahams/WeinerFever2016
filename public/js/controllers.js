@@ -13,6 +13,9 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$fire
 	if (!('ontouchstart' in window || navigator.maxTouchPoints)) {
 		$rootScope.touch = "no-touch";
 	}
+	//detect if ios or android
+	$rootScope.ios = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+	$rootScope.android = /android/i.test(navigator.userAgent);
 
 	//initialise menu closed
 	//$rootScope.menuOpen = true;
@@ -354,7 +357,7 @@ weinerControllers.controller('adminDash', ['$scope', '$firebaseArray', 'currentA
 	};
 }]);
 
-weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', '$stateParams', 'teamsObject', '$interval', '$timeout', function($scope, $firebaseObject, currentAuth, $rootScope, $state, $stateParams, teamsObject, $interval, $timeout) {
+weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'currentAuth', '$rootScope', '$state', '$stateParams', 'teamsObject', '$interval', '$timeout', '$http', function($scope, $firebaseObject, currentAuth, $rootScope, $state, $stateParams, teamsObject, $interval, $timeout, $http) {
 	$scope.$on('$viewContentLoaded', function (event) {
 		size();
 	});
@@ -365,8 +368,19 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		$scope.both = false;
 	}
 
+	$scope.stats = {};
 	$scope.game = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode));
-	$scope.teams = teamsObject;
+	$scope.game.$loaded().then(function () {
+		$scope.stats.home = $firebaseObject($rootScope.statsRef.child($scope.game.home).child($rootScope.getGender($scope.game.name)));
+		$scope.stats.away = $firebaseObject($rootScope.statsRef.child($scope.game.away).child($rootScope.getGender($scope.game.name)));
+	});
+
+	$scope.teams = {};
+	$http.get("/js/data/teams.json").then(function (response) {
+		$scope.teams.static = response.data.teams;
+	});
+	$scope.teams.dynamic = teamsObject;
+
 
 	$scope.selectedPlayer = "None Selected";
 	$scope.selectedTeam = null;
@@ -380,6 +394,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 			$(event.currentTarget).addClass('info');
 			$scope.selectedPlayer = $(event.currentTarget).children("td:last-of-type").text();
 			$scope.selectedTeam = $(event.currentTarget).parents("#table-wrap").prev("h2").text();
+			$scope.selectedTeam = $scope.selectedTeam.substring(0, ($scope.selectedTeam.length - 4));
 			$scope.color = $scope.teams.static[$scope.selectedTeam].color;
 			$scope.logo = $scope.teams.static[$scope.selectedTeam].picture;
 		} else {
@@ -398,7 +413,7 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		}
 		return "away";
 	};
-	var player = null;
+	var player, stats = null;
 	//operation: + or -    type: key of player's stats object     val: how many points or foul
 	$scope.statsEdit = function (event, operation, type, val) {
 		//gameStatsRef = $rootScope.gamesRef.child($scope.game.$id + "/stats/" + $scope.whichTeam() + "/");
@@ -407,25 +422,42 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		}
 
 		player = $scope.game.stats[$scope.whichTeam()][$scope.selectedPlayer];
+		stats = $scope.stats[$scope.whichTeam()][$scope.selectedPlayer];
 		switch (operation) {
 			case "plus":
 				if (angular.isNumber(val)) {
 					player.pt += val;
-					player[type] += val;
+					player[type] ++;
+					$scope.game[$scope.whichTeam().charAt(0) + "Score"] += val;
 					$scope.game.$save();
+
+					stats.pt += val;
+					stats[type] ++;
+					$scope.stats[$scope.whichTeam()].$save();
 				} else {
 					player.fo ++;
 					$scope.game.$save();
+
+					stats.fo --;
+					$scope.stats[$scope.whichTeam()].$save();
 				}
 				break;
 			case "minus":
 				if (angular.isNumber(val) && player[type] > 0) {
 					player.pt -= val;
-					player[type] -= val;
+					player[type] -- ;
+					$scope.game[$scope.whichTeam().charAt(0) + "Score"] -= val;
 					$scope.game.$save();
+
+					stats.pt -= val;
+					stats[type] --;
+					$scope.stats[$scope.whichTeam()].$save();
 				} else if (player.fo > 0) {
 					player.fo --;
 					$scope.game.$save();
+
+					stats.fo --;
+					$scope.stats[$scope.whichTeam()].$save();
 				}
 				break;
 		}
@@ -461,16 +493,18 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 		$scope.endTimer();		
 		
 		var playTime = $rootScope.processManualTime($scope.min, $scope.sec, $scope.mms, $scope.quarter);
-		console.log(playTime);
+		if (!playTime) {
+			return;
+		}
 		$scope.game.playTime = playTime[0];
 		$scope.game.quarter = playTime[1];
 		if ($scope.game.quarter == 0 || !$scope.game.quarter) {
-			console.log($scope.game.quarter);
+			//console.log($scope.game.quarter);
 			$scope.game.live = false;
 		} else {
 			$scope.game.live = true;
 		}
-		console.log($scope.game.playTime);
+		//console.log($scope.game.playTime);
 		$scope.game.$save().then(function () {
 			$rootScope.processing = false;
 			$scope.min = null;

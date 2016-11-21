@@ -9,6 +9,14 @@
 
 @top-back: #3b588e;
 
+/* iOS ONLY */
+body.ios {
+	#out-container.open footer#page-foot {
+		margin-left: 185px;
+	}
+}
+
+
 body {
 	background: url(/assets/img/background/basketball2.jpg) no-repeat center center fixed;
 	background-size: cover;
@@ -55,16 +63,16 @@ body {
 	h1 {
 		margin: 0;
 		font-family: 'Black Ops One', cursive;
-		font-size: 14.5rem;
-		margin-top: -0.775rem;
+		font-size: 145px;
+		margin-top: -7.75px;
 	}
 
 	h3 {
 		font-family: 'Caveat Brush', cursive;
-		font-size: 2.5rem;
-		letter-spacing: 0.025rem;
+		font-size: 25px;
+		letter-spacing: 0.25px;
 		margin: 0;
-		margin-top: -2.9rem;
+		margin-top: -29px;
 		color: #f8f8f8;
 	}
 }
@@ -86,7 +94,7 @@ body {
 	height: 100%;
 	background-color: @top-back;
 	color: #eee;
-	font-size: 1.8rem;
+	font-size: 18px;
 	padding-top: 51.29682px;
 
 	ul {
@@ -103,7 +111,7 @@ body {
 			color: #f8f8f8;
 
 			a {
-				font-size: 1.5rem;
+				font-size: 15px;
 				outline: inherit;
 				transition: all 0.05s;
 				color: inherit;
@@ -175,9 +183,9 @@ body {
 			.navbar-brand {
 				a {
 					font-family: 'Black Ops One', cursive;
-					font-size: 8rem;
+					font-size: 80px;
 					color: #eaba63;
-					margin-top: 2rem;
+					margin-top: 20px;
 					display: inline-block;
 
 					&:hover, &:active, &:focus {
@@ -220,7 +228,7 @@ body {
 					color: #f8f8f8;
 
 					a {
-						font-size: 1.5rem;
+						font-size: 15px;
 						transition: all 0.05s;
 						border-radius: 5px;
 						line-height: 20px;
@@ -248,7 +256,7 @@ body {
 
 #hamburger {
 	float: left;
-	font-size: 5rem;
+	font-size: 50px;
 	margin: 0;
 	color: #f8f8f8;
 	position: relative;
@@ -256,7 +264,7 @@ body {
 	cursor: pointer;
 
 	span {
-		margin: 1.6rem;
+		margin: 16px;
 	}
 }
 
@@ -270,6 +278,7 @@ body {
 	background-color: #f8f8f8;
 	margin-top: 98px;
 	margin-bottom: 71px;
+	position: relative;
 
 	::selection {
 		background: #444;
@@ -289,6 +298,7 @@ body {
 	box-shadow: 0px -2px 5px 0px rgba(0,0,0,0.5);
 	background-color: #25282a;
 	margin-left: -15px;
+	transition: margin 0.25s;
 	z-index: 150;
 	//opacity: 0.95;	
 }
@@ -364,24 +374,24 @@ body.no-touch {
 		//margin-left: 5px;
 
 		span {
-			margin: 1.7rem 1.6rem;
+			margin: 17px 16px;
 		}
 	}
 
 	.navbar-brand {
 		a {
-			font-size: 5.75rem !important;
-			margin-top: 1.525rem !important;
+			font-size: 50.0px !important;
+			margin-top: 15.25px !important;
 		}
 
 		span {
-			font-size: 1.5rem !important;
-			width: 232px !important;
+			font-size: 15px !important;
+			width: 205px !important;
 		}
 	}
 
 	#hamburger {
-		font-size: 4rem;
+		font-size: 40px;
 	}
 }
 
@@ -405,24 +415,24 @@ body.no-touch {
 
 	.navbar-brand {
 		a {
-			font-size: 4.75rem !important;
-			margin-top: 1.1rem !important;
+			font-size: 47.5px !important;
+			margin-top: 11px !important;
 		}
 
 		span {
 			width: 175px !important;
-			font-size: 1.25rem !important;
+			font-size: 12.5px !important;
 			padding-top: 0 !important;
 			margin-top: -1.525px;
 		}
 	}
 
 	#hamburger {
-		font-size: 3.5rem;
+		font-size: 35px;
 
 		span {
-			margin: 1.45rem 1.6rem !important;
-			margin-right: 0.5rem !important;
+			margin: 14.5px 16px !important;
+			margin-right: 5 !important;
 		}
 	}
 
@@ -451,7 +461,7 @@ body.no-touch {
 			padding: 0 !important;
 			margin: 0;
 			margin-top: 5.25px;
-			font-size: 1.3rem;
+			font-size: 13px;
 			width: 100% !important;
 		}
 	}
@@ -469,7 +479,7 @@ body.no-touch {
 		width: ~'calc(100% - 51px)';
 
 		a {
-			font-size: 3.75rem !important;
+			font-size: 37.5px !important;
 		}
 	}
 }
@@ -477,11 +487,11 @@ body.no-touch {
 //fix sizing - move hamburger further left
 @media screen and (max-width: 349px) {
 	#hamburger .glyphicon {
-		margin-left: 0.5rem !important;
+		margin-left: 5px !important;
 	}
 
 	.navbar-brand span {
-		font-size: 1.1rem !important;
+		font-size: 11px !important;
 		margin-top: 3.25px;
 	}
 }

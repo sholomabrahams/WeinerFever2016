@@ -1,10 +1,10 @@
 <section class="inner-wrap admin" id="set-games">
 	<aside class="roster col-md-3" id="home">
-		<img ng-src="/assets/img/logos/{{teams.static[game.home].picture}}" height="35" width="35">
-		<h2 ng-bind="game.home" style="background-color: {{teams.static[game.home].color}}"></h2>
+		<img ng-src="/assets/img/logos/{{::teams.static[game.home].picture}}" height="35" width="35">
+		<h2 ng-bind="game.home + '&nbsp;&bull;&nbsp;' + game.hScore" style="background-color: {{teams.static[game.home].color}}"></h2>
 		<div id="table-wrap">
 			<table class="table table-condensed table-responsive">
-				<tr ng-repeat="(name, stats) in game.stats.home" ng-click="select($event)">
+				<tr ng-repeat="(name, stats) in ::game.stats.home" ng-click="select($event)">
 					<td ng-bind="stats.number"></td><td ng-bind="name"></td>
 				</tr>
 			</table>
@@ -15,7 +15,7 @@
 		<!-- MANUAL TIME EDITING - ONLY FOR BOTH -->
 			<div id="manual-time">
 				<h2 ng-bind="game.playTime"></h2>
-				<h4 ng-bind="game.displayQuarter(quarter)"></h4>
+				<h4 ng-bind-html="displayQuarter(game.quarter)"></h4>
 				<hr>
 				<div ng-if="both" ng-include="'/templates/partials/manual_time.html'"></div>
 			</div>
@@ -43,11 +43,11 @@
 	</section>
 
 	<aside class="roster col-md-3" id="away">
-		<img ng-src="/assets/img/logos/{{teams.static[game.away].picture}}" height="35" width="35">
-		<h2 ng-bind="game.away" style="background-color: {{teams.static[game.away].color}}"></h2>
+		<img ng-src="/assets/img/logos/{{::teams.static[game.away].picture}}" height="35" width="35">
+		<h2 ng-bind="game.away + '&nbsp;&bull;&nbsp;' + game.aScore" style="background-color: {{teams.static[game.away].color}}"></h2>
 		<div id="table-wrap">
 			<table class="table table-condensed table-responsive">
-				<tr ng-repeat="(name, stats) in game.stats.away" ng-click="select($event)">
+				<tr ng-repeat="(name, stats) in ::game.stats.away" ng-click="select($event)">
 					<td ng-bind="stats.number"></td><td ng-bind="name"></td>
 				</tr>
 			</table>

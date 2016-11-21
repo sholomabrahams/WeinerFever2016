@@ -6,7 +6,7 @@
 			"day" : 30,
 			"finished" : false,
 			"gym" : "Hurwitz",
-			"hScore" : 3,
+			"hScore" : 0,
 			"home" : "Beth Tfiloh",
 			"index" : 4,
 			"live" : false,
@@ -14,7 +14,7 @@
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "7:00",
-			"quarter" : "0",
+			"quarter" : 0,
 			"special" : false,
 			"stats" : {
 				"away" : {
@@ -134,7 +134,7 @@
 					"Justin S" : {
 						"fo" : 0,
 						"ft" : 0,
-						"grade": 12,
+						"grade" : 12,
 						"p2" : 0,
 						"p3" : 0,
 						"pt" : 0
@@ -260,8 +260,8 @@
 			"hScore" : 0,
 			"home" : "Yavneh",
 			"index" : 11,
-			"month": "Nov",
 			"live" : false,
+			"month" : "Nov",
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -278,8 +278,8 @@
 			"hScore" : 0,
 			"home" : "HANC",
 			"index" : 12,
-			"month": "Dec",
 			"live" : false,
+			"month" : "Nov",
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "00:00",
@@ -297,7 +297,7 @@
 			"home" : "Beth Tfiloh",
 			"index" : 16,
 			"live" : false,
-			"month": "Dec",
+			"month" : "Dec",
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -312,10 +312,10 @@
 			"finished" : false,
 			"gym" : "Green",
 			"hScore" : 0,
-			"month": "Dec",
 			"home" : "Boyar",
 			"index" : 17,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -327,13 +327,13 @@
 			"aScore" : 0,
 			"away" : "HANC",
 			"day" : 1,
-			"month": "Dec",
 			"finished" : false,
 			"gym" : "Zimmerman",
 			"hScore" : 0,
 			"home" : "CHAT",
 			"index" : 18,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -350,8 +350,8 @@
 			"hScore" : 0,
 			"home" : "Ramaz",
 			"index" : 22,
-			"month": "Dec",
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -368,8 +368,8 @@
 			"hScore" : 0,
 			"home" : "HANC",
 			"index" : 23,
-			"month": "Dec",
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -381,13 +381,13 @@
 			"aScore" : 0,
 			"away" : "CHAT",
 			"day" : 1,
-			"month": "Dec",
 			"finished" : false,
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Yavneh",
 			"index" : 24,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -399,13 +399,13 @@
 			"aScore" : 0,
 			"away" : "Beth Tfiloh",
 			"day" : 2,
-			"month": "Dec",
 			"finished" : false,
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Boyar",
 			"index" : 28,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -423,7 +423,7 @@
 			"home" : "Ramaz",
 			"index" : 29,
 			"live" : false,
-			"month": "Dec",
+			"month" : "Dec",
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -440,8 +440,8 @@
 			"hScore" : 0,
 			"home" : "Yavneh",
 			"index" : 30,
-			"month": "Dec",
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Boys",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -455,11 +455,11 @@
 			"day" : 3,
 			"finished" : false,
 			"gym" : "Zimmerman",
-			"month": "Dec",
 			"hScore" : 0,
 			"home" : "TBD",
 			"index" : 37,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Boys 5<sup>th</sup> Place",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -471,13 +471,13 @@
 			"aScore" : 0,
 			"away" : "TBD",
 			"day" : 3,
-			"month": "Dec",
 			"finished" : false,
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "TBD",
 			"index" : 40,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Boys Finals",
 			"ot" : false,
 			"playTime" : "00:00",
@@ -491,11 +491,11 @@
 			"day" : 3,
 			"finished" : false,
 			"gym" : "Green",
-			"month": "Dec",
 			"hScore" : 0,
 			"home" : "TBD",
 			"index" : 39,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Boys 3<sup>rd</sup> Place",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -506,14 +506,14 @@
 		"bsf1" : {
 			"aScore" : 0,
 			"away" : "TBD",
-			"day" : 3,
+			"day" : 2,
 			"finished" : false,
 			"gym" : "TBD",
 			"hScore" : 0,
 			"home" : "TBD",
 			"index" : 33,
 			"live" : false,
-			"month": "Dec",
+			"month" : "Dec",
 			"name" : "Boys SF 1",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -524,14 +524,14 @@
 		"bsf2" : {
 			"aScore" : 0,
 			"away" : "TBD",
-			"day" : 9,
-			"month": "Dec",
+			"day" : 2,
 			"finished" : false,
 			"gym" : "TBD",
 			"hScore" : 0,
 			"home" : "TBD",
 			"index" : 34,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Boys SF 2",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -548,8 +548,8 @@
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
 			"index" : 1,
-			"month": "Nov",
 			"live" : false,
+			"month" : "Nov",
 			"name" : "Girls",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -561,13 +561,13 @@
 			"aScore" : 0,
 			"away" : "Yavneh",
 			"day" : 30,
-			"month": "Nov",
 			"finished" : false,
 			"gym" : "Green",
 			"hScore" : 0,
 			"home" : "Ramaz",
 			"index" : 2,
 			"live" : false,
+			"month" : "Nov",
 			"name" : "Girls",
 			"ot" : false,
 			"playTime" : "00:00",
@@ -582,10 +582,10 @@
 			"finished" : false,
 			"gym" : "Zimmerman",
 			"hScore" : 0,
-			"month": "Nov",
 			"home" : "Boyar",
 			"index" : 3,
 			"live" : false,
+			"month" : "Nov",
 			"name" : "Girls",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -600,10 +600,10 @@
 			"finished" : false,
 			"gym" : "Hurwitz",
 			"hScore" : 0,
-			"month": "Nov",
 			"home" : "CHAT",
 			"index" : 7,
 			"live" : false,
+			"month" : "Nov",
 			"name" : "Girls",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -614,15 +614,15 @@
 		"g05" : {
 			"aScore" : 0,
 			"away" : "Boyar",
-			"day" : 3,
+			"day" : 30,
 			"finished" : false,
 			"gym" : "Green",
 			"hScore" : 0,
 			"home" : "Yavneh",
 			"index" : 8,
 			"live" : false,
+			"month" : "Nov",
 			"name" : "Girls",
-			"month": "Nov",
 			"ot" : false,
 			"playTime" : "7:00",
 			"quarter" : 0,
@@ -632,15 +632,15 @@
 		"g06" : {
 			"aScore" : 0,
 			"away" : "Ramaz",
-			"day" : 3,
+			"day" : 30,
 			"finished" : false,
 			"gym" : "Zimmerman",
 			"hScore" : 0,
 			"home" : "HANC",
 			"index" : 9,
 			"live" : false,
+			"month" : "Nov",
 			"name" : "Girls",
-			"month": "Nov",
 			"ot" : false,
 			"playTime" : "00:00",
 			"quarter" : 0,
@@ -653,11 +653,11 @@
 			"day" : 1,
 			"finished" : false,
 			"gym" : "Hurwitz",
-			"month": "Dec",
 			"hScore" : 0,
 			"home" : "Beth Tfiloh",
 			"index" : 13,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Girls",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -671,11 +671,11 @@
 			"day" : 1,
 			"finished" : false,
 			"gym" : "Green",
-			"month": "Dec",
 			"hScore" : 0,
 			"home" : "Boyar",
 			"index" : 14,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Girls",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -692,8 +692,8 @@
 			"hScore" : 0,
 			"home" : "CHAT",
 			"index" : 15,
-			"month": "Dec",
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Girls",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -710,8 +710,8 @@
 			"hScore" : 0,
 			"home" : "Ramaz",
 			"index" : 19,
-			"month": "Dec",
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Girls",
 			"ot" : false,
 			"playTime" : "00:00",
@@ -727,9 +727,9 @@
 			"gym" : "Green",
 			"hScore" : 0,
 			"home" : "HANC",
-			"month": "Dec",
 			"index" : 20,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Girls",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -745,9 +745,9 @@
 			"gym" : "Zimmerman",
 			"hScore" : 0,
 			"home" : "Yavneh",
-			"month": "Dec",
 			"index" : 21,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Girls",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -759,13 +759,13 @@
 			"aScore" : 0,
 			"away" : "Beth Tfiloh",
 			"day" : 2,
-			"month": "Dec",
 			"finished" : false,
 			"gym" : "Zimmerman",
 			"hScore" : 0,
 			"home" : "Boyar",
 			"index" : 25,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Girls",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -776,7 +776,6 @@
 		"g14" : {
 			"aScore" : 0,
 			"away" : "CHAT",
-			"month": "Dec",
 			"day" : 2,
 			"finished" : false,
 			"gym" : "Green",
@@ -784,6 +783,7 @@
 			"home" : "Ramaz",
 			"index" : 26,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Girls",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -795,13 +795,13 @@
 			"aScore" : 0,
 			"away" : "HANC",
 			"day" : 2,
-			"month": "Dec",
 			"finished" : false,
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "Yavneh",
 			"index" : 27,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Girls",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -817,9 +817,9 @@
 			"gym" : "Green",
 			"hScore" : 0,
 			"home" : "TBD",
-			"month": "Dec",
 			"index" : 36,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Girls 5<sup>th</sup> Place",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -831,13 +831,13 @@
 			"aScore" : 0,
 			"away" : "TBD",
 			"day" : 3,
-			"month": "Dec",
 			"finished" : false,
 			"gym" : "Hurwitz",
 			"hScore" : 0,
 			"home" : "TBD",
 			"index" : 38,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Girls Finals",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -852,10 +852,10 @@
 			"finished" : false,
 			"gym" : "Hurwitz",
 			"hScore" : 0,
-			"month": "Dec",
 			"home" : "TBD",
 			"index" : 35,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Girls 3<sup>rd</sup> Place",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -867,13 +867,13 @@
 			"aScore" : 0,
 			"away" : "TBD",
 			"day" : 2,
-			"month": "Dec",
 			"finished" : false,
-			"gym" : "Hurwitz",
+			"gym" : "TBD",
 			"hScore" : 0,
 			"home" : "TBD",
 			"index" : 31,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Girls SF 1",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -885,13 +885,13 @@
 			"aScore" : 0,
 			"away" : "TBD",
 			"day" : 2,
-			"month": "Dec",
 			"finished" : false,
-			"gym" : "Hurwitz",
+			"gym" : "TBD",
 			"hScore" : 0,
 			"home" : "TBD",
 			"index" : 32,
 			"live" : false,
+			"month" : "Dec",
 			"name" : "Girls SF 2",
 			"ot" : false,
 			"playTime" : "7:00",
@@ -901,25 +901,10 @@
 		}
 	},
 	"stats" : {
-		"Beth Tfiloh": {
-			"boys": {
+		"Beth Tfiloh" : {
+			"boys" : {
 				"Andrew K" : {
-					"fo" : 0,
-					"grade": 11,
-					"ft" : 0,
-					"p2" : 0,
-					"p3" : 0,
-					"pt" : 0
-				},
-				"Brian F" : {
-					"fo" : 0,
-					"ft" : 0,
-					"grade" : 12,
-					"p2" : 0,
-					"p3" : 0,
-					"pt" : 0
-				},
-				"Nicki F": {
+					"number": 10,
 					"fo" : 0,
 					"ft" : 0,
 					"grade" : 11,
@@ -927,15 +912,17 @@
 					"p3" : 0,
 					"pt" : 0
 				},
-				"Harris G": {
+				"Brian F" : {
+					"number": 4,
 					"fo" : 0,
 					"ft" : 0,
-					"grade" : 10,
+					"grade" : 12,
 					"p2" : 0,
 					"p3" : 0,
 					"pt" : 0
 				},
 				"Dovid T" : {
+					"number": 3,
 					"fo" : 0,
 					"ft" : 0,
 					"grade" : 12,
@@ -944,6 +931,7 @@
 					"pt" : 0
 				},
 				"Ethan H" : {
+					"number": null,
 					"fo" : 0,
 					"ft" : 0,
 					"grade" : 12,
@@ -951,15 +939,17 @@
 					"p3" : 0,
 					"pt" : 0
 				},
-				"Justin S" : {
+				"Harris G" : {
+					"number": 14,
 					"fo" : 0,
 					"ft" : 0,
-					"grade": 12,
+					"grade" : 10,
 					"p2" : 0,
 					"p3" : 0,
 					"pt" : 0
 				},
-				"Jared H": {
+				"Jared H" : {
+					"number": 12,
 					"fo" : 0,
 					"ft" : 0,
 					"grade" : 11,
@@ -967,7 +957,17 @@
 					"p3" : 0,
 					"pt" : 0
 				},
+				"Justin S" : {
+					"number": null,
+					"fo" : 0,
+					"ft" : 0,
+					"grade" : 12,
+					"p2" : 0,
+					"p3" : 0,
+					"pt" : 0
+				},
 				"Kameron G" : {
+					"number": 25,
 					"fo" : 0,
 					"ft" : 0,
 					"grade" : 11,
@@ -976,6 +976,7 @@
 					"pt" : 0
 				},
 				"Mitchell C" : {
+					"number": 20,
 					"fo" : 0,
 					"ft" : 0,
 					"grade" : 12,
@@ -983,7 +984,8 @@
 					"p3" : 0,
 					"pt" : 0
 				},
-				"Oren P" : {
+				"Nicki F" : {
+					"number": 11,
 					"fo" : 0,
 					"ft" : 0,
 					"grade" : 11,
@@ -991,7 +993,8 @@
 					"p3" : 0,
 					"pt" : 0
 				},
-				"Scott T" : {
+				"Oren P" : {
+					"number": 24,
 					"fo" : 0,
 					"ft" : 0,
 					"grade" : 11,
@@ -1000,6 +1003,7 @@
 					"pt" : 0
 				},
 				"Sammy G" : {
+					"number": 23,
 					"fo" : 0,
 					"ft" : 0,
 					"grade" : 12,
@@ -1008,15 +1012,25 @@
 					"pt" : 0
 				},
 				"Sammy S" : {
+					"number": 2,
 					"fo" : 0,
 					"ft" : 0,
 					"grade" : 12,
 					"p2" : 0,
 					"p3" : 0,
 					"pt" : 0
+				},
+				"Scott T" : {
+					"number": 22,
+					"fo" : 0,
+					"ft" : 0,
+					"grade" : 11,
+					"p2" : 0,
+					"p3" : 0,
+					"pt" : 0
 				}
 			},
-			"girls": {
+			"girls" : {
 				"Alyse M" : {
 					"fo" : 0,
 					"ft" : 0,
@@ -1059,65 +1073,17 @@
 				}
 			}
 		},
-		"Boyar": {
-			"boys": {
-				"Ori M" : {
+		"Boyar" : {
+			"boys" : {
+				"Niv A" : {
 					"fo" : 0,
 					"ft" : 0,
-					"grade" : 9,
-					"p2" : 0,
-					"p3" : 0,
-					"pt" : 0
-				},
-				"Ori L" : {
-					"fo" : 0,
-					"ft" : 0,
-					"grade" : 9,
-					"p2" : 0,
-					"p3" : 0,
-					"pt" : 0
-				},
-				"Sagi M" : {
-					"fo" : 0,
-					"ft" : 0,
-					"grade" : 11,
+					"grade" : 10,
 					"p2" : 0,
 					"p3" : 0,
 					"pt" : 0
 				},
 				"Noam P" : {
-					"fo" : 0,
-					"ft" : 0,
-					"grade" : 11,
-					"p2" : 0,
-					"p3" : 0,
-					"pt" : 0
-				},
-				"Omer M" : {
-					"fo" : 0,
-					"ft" : 0,
-					"grade" : 12,
-					"p2" : 0,
-					"p3" : 0,
-					"pt" : 0
-				},
-				"Oriya H" : {
-					"fo" : 0,
-					"ft" : 0,
-					"grade" : 12,
-					"p2" : 0,
-					"p3" : 0,
-					"pt" : 0
-				},
-				"Or C" : {
-					"fo" : 0,
-					"ft" : 0,
-					"grade" : 9,
-					"p2" : 0,
-					"p3" : 0,
-					"pt" : 0
-				},
-				"Tomer M" : {
 					"fo" : 0,
 					"ft" : 0,
 					"grade" : 11,
@@ -1133,16 +1099,64 @@
 					"p3" : 0,
 					"pt" : 0
 				},
-				"Niv A" : {
+				"Omer M" : {
 					"fo" : 0,
 					"ft" : 0,
-					"grade" : 10,
+					"grade" : 12,
+					"p2" : 0,
+					"p3" : 0,
+					"pt" : 0
+				},
+				"Or C" : {
+					"fo" : 0,
+					"ft" : 0,
+					"grade" : 9,
+					"p2" : 0,
+					"p3" : 0,
+					"pt" : 0
+				},
+				"Ori L" : {
+					"fo" : 0,
+					"ft" : 0,
+					"grade" : 9,
+					"p2" : 0,
+					"p3" : 0,
+					"pt" : 0
+				},
+				"Ori M" : {
+					"fo" : 0,
+					"ft" : 0,
+					"grade" : 9,
+					"p2" : 0,
+					"p3" : 0,
+					"pt" : 0
+				},
+				"Oriya H" : {
+					"fo" : 0,
+					"ft" : 0,
+					"grade" : 12,
+					"p2" : 0,
+					"p3" : 0,
+					"pt" : 0
+				},
+				"Sagi M" : {
+					"fo" : 0,
+					"ft" : 0,
+					"grade" : 11,
+					"p2" : 0,
+					"p3" : 0,
+					"pt" : 0
+				},
+				"Tomer M" : {
+					"fo" : 0,
+					"ft" : 0,
+					"grade" : 11,
 					"p2" : 0,
 					"p3" : 0,
 					"pt" : 0
 				}
 			},
-			"girls": {
+			"girls" : {
 				"Maya E" : {
 					"fo" : 0,
 					"ft" : 0,
@@ -1150,7 +1164,7 @@
 					"p2" : 0,
 					"p3" : 0,
 					"pt" : 0
-				},	
+				},
 				"Shir C" : {
 					"fo" : 0,
 					"ft" : 0,
@@ -1168,22 +1182,6 @@
 					"pt" : 0
 				}
 			}
-		},
-		"CHAT": {
-			"boys": {},
-			"girls": {}
-		},
-		"HANC": {
-			"boys": {},
-			"girls": {}
-		},
-		"Ramaz": {
-			"boys": {},
-			"girls": {}
-		},
-		"Yavneh": {
-			"boys": {},
-			"girls": {}
 		}
 	},
 	"teams" : {
