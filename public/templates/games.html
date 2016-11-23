@@ -4,7 +4,7 @@
 			<h2>Boys</h2>
 			<div class="games-wrap">
 				<div class="game" ng-repeat="game in games.boys | orderBy : 'index'">
-					<div class="game-out-wrap" ng-if="game.live">
+					<div class="game-out-wrap" ng-if="game.live" id="{{game.live ? 'live-wrap' : null}}">
 						<div class="left">
 							<div class="home">
 								<a ui-sref="teamsSelected({team: game.home, gender: getGender(game.name)})">
@@ -94,7 +94,7 @@
 			<h2>Girls</h2>
 			<div class="games-wrap">
 				<div class="game" ng-repeat="game in games.girls | orderBy : 'index'">
-					<div class="game-out-wrap" ng-if="game.live">
+					<div class="game-out-wrap" ng-if="game.live" id="{{game.live ? 'live-wrap' : null}}">
 						<div class="left">
 							<div class="home">
 								<a ng-href="/#teams/{{game.home}}/{{getGender(game.name)}}">
