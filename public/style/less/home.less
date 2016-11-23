@@ -17,8 +17,8 @@
 				/* DEV ONLY *///border: 1px solid #333;
 
 				.game-out-wrap {
-					display: flex;
 					min-height: 150px;
+					position: relative;
 					flex-wrap: wrap;
 				
 					&:last-child {
@@ -31,9 +31,8 @@
 
 					.left {
 						display: flex;
-						flex: 1;
-						//flex: @golden-ratio; //golden ratio
-						order: 1;
+						width: 50%;
+						float: left;
 						flex-direction: column;
 
 						.home, .away {
@@ -88,13 +87,13 @@
 					}
 
 					.right {
-						flex: 1;
-						order: 2;
+						float: right;
+						width: 50%;
 						text-align: center;
 						display: flex;
 
 						.stats-button {
-							padding-left: 3.5px;
+							padding-left: 15px;
 							color: #e8e8e8;
 
 							&.hide {
@@ -133,6 +132,12 @@
 				}
 			}
 		}
+	}
+}
+
+#live-wrap {
+	.stats-button {
+		padding-left: 40px;
 	}
 }
 
@@ -209,6 +214,17 @@ section.stats {
 @media screen and (max-width: 767px) {
 	.game-sec .games-wrap h2.score {
 		margin: auto !important;
+	}
+}
+
+//change to horizontal stats button
+@media screen and (max-width: 504px) {
+	.stats-button {
+		display: none;
+	}
+
+	.mobile-stats-button {
+		display: block;
 	}
 }
 
