@@ -31,7 +31,7 @@
 
 					.left {
 						display: flex;
-						width:60%;
+						width: 50%;
 						float: left;
 						flex-direction: column;
 
@@ -88,7 +88,7 @@
 
 					.right {
 						float: right;
-						width: 40%;
+						width: 50%;
 						text-align: center;
 						display: flex;
 
@@ -96,7 +96,11 @@
 							padding-left: 15px;
 							color: #e8e8e8;
 
-							div, .stats-button-mixin {
+							&.hide {
+								visibility: hidden;
+							}
+
+								div {
 								background-color: @top-back;
 								cursor: pointer;
 								opacity: 0.9;
@@ -126,20 +130,6 @@
 						}
 					}
 				}
-
-				.mobile-stats-button {
-					display: none;
-					color: #e8e8e8;
-					background-color: @top-back !important;
-					height: 20px;
-					cursor: pointer;
-					border-radius: 5px;
-					padding: 4px 8px;
-					width: 86.1%;
-					font-family: 'Josefin sans', sans-serif;
-					font-size: 22px;
-					margin: auto; 
-				}
 			}
 		}
 	}
@@ -148,14 +138,6 @@
 #live-wrap {
 	.stats-button {
 		padding-left: 40px;
-	}
-
-	.left {
-		width: 70%;
-	}
-
-	.right {
-		width: 30%;
 	}
 }
 
@@ -251,7 +233,7 @@ section.stats {
 		.home, .away {
 			div {
 				margin-left: 0 !important;
-				margin-right: 0px !important;
+				margin-right: 10px !important;
 			}
 		}
 	}
@@ -264,10 +246,6 @@ section.stats {
 
 /* when games collapse into 2 rows */
 @media screen and (max-width: 434px) {
-	#live {
-		padding: 0;
-	}
-
 	.game-sec .games-wrap .left {
 		.home, .away {
 			a, h2 { 
@@ -281,52 +259,14 @@ section.stats {
 	}
 }
 
-@media screen and (max-width: 390px) {
-	.home, .away {
-		a div {
-			margin: 0 !important;
-			width: 90px !important;
-		}
-	}
-}
-
 // optomize 
 @media screen and (max-width: 345px) {
 	.game-sec .games-wrap .left {
 		.home, .away {
 			a, h2 {
-				//margin-left: 7.5px !important;
+				margin-left: 10px !important;
 			}
 		}
-	}
-}
-
-@media screen and (min-width: 355px) {
-	.left {
-		margin-left: 25px !important;
-		width: ~"calc(50% - 25px)" !important;
-	}
-
-	#live-wrap .left {
-		margin-left: 0px !important;
-	}
-
-	.right {
-		width: 50% !important;
-	}
-}
-
-@media screen and (min-width: 1200px) {
-	.left {
-		width: 55%;
-	}
-
-	.right {
-		width: 45%;
-	}
-
-	h2.score {
-		margin: auto !important;
 	}
 }
 
