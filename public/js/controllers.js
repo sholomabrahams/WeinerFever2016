@@ -83,12 +83,21 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$fire
 	$rootScope.whichStats = null;
 	$rootScope.openStats = function(event) {
 		event.stopPropagation();
+		console.log($(event.currentTarget).hasClass('mobile-stats-button'));
 		if (event.currentTarget != $rootScope.whichStats) {
 			$(".stats").slideUp(350);
-			$(event.currentTarget).parents(".game-out-wrap").siblings(".stats").slideDown(350);
+			if ($(event.currentTarget).hasClass('mobile-stats-button')) {
+				$(event.currentTarget).siblings('.stats').slideDown(350);
+			} else {
+				$(event.currentTarget).parents(".game-out-wrap").siblings(".stats").slideDown(350);
+			}
 			$rootScope.whichStats = event.currentTarget;
 		} else {
-			$(event.currentTarget).parents(".game-out-wrap").siblings(".stats").slideUp(350);
+			if ($(event.currentTarget).hasClass('mobile-stats-button')) {
+				$(event.currentTarget).siblings('.stats').slideUp(350);
+			} else {
+				$(event.currentTarget).parents(".game-out-wrap").siblings(".stats").slideUp(350);
+			}
 			$rootScope.whichStats = null;
 		}
 	};
