@@ -49,7 +49,7 @@ weinerApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', f
 			url: '/games',
 			templateUrl: '/templates/games.html',
 			controller: 'games'
-		})/*.
+		})./*
 		state('games.showStats', {
 			url: '/:team/:gender',
 			resolve: {
@@ -57,7 +57,7 @@ weinerApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', f
 					return /*$firebaseArray($rootScope.rootRef.child("stats").child(gender).child(team).orderByKey());
 				}]
 			}
-		}).
+		}).*/
 		state('teams', {
 			url: '/teams',
 			templateUrl: '/templates/teams.html',
@@ -67,5 +67,5 @@ weinerApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', f
 			url: '/teams/:team/:gender',
 			templateUrl: '/templates/teams_selected.html',
 			controller: 'teamsSelected'
-		})*/
+		})
 }]);

@@ -14,10 +14,7 @@
     "ignore": [
         
         "**/*.ini",
-        
-        "/assets/img/team_pics/**",
-        "/assets/img/team_pics - 4 3/**",
-        "/assets/img/team_pics_old/**"
+        "/assets/img/unused/**"
     ]
   }
 }

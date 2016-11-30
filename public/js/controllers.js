@@ -83,7 +83,6 @@ weinerControllers.run(['$rootScope', '$http', '$firebaseArray', '$state', '$fire
 	$rootScope.whichStats = null;
 	$rootScope.openStats = function(event) {
 		event.stopPropagation();
-		console.log($(event.currentTarget).hasClass('mobile-stats-button'));
 		if (event.currentTarget != $rootScope.whichStats) {
 			$(".stats").slideUp(350);
 			if ($(event.currentTarget).hasClass('mobile-stats-button')) {
@@ -403,7 +402,11 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 			$(event.currentTarget).addClass('info');
 			$scope.selectedPlayer = $(event.currentTarget).children("td:last-of-type").text();
 			$scope.selectedTeam = $(event.currentTarget).parents("#table-wrap").prev("h2").text();
+			//console.log($scope.selectedTeam);
 			$scope.selectedTeam = $scope.selectedTeam.substring(0, ($scope.selectedTeam.length - 4));
+			//console.log($scope.teams.static);
+			//console.log($scope.selectedTeam);
+			//console.log($scope.teams.static[$scope.selectedTeam]);
 			$scope.color = $scope.teams.static[$scope.selectedTeam].color;
 			$scope.logo = $scope.teams.static[$scope.selectedTeam].picture;
 		} else {
@@ -529,11 +532,49 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 			setTimer();
 		}
 	};
+
+	$scope.endGame = function(event) {
+		event.preventDefault();
+
+		var winner, loser, winScore, losScore;
+		if ($scope.game.hScore > $scope.game.aScore) {
+			winner = $scope.game.home;
+			loser = $scope.game.away;
+			winScore = $scope.game.hScore;
+			losScore = $scope.game.aScore;
+		} else if ($scope.game.hScore < $scope.game.aScore) {
+			winner = $scope.game.away;
+			loser = $scope.game.home;
+			winScore = $scope.game.aScore;
+			losScore = $scope.game.hScore;
+		} else {
+			alert("You can not end the game while it is tied");
+			return;
+		}
+
+		if (confirm("Are you sure you want to end the game, with " + winner + " beating " + loser + ", with the score: " + winScore + "-" + losScore + "?")) {
+			$scope.game.live = false;
+			$scope.game.quarter = false;
+			$scope.game.finished = true;
+			$scope.game.$save();
+			//console.log($scope.teams.dynamic[winner]);
+			//console.log($rootScope.getGender($scope.game.$id));
+			$scope.teams.dynamic[winner][$rootScope.getGender($scope.game.$id)].win ++;
+			$scope.teams.dynamic[loser][$rootScope.getGender($scope.game.$id)].los ++;
+			$scope.teams.dynamic.$save();
+			//console.log($scope.teams.dynamic);
+		}
+	};
 }]);
 
-weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$firebaseObject', 'currentAuth', '$stateParams', '$state', function ($scope, $rootScope, $firebaseObject, currentAuth, $stateParams, $state) {
+weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$firebaseObject', 'currentAuth', '$stateParams', '$state', '$http', 'teamsObject', function ($scope, $rootScope, $firebaseObject, currentAuth, $stateParams, $state, $http, teamsObject) {
 	$scope.game = $firebaseObject($rootScope.gamesRef.child($stateParams.gameCode));
 	//console.log($scope.game);
+	$scope.teams = {};
+	$http.get("/js/data/teams.json").then(function (response) {
+		$scope.teams.static = response.data.teams;
+	});
+	$scope.teams.dynamic = teamsObject;
 
 	var currentQuarter;
 	$scope.processQuarter = function () {
@@ -550,8 +591,8 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 	};
 
 	$scope.env = {
-		quarterLength:/* "7:00"*/ "35.20",
-		otQLength: "32.68"
+		quarterLength:/* "7:00"*/ "12.10",
+		otQLength: "1:30"
 	};
 
 	//button and quarter logic:
@@ -617,6 +658,26 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 		} else if ($scope.button.state === 5) {
 			$scope.game.live = false;
 			$scope.game.quarter = false;
+			$scope.game.finished = true;
+
+			var winner, loser, winScore, losScore;
+			if ($scope.game.hScore > $scope.game.aScore) {
+				winner = $scope.game.home;
+				loser = $scope.game.away;
+				winScore = $scope.game.hScore;
+				losScore = $scope.game.aScore;
+			} else if ($scope.game.hScore < $scope.game.aScore) {
+				winner = $scope.game.away;
+				loser = $scope.game.home;
+				winScore = $scope.game.aScore;
+				losScore = $scope.game.hScore;
+			} else {
+				alert("You can not end the game while it is tied");
+				return;
+			}
+			$scope.teams.dynamic[winner][$rootScope.getGender($scope.game.$id)].win ++;
+			$scope.teams.dynamic[loser][$rootScope.getGender($scope.game.$id)].los ++;
+			$scope.teams.dynamic.$save();
 			$scope.game.$save();
 			$state.go('adminDash');
 		} else if ($scope.button.state === 6) {
@@ -636,6 +697,26 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 		} else if ($scope.button.state === 8) {
 			$scope.game.live = false;
 			$scope.game.quarter = false;
+			$scope.game.finished = true;
+
+			var winner, loser, winScore, losScore;
+			if ($scope.game.hScore > $scope.game.aScore) {
+				winner = $scope.game.home;
+				loser = $scope.game.away;
+				winScore = $scope.game.hScore;
+				losScore = $scope.game.aScore;
+			} else if ($scope.game.hScore < $scope.game.aScore) {
+				winner = $scope.game.away;
+				loser = $scope.game.home;
+				winScore = $scope.game.aScore;
+				losScore = $scope.game.hScore;
+			} else {
+				alert("You can not end the game while it is tied");
+				return;
+			}
+			$scope.teams.dynamic[winner][$rootScope.getGender($scope.game.$id)].win ++;
+			$scope.teams.dynamic[loser][$rootScope.getGender($scope.game.$id)].los ++;
+			$scope.teams.dynamic.$save();
 			$scope.game.$save();
 			$state.go('adminDash');
 		} else if ($scope.button.state === 9) {
@@ -644,7 +725,7 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 			$scope.game.$save();
 			$scope.button.state = 10;
 			$scope.button.text = "Start 2<sup>nd</sup> Half Over Time";
-			$scope.button.context = "Primary";
+			$scope.button.context = "primary";
 		} else if ($scope.button.state === 10) {
 			initClock($scope.env.otQLength, $scope.game.quarter);
 			clock.start();
@@ -654,6 +735,26 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 		} else if ($scope.button.state === 11) {
 			$scope.game.live = false;
 			$scope.game.quarter = false;
+			$scope.game.finished = true;
+
+			var winner, loser, winScore, losScore;
+			if ($scope.game.hScore > $scope.game.aScore) {
+				winner = $scope.game.home;
+				loser = $scope.game.away;
+				winScore = $scope.game.hScore;
+				losScore = $scope.game.aScore;
+			} else if ($scope.game.hScore < $scope.game.aScore) {
+				winner = $scope.game.away;
+				loser = $scope.game.home;
+				winScore = $scope.game.aScore;
+				losScore = $scope.game.hScore;
+			} else {
+				alert("You can not end the game while it is tied");
+				return;
+			}
+			$scope.teams.dynamic[winner][$rootScope.getGender($scope.game.$id)].win ++;
+			$scope.teams.dynamic[loser][$rootScope.getGender($scope.game.$id)].los ++;
+			$scope.teams.dynamic.$save();
 			$scope.game.$save();
 			$state.go('adminDash');
 		}
@@ -685,7 +786,7 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 					formatString = "{m}:{ss}";
 				}
 				$scope.game.playTime = clock.lap(formatString).substr(0, 5);
-				console.log($scope.game.playTime);
+				//console.log($scope.game.playTime);
 				$scope.game.$save();
 			},
 			onComplete: function () {
@@ -796,6 +897,7 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 			$scope.game.ot = false;
 			$scope.game.aScore = 0;
 			$scope.game.hScore = 0;
+			$scope.game.$save();
 		}
 
 		$(".modal").modal('hide');
@@ -803,10 +905,11 @@ weinerControllers.controller('gameEditorTime', ['$scope', '$rootScope', '$fireba
 	$scope.endGame = function (event) {
 		event.preventDefault();
 
-		if (confirm("Doing this will irrevocably reset the game as if it did not happen.\n\(Note\: this will not impact stats and scores\)\nAre you sure you want to continue?")) {
+		if (confirm("Doing this will end the game.\n\(Note\: this will not impact stats and scores\)\nAre you sure you want to continue?")) {
 			$scope.game.quarter = false;
 			$scope.game.live = false;
 			$scope.game.finished = true;
+			$scope.game.$save();
 		}
 
 		$(".modal").modal('hide');

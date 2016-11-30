@@ -54,7 +54,7 @@
 				<h2 ng-bind="panelTwoTitle"></h2>
 				<div class="games-wrap">
 					<div class="game" ng-repeat="game in otherGames | orderBy : 'index'" ng-if="game.day == otherGameDay">
-						<div class="game-out-wrap">
+						<div class="game-out-wrap" id="{{game.finished ? 'live-wrap' : null}}">
 							<div class="left">
 								<div class="home">
 									<a ui-sref="teamsSelected({team: game.home, gender: getGender(game.name)})">
@@ -64,7 +64,7 @@
 										</div>
 										<img ng-src="/assets/img/logos/{{game.home == 'TBD' ? 'TBD.png' : teams.static[game.home].picture}}" width="60" height="60">
 									</a>
-									<!--<h2 class="score">{{game.hScore}}</h2>-->
+									<h2 class="score" ng-if="game.finished" ng-bind="game.hScore"></h2>
 								</div>
 
 								<div class="away">
@@ -75,7 +75,7 @@
 										</div>
 										<img ng-src="/assets/img/logos/{{game.away == 'TBD' ? 'TBD.png' : teams.static[game.away].picture}}" width="60" height="60">
 									</a>
-									<!--<h2 class="score">{{game.aScore}}</h2>-->
+									<h2 class="score" ng-if="game.finished" ng-bind="game.aScore"></h2>
 								</div>
 							</div>
 
@@ -86,9 +86,15 @@
 										<h3>STATS</h3>
 									</div>
 								</div>
-								<div class="info">
+								<div class="info" ng-if="!game.finished">
 									<h4 ng-bind-html="game.name"></h4>
 									<h2 ng-bind="game.time"> </h2>
+									<h6 ng-bind="game.gym + ' Gym'"> </h6>
+									<h5 ng-bind-html="game.month + '. ' + game.day + '<sup>' + ordinal(game.day) + '</sup>'"></h5>
+								</div>
+								<div class="info" ng-if="game.finished">
+									<h4 ng-bind-html="game.name"></h4>
+									<h2> Final <span ng-bind="game.ot ? '(OT)' : null"></span></h2>
 									<h6 ng-bind="game.gym + ' Gym'"> </h6>
 									<h5 ng-bind-html="game.month + '. ' + game.day + '<sup>' + ordinal(game.day) + '</sup>'"></h5>
 								</div>

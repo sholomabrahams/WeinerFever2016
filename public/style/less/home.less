@@ -199,6 +199,23 @@ section.stats {
 	}
 }
 
+@media screen and (max-width: 700px) {
+	body.ios {
+		section#home, section#games-page {
+			section.stats {
+				display: block;
+				overflow: auto;
+
+				div {
+					float: left;
+					margin: auto;
+					min-width: 220px;
+				}
+			}
+		}
+	}
+}
+
 .live {
 	.left {
 		flex: 1.61803398875 !important;
