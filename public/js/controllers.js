@@ -402,13 +402,33 @@ weinerControllers.controller('gameEditorBoth', ['$scope', '$firebaseObject', 'cu
 			$(event.currentTarget).addClass('info');
 			$scope.selectedPlayer = $(event.currentTarget).children("td:last-of-type").text();
 			$scope.selectedTeam = $(event.currentTarget).parents("#table-wrap").prev("h2").text();
-			//console.log($scope.selectedTeam);
-			$scope.selectedTeam = $scope.selectedTeam.substring(0, ($scope.selectedTeam.length - 4));
-			//console.log($scope.teams.static);
-			//console.log($scope.selectedTeam);
-			//console.log($scope.teams.static[$scope.selectedTeam]);
-			$scope.color = $scope.teams.static[$scope.selectedTeam].color;
-			$scope.logo = $scope.teams.static[$scope.selectedTeam].picture;
+
+			try {
+				
+				
+				//console.log($scope.selectedTeam);
+				$scope.selectedTeam = $scope.selectedTeam.substring(0, ($scope.selectedTeam.length - 5));
+				//console.log($scope.teams.static);
+				//console.log($scope.selectedTeam);
+				//console.log($scope.teams.static["Yavneh"]);
+				//console.log($scope.teams.static[$scope.selectedTeam]);
+				$scope.color = $scope.teams.static[$scope.selectedTeam].color;
+				$scope.logo = $scope.teams.static[$scope.selectedTeam].picture;
+			} catch(e) {
+				console.log(e);
+
+				$scope.selectedTeam = $(event.currentTarget).parents("aside.roster").attr('id');
+
+				if ($scope.selectedTeam == "home") {
+					$scope.selectedTeam = $scope.game.home;
+				} else if ($scope.selectedTeam == "away") {
+					$scope.selectedTeam = $scope.game.away;
+				}
+				
+				$scope.color = $scope.teams.static[$scope.selectedTeam].color;
+				$scope.logo = $scope.teams.static[$scope.selectedTeam].picture;
+			}
+				
 		} else {
 			$(".roster tr").removeClass('info');
 			$scope.selectedPlayer = "None Selected";

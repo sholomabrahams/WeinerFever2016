@@ -12,7 +12,7 @@
       }
     ],
     "ignore": [
-        
+        "/assets/img/team_pics-16-9",
         "**/*.ini",
         "/assets/img/unused/**"
     ]
