@@ -311,7 +311,7 @@ weinerControllers.controller('teamsSelected', ['$scope', '$rootScope', 'teamsObj
 		}
 	};console.log($scope.game);
 
-	$scope.selection = null;
+	/*$scope.selection = null;
 	$scope.select = function (gender) {
 		if (gender == 'boys') {
 			if ($scope.selection == 'boys') {
@@ -327,7 +327,7 @@ weinerControllers.controller('teamsSelected', ['$scope', '$rootScope', 'teamsObj
 
 			}
 		}
-	};
+	};*/
 }]);
 
 weinerControllers.controller('adminLogin', ['$scope', 'currentAuth', '$firebaseAuth', '$rootScope', '$state', function($scope, currentAuth, $firebaseAuth, $rootScope, $state) {
